@@ -19,8 +19,8 @@ Once you've fired up XCode, you'll notice that there is not an xcode project in 
 Open a terminal window, change directory to the project root directory, and issue the following commands:
 
 {{{
-> xcodebuild build --buildstyle Release DSTROOT=/ 
-> sudo xcodebuild install --buildstyle Release DSTROOT=/
+> xcodebuild -configuration Release DSTROOT=/ clean build 
+> sudo xcodebuild -configuration Release DSTROOT=/ install
 }}}
 
 Alternatively, download the pre-built version here : http://code.google.com/p/imate-osx/downloads/list
