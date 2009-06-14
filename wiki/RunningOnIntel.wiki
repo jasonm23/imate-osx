@@ -4,7 +4,7 @@ Under Leopard (at least) on intel-based machines, Apple's base ADB controller ke
 
 A pre built universal binary version of this extension for OSX 10.4 and above is available from : http://imate-osx.googlecode.com/files/IOADBFamily-6.dmg.gz
 
-*If you already have a copy of IOADBFamily.kext in /System/Library/Extensions DO NOT INSTALL THIS* 
+<font color="red">*If you already have a copy of IOADBFamily.kext in /System/Library/Extensions DO NOT INSTALL THIS*</font>
 
 == Details ==
 
