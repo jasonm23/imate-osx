@@ -38,3 +38,19 @@ Usually, you'll see the driver trying to set the handler ID of your device to so
 Next up, capture packets from using the device, work out what packets are sent backwards and forwards when you do what.  Think hard.  Think harder. Reverse-engineer the protocol.  Look at what happens if you mess with any related control panels.  Reverse engineer that as well, if needs be.
 
 Right, you're done with "classic" MacOS.  Relegate the machines back to the dusty cupboard of discontinued tech, and get on with writing a driver.  Fun fun.
+
+== The driver ==
+
+Probably the best way to write your driver is to make it convert the ADB protocol you just deciphered to HID, that way you have a running chance of getting your device recognised by the rest of the system.
+
+So, fire up XCode, new Kext project.  You'll want a new class for your driver, as per the usual IOKit conventions, with a superclass of IOHIDDevice.
+
+=== Getting it to match your device, and other Info.plist guff ===
+
+Matching is a piece of cake.  You'll want to make a dictionary entry in the IOKitPersonalities array of info.plist, and it should have the following settings
+
+IOClass : *_YourClassName_*
+IOProviderClass : IOADBDevice
+ADBMatch : 0x*_AA_*-0x*_HH_*
+
+The AA and HH in the ADBMatch line should be replaced by the default Address and Handler that your device identifies itself as.
