@@ -1,16 +1,16 @@
-#Instructions for running this on intel based macs
-
 = Running on Intel-based macs =
 
 Under Leopard (at least) on intel-based machines, Apple's base ADB controller kernel extension, IOADBFamily.kext, is not installed.  This is a problem, as it contains the superclasses and user client classes for required by the iMate driver.  In order to build and / or run the iMate driver, it is necessary to build or install the Apple driver as well. 
 
-= Details =
+A pre built universal binary version of this extension for OSX 10.4 and above is available from : http://code.google.com/p/imate-osx/downloads/list
 
-== Obtaining the source ==
+== Details ==
+
+=== Obtaining the source ===
 
 The source for IOADBFamily can be downloaded from Apple's public source site.  The required file is http://opensource.apple.com/tarballs/IOADBFamily/IOADBFamily-6.tar.gz
 
-== Building the kernel extension ==
+=== Building the kernel extension ===
 
 In order to build the extension, you will need Apple's developer tools installed on your machine.  These should have come with your copy of OSX, or can be downloaded at http://connect.apple.com (Apple Developer Connection membership required, the 'online' or, in other words, free, membership is sufficient)
 
