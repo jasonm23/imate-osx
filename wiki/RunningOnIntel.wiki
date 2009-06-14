@@ -14,13 +14,14 @@ The source for IOADBFamily can be downloaded from Apple's public source site.  T
 
 In order to build the extension, you will need Apple's developer tools installed on your machine.  These should have come with your copy of OSX, or can be downloaded at http://connect.apple.com (Apple Developer Connection membership required, the 'online' or, in other words, free, membership is sufficient)
 
-Once you've fired up XCode, you'll notice that there is not an xcode project in the folder, only a .pbproj file suitable for Project Builder (XCode's predecessor) or XCode 2.x.  Fear not, in the downloads section here, you'll find a .xcodeproj file suitable for XCode 2.x or 3.x.  Download this and place it in the root of the project, alongside the .pbproj.
+That's all well and good, but unfortunately you'll notice that there is not an xcode project in the folder, only a .pbproj file suitable for Project Builder (XCode's predecessor) or XCode 2.x.  There's an additional gotcha, in that one of the defnined constants used by the project is undefined on intel.  Fear not, though, for we have a fix for both of these issues:
 
-Open a terminal window, change directory to the project root directory, and issue the following commands:
+Open a terminal window, change directory to the project root directory (e.g. ~/Desktop/IOADBFamily-6), and issue the following commands:
 
 {{{
-> xcodebuild -configuration Release DSTROOT=/ clean build 
-> sudo xcodebuild -configuration Release DSTROOT=/ install
+svn co http://imate-osx.googlecode.com/svn/trunk/IOADBFamily-6 .
+xcodebuild -configuration Release DSTROOT=/ clean build 
+sudo xcodebuild -configuration Release DSTROOT=/ install
 }}}
 
 Alternatively, download the pre-built version here : http://code.google.com/p/imate-osx/downloads/list
