@@ -61,7 +61,8 @@ That much is enough that, when an ADB device with the right address and handler 
 
 First off, add another couple of entries to your personality:
 
-{{{VendorID: 0xVVVV
+{{{
+VendorID: 0xVVVV
 ProductID: 0xPPPP
 }}}
 
@@ -69,11 +70,13 @@ where VVVV and PPP are some random vendor ID.  Unless you happen to have a valid
 
 Now add another personality to Info.plist, and add the following:
 
-{{{CFBundleIdentifier: com.apple.kernel.iokit
+{{{
+CFBundleIdentifier: com.apple.kernel.iokit
 IOClass: IOHIDEventDriver
 IOProviderClass: IOHIDInterface
 VendorID: 0xVVVV
-ProductID: 0xVVVV}}}
+ProductID: 0xVVVV
+}}}
 What this does is tell IOKit that when it gets an IOHIDInterface with the given vendor and product ID, it should fire up all the rest.  Easy enough, and you get the IOHIDInterface by default, so all should now be well.
 
 === The driver itself ===
