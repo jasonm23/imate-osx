@@ -23,9 +23,18 @@ Really, it's not easy, but here's a good set of starting rules.
 
 First, you'll want to make up your protocol sniffing cable.  The schema is in the ADB Analyzer application itsef, but I've reproduced it here :
 
+http://imate-osx.googlecode.com/files/cable.png
 
+The "ADB" end plugs into the adb bus of the "host" machine, where you'll be running the relevant driver and also plugging in your device.  The other end goes to the serial port of the other machine, which will be running the analyzer application.
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Fire up both machines, with the cable between them, your device plugged into the bus of the host machine, and a driver up and running.  No magic smoke let out of the machines?  Good.
+
+== Protocol Analysis ==
+
+Now, you want to see what happens when the ADB bus is probed, what the driver does to make your device do its thing.  Use something to reinitialize the bus on the "host" machine(ADB Reinit or ADB Parser should do the trick, both of these are available from the same place as ADB Analyzer) while ADB Analyzer is waiting for input.  You may need to do this a lot to work out  what packets are being sent.  No, ADB analyzer doesn't let you save dumps.  Nor does it collect very much before stopping (about 3 seconds worth maximum).  You'll need a pen and paper, or another machine, to note the various packets that are being sent.
+
+Usually, you'll see the driver trying to set the handler ID of your device to something other than its default.  You need to know what this is, because it's the "knock on the door" that the device will need to give up all its secrets to you in your OSX driver.
+
+Next up, capture packets from using the device, work out what packets are sent backwards and forwards when you do what.  Think hard.  Think harder. Reverse-engineer the protocol.  Look at what happens if you mess with any related control panels.  Reverse engineer that as well, if needs be.
+
+Right, you're done with "classic" MacOS.  Relegate the machines back to the dusty cupboard of discontinued tech, and get on with writing a driver.  Fun fun.
