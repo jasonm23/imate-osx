@@ -1,0 +1,31 @@
+= Introduction =
+
+So, you have an ADB Device, and you want to develop a driver for it under OSX.  There's 3 questions you need to ask yourself before you start:
+
+  # Has someone else already done it?
+  # Are you sure you want to do this?
+  # Are you completely mental?
+
+Really, it's not easy, but here's a good set of starting rules.
+
+== What you need ==
+
+  * Your device
+  * A driver for your device running under "classic" MacOS
+  * A couple of older macs, at least one of which is equipped with an ADB port, and the other of which is equipped with a serial port, both of which are running "classic" MacOS somewhere between 7.5.x and 9.x 
+  * A serial cable and an ADB (or s-video) cable which can be sacrificed (you'll be cutting both of them in half)
+  * 1 x 2K and 1 x 10K resistor
+  * A copy of (at least) [ftp://ftp.apple.com/developer/Tool_Chest/Devices_-_Hardware/Apple_Desktop_Bus/ADB_Analyzer_1.0D6.sit.hqx ADB Analyzer]
+  * An idea of what the ADB protocol looks and feels like, you'll want to read at least the first few parts of [http://developer.apple.com/documentation/Mac/Devices/Devices-203.html Inside Macintosh - ADB Manager]
+  * A decent grasp of IOKit device drivers, and probably an idea of what HID devices are all about
+
+== Getting your shit together ==
+
+First, you'll want to make up your protocol sniffing cable.  The schema is in the ADB Analyzer application itsef, but I've reproduced it here :
+
+
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
