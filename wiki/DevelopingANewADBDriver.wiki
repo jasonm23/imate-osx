@@ -49,8 +49,37 @@ So, fire up XCode, new Kext project.  You'll want a new class for your driver, a
 
 Matching is a piece of cake.  You'll want to make a dictionary entry in the IOKitPersonalities array of info.plist, and it should have the following settings
 
-IOClass : *_YourClassName_*
+{{{
+IOClass : YourClassName
 IOProviderClass : IOADBDevice
-ADBMatch : 0x*_AA_*-0x*_HH_*
+ADBMatch : 0xAA-0xHH
+}}}
 
-The AA and HH in the ADBMatch line should be replaced by the default Address and Handler that your device identifies itself as.
+The AA and HH in the ADBMatch line should be replaced by the default Address and Handler that your device identifies itself as.  'YourClassName' should obviously be replaced by your driver Class' name
+
+That much is enough that, when an ADB device with the right address and handler crops up, your driver will get a shot at handling it.  Neato, right?  Yep, but there's more.  Although your class is a (fake) HID device, it won't get hooked into the HID system automatically.  That's a bit arse, and we need a bit of voodoo to get it to work.
+
+First off, add another couple of entries to your personality:
+
+{{{VendorID: 0xVVVV
+ProductID: 0xPPPP
+}}}
+
+where VVVV and PPP are some random vendor ID.  Unless you happen to have a valid HID vendor ID lying about, of course.  Best make sure it's not a real one, but it actually shouldn't matter.
+
+Now add another personality to Info.plist, and add the following:
+
+{{{CFBundleIdentifier: com.apple.kernel.iokit
+IOClass: IOHIDEventDriver
+IOProviderClass: IOHIDInterface
+VendorID: 0xVVVV
+ProductID: 0xVVVV}}}
+What this does is tell IOKit that when it gets an IOHIDInterface with the given vendor and product ID, it should fire up all the rest.  Easy enough, and you get the IOHIDInterface by default, so all should now be well.
+
+=== The driver itself ===
+
+That's pretty basic.  You might need to do some ADB messaging in `probe()`, depending on yor protocol.  Otherwise, you'll want to do any relevant intialisation in `handleOpen()` including a call to `IOADBDevice::claimForClient()`.  `handleClose()` should get the matching `closeForClient()` call.  Hook your power management up to the ADB Device itself.  Then your ADB callback function should populate your HID event structure(s) and use `handleEvent()` to post them on.
+
+Cake!
+ 
+ 
