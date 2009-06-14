@@ -1,0 +1,21 @@
+#Instructions for running this on intel based macs
+
+= Issues regarding MacIntel =
+
+Under Leopard on MacIntel, Apple's ADB controller kernel extension, IOADBFamily.kext, is not installed.  This is a problem, as it contains the superclasses and user client classes for required by the iMate driver.  In order to build and / or run the iMate driver, it is necessary to build or install the Apple driver as well. 
+
+= Details =
+
+== Obtaining the source ==
+
+The source for IOADBFamily can be downloaded from Apple's public source site.  The required file is http://opensource.apple.com/tarballs/IOADBFamily/IOADBFamily-6.tar.gz
+
+== Building the kernel extension ==
+
+In order to build the extension, you will need Apple's developer tools installed on your machine.  These should have come with your copy of OSX, or can be downloaded at http://connect.apple.com (Apple Developer Connection membership required, the 'online' or, in other words, free, membership is sufficient)
+
+Once you've fired up XCode, you'll notice that there is not an xcode project in the folder, only a .pbproj file suitable for Project Builder (XCode's predecessor) or XCode 2.x.  Fear not, in the Files section here, you'll find a .xcodeproj file suitable for XCode 2.x or 3.x.  Download this and place it in the root of the project, alongside the .pbproj , and open it with XCode.
+
+Set the project  settings to "Release", and hit the build button.
+
+Oh Noes!  Your build has failed!
