@@ -81,7 +81,7 @@ What this does is tell IOKit that when it gets an IOHIDInterface with the given 
 
 === The driver itself ===
 
-That's pretty basic.  You might need to do some ADB messaging in `probe()`, depending on yor protocol.  Otherwise, you'll want to do any relevant intialisation in `handleOpen()` including a call to `IOADBDevice::claimForClient()`.  `handleClose()` should get the matching `closeForClient()` call.  Hook your power management up to the ADB Device itself.  Then your ADB callback function should populate your HID event structure(s) and use `handleEvent()` to post them on.
+That's pretty basic.  You might need to do some ADB messaging in `probe()`, depending on yor protocol.  Otherwise, you'll want to do any relevant intialisation in `handleOpen()` including a call to `IOADBDevice::siezeForClient()`.  `handleClose()` should get the matching `IOADBDevice::releaseFromClient()` call.  Hook your power management up to the ADB Device itself using `IOService::PMInit()` and `IOService::joinPMTree()` as usual.  The  ADB callback function passed into `IOADBDevice::siezeForClient()` should populate your HID event structure(s) and use `handleEvent()` to post them on.
 
 Cake!
  
