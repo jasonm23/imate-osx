@@ -43,7 +43,9 @@ Right, you're done with "classic" MacOS.  Relegate the machines back to the dust
 
 Probably the best way to write your driver is to make it convert the ADB protocol you just deciphered to HID, that way you have a running chance of getting your device recognised by the rest of the system.
 
-So, fire up XCode, new Kext project.  You'll want a new class for your driver, as per the usual IOKit conventions, with a superclass of IOHIDDevice.
+If you decide to go this route, there is a separate project in the svn repository for ADBHIDDevice, which does most of the donkey work for you.  It also contains a sample driver for your bog-stock ADB mouse.
+
+So, make yourself a new IOKit Driver project, and make your new class, with a superclass of ADBHIDDevice.
 
 === Getting it to match your device, and other Info.plist guff ===
 
@@ -52,36 +54,39 @@ Matching is a piece of cake.  You'll want to make a dictionary entry in the IOKi
 {{{
 IOClass : YourClassName
 IOProviderClass : IOADBDevice
-ADBMatch : 0xAA-0xHH
+ADB Match : 0xAA-0xHH
 }}}
 
-The AA and HH in the ADBMatch line should be replaced by the default Address and Handler that your device identifies itself as.  'YourClassName' should obviously be replaced by your driver Class' name
+The AA and HH in the ADB Match line should be replaced by the default Address and Handler that your device identifies itself as.  'YourClassName' should obviously be replaced by your driver Class' name
 
-That much is enough that, when an ADB device with the right address and handler crops up, your driver will get a shot at handling it.  Neato, right?  Yep, but there's more.  Although your class is a (fake) HID device, it won't get hooked into the HID system automatically.  That's a bit arse, and we need a bit of voodoo to get it to work.
+That much is enough that, when an ADB device with the right address and handler crops up, your driver will get a shot at handling it.  Neato, right?  Yep, but there's more.  Although your class is a (fake) HID device, it won't get hooked into the HID system automatically.  That's a bit arse, and we need a bit of voodoo to get it to work.  We'll come back to this later.
 
-First off, add another couple of entries to your personality:
+=== The Driver ===
 
-{{{
-VendorID: 0xVVVV
-ProductID: 0xPPPP
-}}}
+There's a load of stuff in the example mouse driver you can pretty much copy across, which should make your life easier.  You'll want vendor and product IDs from somewhere, these should not collide with existing USB vendor and product IDs unless you're trying to do something really gnarly like pretending your ABD device is an existing USB HID device...
 
-where VVVV and PPP are some random vendor ID.  Unless you happen to have a valid HID vendor ID lying about, of course.  Best make sure it's not a real one, but it actually shouldn't matter.
+Next up, you're going to need a HID descriptor.  There's nothing nice about this, it's a horrendous job and about the oly HID descriptor editing tool I know of runs under windows.  Woopla.  So, make up your HID descriptor, export it to an ".h" file somewhere, and (I would suggest) bring it into your class in the same way I have done for the mouse driver (as a static class member) 
 
-Now add another personality to Info.plist, and add the following:
+Make up your hid report typedef at the same time.
+
+Now make up a method that populates your HID report(s) and sends them off using `handleReport()`.  Your work is nearly done.
+
+=== Back to Info.plist, or _voodoo time_ ===
+
+Now, as I said earlier, you won't be fully hooked up to the HID system if you try running your driver now.  You'll handle your packets and all that jive, but your driver won't have an IOHIDEventDriver hanging onto it.  For that, we need to go back to Info.plist, and add a dummy entry to make that happen.  Looking at the example mosue driver, this is the "HID System Hookup" in the personalities list.
+
+So : add another personality to Info.plist, and add the following:
 
 {{{
 CFBundleIdentifier: com.apple.kernel.iokit
 IOClass: IOHIDEventDriver
 IOProviderClass: IOHIDInterface
-VendorID: 0xVVVV
-ProductID: 0xVVVV
+VendorID: VVVV
+ProductID: PPPP
 }}}
-What this does is tell IOKit that when it gets an IOHIDInterface with the given vendor and product ID, it should fire up all the rest.  Easy enough, and you get the IOHIDInterface by default, so all should now be well.
+What this does is tell IOKit that when it gets an IOHIDInterface with the given vendor and product ID, it should fire up all the rest.  Easy enough, and you get the IOHIDInterface by default, so all should now be well.  Obviously, VVVV and PPPP are the vendor (and optionally product) ids that you are returning from your code. 
 
-=== The driver itself ===
-
-That's pretty basic.  You might need to do some ADB messaging in `probe()`, depending on yor protocol.  Otherwise, you'll want to do any relevant intialisation in `handleOpen()` including a call to `IOADBDevice::siezeForClient()`.  `handleClose()` should get the matching `IOADBDevice::releaseFromClient()` call.  Hook your power management up to the ADB Device itself using `IOService::PMInit()` and `IOService::joinPMTree()` as usual.  The  ADB callback function passed into `IOADBDevice::siezeForClient()` should populate your HID event structure(s) and use `handleEvent()` to post them on.
+And that's it.
 
 Cake!
  
