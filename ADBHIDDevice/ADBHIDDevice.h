@@ -50,20 +50,33 @@ public:
   
   // power management
   virtual IOReturn setPowerState(unsigned long powerStateOrdinal, IOService * device);
-  virtual IOReturn powerStateWillChangeTo ( IOPMPowerFlags theFlags, unsigned long, IOService*);
-  virtual IOReturn powerStateDidChangeTo ( IOPMPowerFlags theFlags, unsigned long, IOService*);
-  // Override in subclasses to define allowed power states
-  virtual IOPMPowerState * myPowerStates() = 0;
-  virtual unsigned long myNumberOfPowerStates() = 0;
+  static IOReturn setPowerStateAction(OSObject * owner, void * arg0, void * arg1, void * arg2, void * arg3);
+  // This is the method to override if you need to do specific handling based on the power
+  // state you're moving to, it's called in workloop context
+  virtual IOReturn setPowerStateGated(unsigned long powerStateOrdinal, IOService * device);
+  
+  // Override in subclasses to define allowed power states if you need more than "on" and "off"
+  virtual IOPMPowerState * myPowerStates();
+  virtual unsigned long myNumberOfPowerStates();
   
   // ADB packet handling
-  static void adbPacketInterrupt(IOService * target, UInt8 adbCommand, IOByteCount length, UInt8 * data);
-  virtual void handleADBPacket(UInt8 * adbData);
+  static void adbPacketInterrupt(IOService * target, UInt8 adbCommand, IOByteCount length, UInt8 * adbData);
+  static IOReturn adbPacketAction(OSObject * owner, void * arg0, void * arg1, void * arg2, void *);
+  
+  // Pure virtual adb packet handler.  Clients override this to do their thing.  Always called
+  // in workloop context.
+  virtual IOReturn handleADBPacket(UInt8 adbCommand, IOByteCount length, UInt8 * adbData) = 0;
 
   // Workloop, gating, underlying device access
   inline IOWorkLoop * workLoop() { return _workLoop; };
   inline IOCommandGate * commandGate() { return _commandGate; };
   inline IOADBDevice * adbDevice() { return _adbDevice; };
+  
+  // Hooks for clients to bring up or down the ADB device.
+  // Note that the device is brought up only when power management comes up. 
+  virtual bool bringUpADBDevice();
+  virtual void bringDownADBDevice();
+
   
 protected:
   IOWorkLoop * _workLoop;

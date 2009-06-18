@@ -34,6 +34,17 @@
 OSDefineMetaClass(KLASS, SUPER)
 OSDefineAbstractStructors(KLASS, SUPER)
 
+enum {
+  kADBHIDPowerStateOff = 0,
+  kADBHIDPowerStateOn = 1,
+  kADBHIDNumberPowerstates = 2
+};
+
+static IOPMPowerState _myPowerStates[kADBHIDNumberPowerstates] = {
+{kIOPMPowerStateVersion1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  // Power Off
+{kIOPMPowerStateVersion1, kIOPMDeviceUsable, kIOPMPowerOn, kIOPMPowerOn, 0, 0, 0, 0, 0, 0, 0, 0}, 
+};
+
 bool 
 KLASS::init(OSDictionary * properties)
 {
@@ -71,10 +82,6 @@ KLASS::handleStart(IOService * nub)
   }
   _commandGate->enable();
 
-  if (!bringUpADBDevice()) {
-    goto cleanup;
-  }
-  
   PMinit();
   nub->joinPMtree(this);
   registerPowerDriver(this, myPowerStates(), myNumberOfPowerStates());  
@@ -89,47 +96,22 @@ cleanup:
 }
 
 bool 
-KLASS::bringUpADBDevice() {
-  if (!_adbDevice->siezeForClient(this, KLASS::adbPacketInterrupt)) {
-    return false;
-  }
-
-  // We now have a hold of the tablet, time to configure it if we need to
-  if (getProperty(kADBHIDDeviceNewHandlerKey)) {
-    UInt8 targetHandler = OSDynamicCast( OSNumber, getProperty(kADBHIDDeviceNewHandlerKey))->unsigned8BitValue();
-    // Check if we need to change handler ID
-    if (_adbDevice->handlerID() != targetHandler) {    
-      // Set the handler id to required ID. 
-      if (_adbDevice->setHandlerID(targetHandler) != kIOReturnSuccess) {
-        return false;
-      }
-    }
-  }
-  return true;
-}
-
-bool 
 KLASS::willTerminate(IOService * provider, IOOptionBits options)
 {
   bringDownADBDevice();
   return SUPER::willTerminate(provider, options);
 }
-//virtual bool didTerminate(IOService * nub, IOOptionBits options, bool * defer);
 
-void
-KLASS::bringDownADBDevice() {
-  if (_adbDevice) {
-    _adbDevice->setHandlerID(adbDevice->defaultHandlerID());
-    _adbDevice->releaseFromClient(this);
-    _adbDevice = NULL;
-  }
+bool 
+KLASS::didTerminate(IOService * nub, IOOptionBits options, bool * defer)
+{
+  return SUPER::didTerminate(nub, options, defer);
 }
 
 void 
 KLASS::handleStop (IOService * nub) {
-  
-  PMstop();
   SUPER::handleStop(nub);
+  PMstop();
 }
 
 void
@@ -153,13 +135,91 @@ KLASS::free()
 
 //
 //// power management
-//virtual IOReturn setPowerState(unsigned long powerStateOrdinal, IOService * device);
-//virtual IOReturn powerStateWillChangeTo ( IOPMPowerFlags theFlags, unsigned long, IOService*);
-//virtual IOReturn powerStateDidChangeTo ( IOPMPowerFlags theFlags, unsigned long, IOService*);
-//// Override in subclasses to define allowed power states
-//virtual IOPMPowerState * myPowerStates() = 0;
-//virtual unsigned long myNumberOfPowerStates() = 0;
+IOReturn 
+KLASS::setPowerState(unsigned long powerStateOrdinal, IOService * device) 
+{
+  retain();
+  IOReturn rc = commandGate()->runAction(setPowerStateAction, (void*)powerStateOrdinal, (void*)device, NULL, NULL);
+  release();
+  return rc;
+}
+IOReturn 
+KLASS::setPowerStateAction(OSObject * owner, void * arg0, void * arg1, void * arg2, void * arg3)
+{
+  KLASS * myThis;
+  if ((myThis = OSDynamicCast(KLASS,owner)) != NULL) {
+    return myThis->setPowerStateGated((UInt32)arg0, (IOService *) arg1);
+  } else {
+    return kIOReturnError;
+  }
+}
+IOReturn 
+KLASS::setPowerStateGated(unsigned long powerStateOrdinal, IOService * device)
+{
+  switch (powerStateOrdinal) {
+    case kADBHIDPowerStateOff:
+      bringDownADBDevice();
+      break;
+    case kADBHIDPowerStateOn:
+      bringUpADBDevice();
+      registerService();
+      break;
+  }
+  return IOPMAckImplied;
+}
+
+IOPMPowerState * KLASS::myPowerStates() { return _myPowerStates; };
+unsigned long KLASS::myNumberOfPowerStates() { return kADBHIDNumberPowerstates; };
 //
-//// ADB packet handling
-//static void adbPacketInterrupt(IOService * target, UInt8 adbCommand, IOByteCount length, UInt8 * data);
-//virtual void handleADBPacket(UInt8 * adbData);
+// ADB packet handling
+/* static */ void 
+adbPacketInterrupt(IOService * target, UInt8 adbCommand, IOByteCount length, UInt8 * adbData)
+{
+  KLASS * myThis;
+  if ((myThis = OSDynamicCast(KLASS, target)) == NULL) {
+  } else {
+    myThis->retain();
+    myThis->commandGate()->runAction(adbPacketAction, (void *) adbCommand, (void *)length, (void *) adbData, NULL);
+    myThis->release();
+  }
+}
+
+/* static */ IOReturn
+KLASS::adbPacketAction(OSObject * owner, void * arg0, void * arg1, void * arg2, void *)
+{
+  KLASS * myThis;
+  if ((myThis = OSDynamicCast(KLASS, target)) == NULL) {
+    return kIOReturnError;
+  } else {
+    return myThis->handleADBPacket((UInt8)arg0,  (IOByteCount)arg1, (UInt8*) arg2);
+  }
+}
+
+bool 
+KLASS::bringUpADBDevice() {
+  if (!_adbDevice->siezeForClient(this, KLASS::adbPacketInterrupt)) {
+    return false;
+  }
+  
+  // We now have a hold of the tablet, time to configure it if we need to
+  if (getProperty(kADBHIDDeviceNewHandlerKey)) {
+    UInt8 targetHandler = OSDynamicCast( OSNumber, getProperty(kADBHIDDeviceNewHandlerKey))->unsigned8BitValue();
+    // Check if we need to change handler ID
+    if (_adbDevice->handlerID() != targetHandler) {    
+      // Set the handler id to required ID. 
+      if (_adbDevice->setHandlerID(targetHandler) != kIOReturnSuccess) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+void
+KLASS::bringDownADBDevice() {
+  if (_adbDevice) {
+    _adbDevice->setHandlerID(adbDevice->defaultHandlerID());
+    _adbDevice->releaseFromClient(this);
+    _adbDevice = NULL;
+  }
+}
