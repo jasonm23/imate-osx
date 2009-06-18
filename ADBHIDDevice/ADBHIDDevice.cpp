@@ -29,8 +29,23 @@
 #define SUPER IOHIDDevice
 #define KLASS ADBHIDDevice
 
+#define kADBHIDDeviceNewHandlerKey "newHandler"
+
 OSDefineMetaClass(KLASS, SUPER)
 OSDefineAbstractStructors(KLASS, SUPER)
+
+bool 
+KLASS::init(OSDictionary * properties)
+{
+  if (!SUPER::init(properties))
+    return false;
+  
+  _workLoop = NULL;
+	_commandGate = NULL;
+	_adbDevice = NULL;
+  
+  return true;
+}
 
 bool
 KLASS::handleStart(IOService * nub)
@@ -39,6 +54,10 @@ KLASS::handleStart(IOService * nub)
     return false;
   }
   
+  if ((_adbDevice = OSDynamicCast(IOADBDevice, nub)) == NULL) {
+    return false;
+  }
+      
   if ((_workLoop = IOWorkLoop::workLoop()) == NULL) {
     goto cleanup;
   }
@@ -51,6 +70,10 @@ KLASS::handleStart(IOService * nub)
     goto cleanup;
   }
   _commandGate->enable();
+
+  if (!bringUpADBDevice()) {
+    goto cleanup;
+  }
   
   PMinit();
   nub->joinPMtree(this);
@@ -61,13 +84,73 @@ cleanup:
   if (_workLoop) {
     _workLoop->release();
   }
+  bringDownADBDevice();
   return false;
 }
 
-//
-//virtual bool willTerminate (IOService * nub, IOOptionBits options);
+bool 
+KLASS::bringUpADBDevice() {
+  if (!_adbDevice->siezeForClient(this, KLASS::adbPacketInterrupt)) {
+    return false;
+  }
+
+  // We now have a hold of the tablet, time to configure it if we need to
+  if (getProperty(kADBHIDDeviceNewHandlerKey)) {
+    UInt8 targetHandler = OSDynamicCast( OSNumber, getProperty(kADBHIDDeviceNewHandlerKey))->unsigned8BitValue();
+    // Check if we need to change handler ID
+    if (_adbDevice->handlerID() != targetHandler) {    
+      // Set the handler id to required ID. 
+      if (_adbDevice->setHandlerID(targetHandler) != kIOReturnSuccess) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+bool 
+KLASS::willTerminate(IOService * provider, IOOptionBits options)
+{
+  bringDownADBDevice();
+  return SUPER::willTerminate(provider, options);
+}
 //virtual bool didTerminate(IOService * nub, IOOptionBits options, bool * defer);
-//virtual void handleStop (IOService * nub);
+
+void
+KLASS::bringDownADBDevice() {
+  if (_adbDevice) {
+    _adbDevice->setHandlerID(adbDevice->defaultHandlerID());
+    _adbDevice->releaseFromClient(this);
+    _adbDevice = NULL;
+  }
+}
+
+void 
+KLASS::handleStop (IOService * nub) {
+  
+  PMstop();
+  SUPER::handleStop(nub);
+}
+
+void
+KLASS::free()
+{
+  if (_commandGate) {
+    if (_workLoop) {
+      _workLoop->removeEventSource(_commandGate);
+    }
+    _commandGate->release();
+    _commandGate = NULL;
+  }
+  if (_workLoop) {
+    _workLoop->release();
+    _workLoop = NULL;
+  }  
+  
+  SUPER::free();
+}
+
+
 //
 //// power management
 //virtual IOReturn setPowerState(unsigned long powerStateOrdinal, IOService * device);
