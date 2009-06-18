@@ -94,8 +94,8 @@ KLASS::handleADBPacket(UInt8 adbCommand, IOByteCount length, UInt8 * adbData) {
   bzero(report, sizeof(ADBHIDMouseReport));
   report->y        = (adbData[0] & 0x40) ? (adbData[0] & 0x7f) | 0x80 : adbData[0] & 0x7f; 
   report->x        = (adbData[1] & 0x40) ? (adbData[1] & 0x7f) | 0x80 : adbData[1] & 0x7f;
-  report->buttons  = (adbData[0] & 0x80) ? 0x01 : 0x00;
-  
+  // Implementing button handling is left as an exercise for the reader (hint : adbData[0] & 0x80)
+  report->buttons  = 0x00;   
   handleReport(_hidReport,kIOHIDReportTypeInput, 0);
   return kIOReturnSuccess;
 }

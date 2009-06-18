@@ -10,6 +10,8 @@
 		32D94FC60562CBF700B6AF17 /* ADBHIDDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */; };
 		32D94FC80562CBF700B6AF17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		32D94FCA0562CBF700B6AF17 /* ADBHIDDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */; settings = {ATTRIBUTES = (); }; };
+		F41C4D060FEAA9BE002F038C /* ADBHIDMouse.h in Headers */ = {isa = PBXBuildFile; fileRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */; };
+		F41C4D070FEAA9BE002F038C /* ADBHIDMouse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F41C4D050FEAA9BE002F038C /* ADBHIDMouse.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		32D94FCF0562CBF700B6AF17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32D94FD00562CBF700B6AF17 /* ADBHIDDevice.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ADBHIDDevice.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DA8362C06AD9B9200E5AC22 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = /System/Library/Frameworks/Kernel.framework; sourceTree = "<absolute>"; };
+		F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBHIDMouse.h; sourceTree = "<group>"; };
+		F41C4D050FEAA9BE002F038C /* ADBHIDMouse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADBHIDMouse.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 			children = (
 				1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */,
 				1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */,
+				F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */,
+				F41C4D050FEAA9BE002F038C /* ADBHIDMouse.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -77,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32D94FC60562CBF700B6AF17 /* ADBHIDDevice.h in Headers */,
+				F41C4D060FEAA9BE002F038C /* ADBHIDMouse.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32D94FCA0562CBF700B6AF17 /* ADBHIDDevice.cpp in Sources */,
+				F41C4D070FEAA9BE002F038C /* ADBHIDMouse.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
