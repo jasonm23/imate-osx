@@ -1,0 +1,339 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeTarget = 32D94FC30562CBF700B6AF17 /* ADBHIDDevice */;
+		codeSenseManager = F41C4BFA0FEA7524002F038C /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXErrorsWarningsDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXErrorsWarningsDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					300,
+					406,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXErrorsWarningsDataSource_TypeID,
+					PBXErrorsWarningsDataSource_MessageID,
+					PBXErrorsWarningsDataSource_LocationID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					516,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					476,
+					60,
+					20,
+					48.16259765625,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 267023621;
+			PBXWorkspaceStateSaveDate = 267023621;
+		};
+		perUserProjectItems = {
+			F41C4C070FEA7906002F038C /* PlistBookmark */ = F41C4C070FEA7906002F038C /* PlistBookmark */;
+			F41C4C080FEA7906002F038C /* PBXTextBookmark */ = F41C4C080FEA7906002F038C /* PBXTextBookmark */;
+			F41C4C090FEA7906002F038C /* PBXTextBookmark */ = F41C4C090FEA7906002F038C /* PBXTextBookmark */;
+			F41C4C0A0FEA7906002F038C /* PlistBookmark */ = F41C4C0A0FEA7906002F038C /* PlistBookmark */;
+			F41C4C0B0FEA7906002F038C /* PBXTextBookmark */ = F41C4C0B0FEA7906002F038C /* PBXTextBookmark */;
+			F41C4C0C0FEA7906002F038C /* PBXTextBookmark */ = F41C4C0C0FEA7906002F038C /* PBXTextBookmark */;
+			F41C4C0D0FEA7906002F038C /* PBXTextBookmark */ = F41C4C0D0FEA7906002F038C /* PBXTextBookmark */;
+			F41C4C0E0FEA7906002F038C /* PBXTextBookmark */ = F41C4C0E0FEA7906002F038C /* PBXTextBookmark */;
+			F41C4C0F0FEA7906002F038C /* PBXTextBookmark */ = F41C4C0F0FEA7906002F038C /* PBXTextBookmark */;
+			F41C4C100FEA7906002F038C /* PBXTextBookmark */ = F41C4C100FEA7906002F038C /* PBXTextBookmark */;
+			F41C4C110FEA7906002F038C /* PBXTextBookmark */ = F41C4C110FEA7906002F038C /* PBXTextBookmark */;
+			F41C4C120FEA7906002F038C /* PBXTextBookmark */ = F41C4C120FEA7906002F038C /* PBXTextBookmark */;
+			F41C4C130FEA7906002F038C /* PBXTextBookmark */ = F41C4C130FEA7906002F038C /* PBXTextBookmark */;
+			F41C4C140FEA7906002F038C /* PBXTextBookmark */ = F41C4C140FEA7906002F038C /* PBXTextBookmark */;
+			F41C4C150FEA7906002F038C /* PBXTextBookmark */ = F41C4C150FEA7906002F038C /* PBXTextBookmark */;
+			F41C4C160FEA7906002F038C /* PBXTextBookmark */ = F41C4C160FEA7906002F038C /* PBXTextBookmark */;
+			F41C4C170FEA7906002F038C /* PBXTextBookmark */ = F41C4C170FEA7906002F038C /* PBXTextBookmark */;
+			F41C4C180FEA7906002F038C /* PBXTextBookmark */ = F41C4C180FEA7906002F038C /* PBXTextBookmark */;
+			F41C4C190FEA7906002F038C /* PBXTextBookmark */ = F41C4C190FEA7906002F038C /* PBXTextBookmark */;
+			F41C4C1A0FEA7906002F038C /* PBXTextBookmark */ = F41C4C1A0FEA7906002F038C /* PBXTextBookmark */;
+			F41C4C1B0FEA7906002F038C /* PBXTextBookmark */ = F41C4C1B0FEA7906002F038C /* PBXTextBookmark */;
+		};
+		sourceControlManager = F41C4BF90FEA7524002F038C /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {694, 966}}";
+			sepNavSelRange = "{1746, 1}";
+			sepNavVisRange = "{223, 1912}";
+			sepNavWindowFrame = "{{15, 74}, {1269, 1099}}";
+		};
+	};
+	1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {694, 1592}}";
+			sepNavSelRange = "{1847, 54}";
+			sepNavVisRange = "{1351, 1047}";
+		};
+	};
+	32D94FC30562CBF700B6AF17 /* ADBHIDDevice */ = {
+		activeExec = 0;
+	};
+	F41C4BF90FEA7524002F038C /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	F41C4BFA0FEA7524002F038C /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	F41C4C070FEA7906002F038C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleIdentifier,
+		);
+		name = "/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	F41C4C080FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 36";
+		rLen = 0;
+		rLoc = 3211;
+		rType = 0;
+		vrLen = 1762;
+		vrLoc = 0;
+	};
+	F41C4C090FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 32";
+		rLen = 0;
+		rLoc = 1851;
+		rType = 0;
+		vrLen = 2760;
+		vrLoc = 0;
+	};
+	F41C4C0A0FEA7906002F038C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleIdentifier,
+		);
+		name = "/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	F41C4C0B0FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 4";
+		rLen = 0;
+		rLoc = 1812;
+		rType = 0;
+		vrLen = 49;
+		vrLoc = 0;
+	};
+	F41C4C0C0FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 3";
+		rLen = 0;
+		rLoc = 3211;
+		rType = 0;
+		vrLen = 53;
+		vrLoc = 0;
+	};
+	F41C4C0D0FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 3";
+		rLen = 0;
+		rLoc = 1766;
+		rType = 0;
+		vrLen = 209;
+		vrLoc = 0;
+	};
+	F41C4C0E0FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 3";
+		rLen = 0;
+		rLoc = 3211;
+		rType = 0;
+		vrLen = 53;
+		vrLoc = 0;
+	};
+	F41C4C0F0FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 11";
+		rLen = 0;
+		rLoc = 1891;
+		rType = 0;
+		vrLen = 1338;
+		vrLoc = 0;
+	};
+	F41C4C100FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 1";
+		rLen = 0;
+		rLoc = 1589;
+		rType = 0;
+		vrLen = 128;
+		vrLoc = 0;
+	};
+	F41C4C110FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 1";
+		rLen = 1590;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2760;
+		vrLoc = 0;
+	};
+	F41C4C120FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 25";
+		rLen = 0;
+		rLoc = 1589;
+		rType = 0;
+		vrLen = 1717;
+		vrLoc = 0;
+	};
+	F41C4C130FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 32";
+		rLen = 0;
+		rLoc = 1851;
+		rType = 0;
+		vrLen = 2760;
+		vrLoc = 0;
+	};
+	F41C4C140FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 25";
+		rLen = 0;
+		rLoc = 1589;
+		rType = 0;
+		vrLen = 1717;
+		vrLoc = 0;
+	};
+	F41C4C150FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 32";
+		rLen = 0;
+		rLoc = 1851;
+		rType = 0;
+		vrLen = 2760;
+		vrLoc = 0;
+	};
+	F41C4C160FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 25";
+		rLen = 0;
+		rLoc = 1589;
+		rType = 0;
+		vrLen = 1717;
+		vrLoc = 0;
+	};
+	F41C4C170FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 32";
+		rLen = 0;
+		rLoc = 1851;
+		rType = 0;
+		vrLen = 2760;
+		vrLoc = 0;
+	};
+	F41C4C180FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 34";
+		rLen = 0;
+		rLoc = 1757;
+		rType = 0;
+		vrLen = 1730;
+		vrLoc = 0;
+	};
+	F41C4C190FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 32";
+		rLen = 0;
+		rLoc = 1851;
+		rType = 0;
+		vrLen = 2760;
+		vrLoc = 0;
+	};
+	F41C4C1A0FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 36";
+		rLen = 0;
+		rLoc = 3211;
+		rType = 0;
+		vrLen = 1762;
+		vrLoc = 0;
+	};
+	F41C4C1B0FEA7906002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 32";
+		rLen = 0;
+		rLoc = 1851;
+		rType = 0;
+		vrLen = 1903;
+		vrLoc = 0;
+	};
+}
