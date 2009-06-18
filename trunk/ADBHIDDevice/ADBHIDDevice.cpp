@@ -173,7 +173,7 @@ unsigned long KLASS::myNumberOfPowerStates() { return kADBHIDNumberPowerstates; 
 //
 // ADB packet handling
 /* static */ void 
-adbPacketInterrupt(IOService * target, UInt8 adbCommand, IOByteCount length, UInt8 * adbData)
+KLASS::adbPacketInterrupt(IOService * target, UInt8 adbCommand, IOByteCount length, UInt8 * adbData)
 {
   KLASS * myThis;
   if ((myThis = OSDynamicCast(KLASS, target)) == NULL) {
@@ -188,16 +188,30 @@ adbPacketInterrupt(IOService * target, UInt8 adbCommand, IOByteCount length, UIn
 KLASS::adbPacketAction(OSObject * owner, void * arg0, void * arg1, void * arg2, void *)
 {
   KLASS * myThis;
-  if ((myThis = OSDynamicCast(KLASS, target)) == NULL) {
+  if ((myThis = OSDynamicCast(KLASS, owner)) == NULL) {
     return kIOReturnError;
   } else {
-    return myThis->handleADBPacket((UInt8)arg0,  (IOByteCount)arg1, (UInt8*) arg2);
+    return myThis->handleADBPacket(*((UInt8*)(&arg0)),  (IOByteCount)arg1, (UInt8*) arg2);
   }
 }
 
+// Returns the HID descriptor for this device
+IOReturn 
+KLASS::newReportDescriptor(IOMemoryDescriptor **descriptor) const
+{
+  IOBufferMemoryDescriptor *buffer;
+  
+  buffer = IOBufferMemoryDescriptor::inTaskWithOptions(kernel_task, 0, reportDescriptorSize());
+  if(buffer==NULL) return kIOReturnNoResources;
+  buffer->writeBytes(0, reportDescriptorBytes(), reportDescriptorSize());
+  *descriptor=buffer;
+  return kIOReturnSuccess;
+}
+
+
 bool 
 KLASS::bringUpADBDevice() {
-  if (!_adbDevice->siezeForClient(this, KLASS::adbPacketInterrupt)) {
+  if (!_adbDevice->seizeForClient(this, KLASS::adbPacketInterrupt)) {
     return false;
   }
   
@@ -218,7 +232,7 @@ KLASS::bringUpADBDevice() {
 void
 KLASS::bringDownADBDevice() {
   if (_adbDevice) {
-    _adbDevice->setHandlerID(adbDevice->defaultHandlerID());
+    _adbDevice->setHandlerID(_adbDevice->defaultHandlerID());
     _adbDevice->releaseFromClient(this);
     _adbDevice = NULL;
   }
