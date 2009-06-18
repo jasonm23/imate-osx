@@ -21,7 +21,21 @@
 	<key>CFBundleVersion</key>
 	<string>1.0.0d1</string>
 	<key>IOKitPersonalities</key>
-	<dict/>
+	<dict>
+		<key>ADBMouse</key>
+		<dict>
+			<key>dpi</key>
+			<string>200</string>
+			<key>ADB Match</key>
+			<string>3</string>
+			<key>CFBundleIdentifier</key>
+			<string>cx.ath.tufty.ADBHIDDevice</string>
+			<key>IOClass</key>
+			<string>ADBHIDMouse</string>
+			<key>IOProviderClass</key>
+			<string>IOADBDevice</string>
+		</dict>
+	</dict>
 	<key>OSBundleLibraries</key>
 	<dict>
 		<key>com.apple.iokit.IOADBFamily</key>

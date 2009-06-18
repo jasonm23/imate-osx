@@ -77,7 +77,25 @@ public:
   virtual bool bringUpADBDevice();
   virtual void bringDownADBDevice();
 
+  // HIDDevice stuff
+  // You may also want to either implement new<Property><type>, or set stuff in Info.plist
+  virtual IOReturn newReportDescriptor(IOMemoryDescriptor **descriptor) const;
+  virtual IOReturn setReport(IOMemoryDescriptor *report,IOHIDReportType reportType,IOOptionBits options) { return kIOReturnUnsupported; };
+  virtual IOReturn getReport(IOMemoryDescriptor *report,IOHIDReportType reportType,IOOptionBits options) { return kIOReturnUnsupported; };
+  virtual OSString * newTransportString() const { return OSString::withCString("ADB"); };
+  virtual OSString * newManufacturerString() const;
+  virtual OSNumber * newPrimaryUsageNumber() const;
+  virtual OSNumber * newPrimaryUsagePageNumber() const;
+  virtual OSNumber * newProductIDNumber() const;
+  virtual OSString * newProductString() const;
+  virtual OSNumber * newVendorIDNumber() const;
+  virtual OSNumber * newLocationIDNumber() const;
   
+  // Pure virtuals giving access to a block of memory containaing a subclass' 
+  // report descriptor
+  virtual void * reportDescriptorBytes() const = 0;
+  virtual size_t reportDescriptorSize() const = 0;
+
 protected:
   IOWorkLoop * _workLoop;
   IOCommandGate * _commandGate;
