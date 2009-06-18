@@ -252,8 +252,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -303,7 +301,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
+									<integer>2</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -341,6 +339,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -358,13 +358,13 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>F41C4CEF0FEA845A002F038C</string>
+										<string>F41C4D020FEAA6FC002F038C</string>
 										<key>history</key>
 										<array>
 											<string>F41C4C070FEA7906002F038C</string>
 											<string>F41C4CB70FEA7D78002F038C</string>
-											<string>F41C4CE30FEA845A002F038C</string>
-											<string>F41C4CE40FEA845A002F038C</string>
+											<string>F41C4CF20FEAA6FC002F038C</string>
+											<string>F41C4CF30FEAA6FC002F038C</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -382,6 +382,20 @@
 											<string>F41C4CEC0FEA845A002F038C</string>
 											<string>F41C4CED0FEA845A002F038C</string>
 											<string>F41C4CEE0FEA845A002F038C</string>
+											<string>F41C4CF40FEAA6FC002F038C</string>
+											<string>F41C4CF50FEAA6FC002F038C</string>
+											<string>F41C4CF60FEAA6FC002F038C</string>
+											<string>F41C4CF70FEAA6FC002F038C</string>
+											<string>F41C4CF80FEAA6FC002F038C</string>
+											<string>F41C4CF90FEAA6FC002F038C</string>
+											<string>F41C4CFA0FEAA6FC002F038C</string>
+											<string>F41C4CFB0FEAA6FC002F038C</string>
+											<string>F41C4CFC0FEAA6FC002F038C</string>
+											<string>F41C4CFD0FEAA6FC002F038C</string>
+											<string>F41C4CFE0FEAA6FC002F038C</string>
+											<string>F41C4CFF0FEAA6FC002F038C</string>
+											<string>F41C4D000FEAA6FC002F038C</string>
+											<string>F41C4D010FEAA6FC002F038C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -680,7 +694,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>267027546.19655299</real>
+	<real>267036412.964486</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>2</integer>
 	<key>ToolbarIsVisible</key>
