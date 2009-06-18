@@ -216,7 +216,48 @@
 		</dict>
 	</array>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>F41C4DC40FEAD6B8002F038C</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>AppleADBMouse.cpp</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>F41C4DC50FEAD6B8002F038C</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>AppleADBMouse.cpp</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>F4F49DFB0FEAD8220020B8EF</string>
+						<key>history</key>
+						<array>
+							<string>F41C4DC80FEAD6B8002F038C</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {1269, 1038}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>61 52 1269 1079 0 0 1920 1178 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>962</integer>
@@ -301,9 +342,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>2</integer>
-									<integer>1</integer>
-									<integer>0</integer>
+									<integer>15</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -328,7 +367,7 @@
 							<real>141</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>83 164 962 848 0 0 1920 1178 </string>
+						<string>276 99 962 848 0 0 1920 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -339,14 +378,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>F41C4C050FEA7906002F038C</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ADBHIDDevice.cpp</string>
+								<string>Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -354,17 +391,20 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>F41C4C060FEA7906002F038C</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ADBHIDDevice.cpp</string>
+										<string>Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>F41C4D020FEAA6FC002F038C</string>
+										<string>F4F49DF70FEAD8220020B8EF</string>
 										<key>history</key>
 										<array>
-											<string>F41C4C070FEA7906002F038C</string>
 											<string>F41C4CB70FEA7D78002F038C</string>
-											<string>F41C4CF20FEAA6FC002F038C</string>
-											<string>F41C4CF30FEAA6FC002F038C</string>
+											<string>F41C4D790FEAD6B8002F038C</string>
+											<string>F41C4D7B0FEAD6B8002F038C</string>
+											<string>F41C4D7C0FEAD6B8002F038C</string>
+											<string>F41C4D7E0FEAD6B8002F038C</string>
+											<string>F4F49DF40FEAD8200020B8EF</string>
+											<string>F4F49DF60FEAD8200020B8EF</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -372,30 +412,10 @@
 											<string>F41C4C0B0FEA7906002F038C</string>
 											<string>F41C4C0C0FEA7906002F038C</string>
 											<string>F41C4CC60FEA7D78002F038C</string>
-											<string>F41C4CE50FEA845A002F038C</string>
-											<string>F41C4CE60FEA845A002F038C</string>
-											<string>F41C4CE70FEA845A002F038C</string>
-											<string>F41C4CE80FEA845A002F038C</string>
-											<string>F41C4CE90FEA845A002F038C</string>
-											<string>F41C4CEA0FEA845A002F038C</string>
-											<string>F41C4CEB0FEA845A002F038C</string>
-											<string>F41C4CEC0FEA845A002F038C</string>
-											<string>F41C4CED0FEA845A002F038C</string>
-											<string>F41C4CEE0FEA845A002F038C</string>
-											<string>F41C4CF40FEAA6FC002F038C</string>
-											<string>F41C4CF50FEAA6FC002F038C</string>
-											<string>F41C4CF60FEAA6FC002F038C</string>
-											<string>F41C4CF70FEAA6FC002F038C</string>
-											<string>F41C4CF80FEAA6FC002F038C</string>
-											<string>F41C4CF90FEAA6FC002F038C</string>
-											<string>F41C4CFA0FEAA6FC002F038C</string>
-											<string>F41C4CFB0FEAA6FC002F038C</string>
-											<string>F41C4CFC0FEAA6FC002F038C</string>
-											<string>F41C4CFD0FEAA6FC002F038C</string>
-											<string>F41C4CFE0FEAA6FC002F038C</string>
-											<string>F41C4CFF0FEAA6FC002F038C</string>
-											<string>F41C4D000FEAA6FC002F038C</string>
-											<string>F41C4D010FEAA6FC002F038C</string>
+											<string>F41C4D860FEAD6B8002F038C</string>
+											<string>F41C4D890FEAD6B8002F038C</string>
+											<string>F41C4DB20FEAD6B8002F038C</string>
+											<string>F4F49DF50FEAD8200020B8EF</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -411,7 +431,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {755, 561}}</string>
 								<key>RubberWindowFrame</key>
-								<string>83 164 962 848 0 0 1920 1178 </string>
+								<string>276 99 962 848 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -464,12 +484,12 @@
 										<dict>
 											<key>PBXCVSModuleTreeModuleColumnWidthsKey</key>
 											<array>
-												<real>200</real>
-												<real>56.66162109375</real>
+												<real>353</real>
+												<real>56</real>
 												<real>63</real>
 												<real>60</real>
 												<real>63</real>
-												<real>139.556640625</real>
+												<real>139</real>
 											</array>
 											<key>PBXCVSModuleTreeModuleColumnsKey</key>
 											<array>
@@ -489,12 +509,14 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 31}, {603, 297}}</string>
+										<string>{{10, 27}, {755, 214}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXCVSModule</string>
 								</dict>
 								<dict>
+									<key>BecomeActive</key>
+									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
@@ -511,7 +533,7 @@
 										<key>Frame</key>
 										<string>{{10, 27}, {755, 214}}</string>
 										<key>RubberWindowFrame</key>
-										<string>83 164 962 848 0 0 1920 1178 </string>
+										<string>276 99 962 848 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -539,11 +561,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>F41C4CD80FEA7D94002F038C</string>
+				<string>F4F49DF80FEAD8220020B8EF</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>F41C4CD90FEA7D94002F038C</string>
+				<string>F4F49DF90FEAD8220020B8EF</string>
 				<string>F41C4C050FEA7906002F038C</string>
-				<string>F41C4CDA0FEA7D94002F038C</string>
+				<string>F4F49DFA0FEAD8220020B8EF</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -694,7 +716,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>267036412.964486</real>
+	<real>267048994.83833101</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>2</integer>
 	<key>ToolbarIsVisible</key>
@@ -709,10 +731,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>F41C4DC40FEAD6B8002F038C</string>
 		<string>/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/ADBHIDDevice.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>83 164 962 848 0 0 1920 1178 </string>
+	<string>276 99 962 848 0 0 1920 1178 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

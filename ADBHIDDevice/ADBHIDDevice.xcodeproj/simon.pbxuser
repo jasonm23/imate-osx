@@ -3,6 +3,9 @@
 	089C1669FE841209C02AAC07 /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeTarget = 32D94FC30562CBF700B6AF17 /* ADBHIDDevice */;
+		addToTargets = (
+			32D94FC30562CBF700B6AF17 /* ADBHIDDevice */,
+		);
 		codeSenseManager = F41C4BFA0FEA7524002F038C /* Code sense */;
 		perUserDictionary = {
 			PBXConfiguration.PBXFileTableDataSource3.PBXErrorsWarningsDataSource = {
@@ -63,80 +66,119 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 267025793;
-			PBXWorkspaceStateSaveDate = 267025793;
+			PBXPerProjectTemplateStateSaveDate = 267048892;
+			PBXWorkspaceStateSaveDate = 267048892;
 		};
 		perUserProjectItems = {
-			F41C4C070FEA7906002F038C = F41C4C070FEA7906002F038C /* PlistBookmark */;
 			F41C4C0A0FEA7906002F038C = F41C4C0A0FEA7906002F038C /* PlistBookmark */;
 			F41C4C0B0FEA7906002F038C = F41C4C0B0FEA7906002F038C /* PBXTextBookmark */;
 			F41C4C0C0FEA7906002F038C = F41C4C0C0FEA7906002F038C /* PBXTextBookmark */;
-			F41C4C0D0FEA7906002F038C = F41C4C0D0FEA7906002F038C /* PBXTextBookmark */;
-			F41C4C0E0FEA7906002F038C = F41C4C0E0FEA7906002F038C /* PBXTextBookmark */;
-			F41C4C0F0FEA7906002F038C = F41C4C0F0FEA7906002F038C /* PBXTextBookmark */;
-			F41C4C100FEA7906002F038C = F41C4C100FEA7906002F038C /* PBXTextBookmark */;
-			F41C4C110FEA7906002F038C = F41C4C110FEA7906002F038C /* PBXTextBookmark */;
-			F41C4C120FEA7906002F038C = F41C4C120FEA7906002F038C /* PBXTextBookmark */;
-			F41C4C130FEA7906002F038C = F41C4C130FEA7906002F038C /* PBXTextBookmark */;
-			F41C4C140FEA7906002F038C = F41C4C140FEA7906002F038C /* PBXTextBookmark */;
-			F41C4C150FEA7906002F038C = F41C4C150FEA7906002F038C /* PBXTextBookmark */;
-			F41C4C160FEA7906002F038C = F41C4C160FEA7906002F038C /* PBXTextBookmark */;
-			F41C4C170FEA7906002F038C = F41C4C170FEA7906002F038C /* PBXTextBookmark */;
-			F41C4C180FEA7906002F038C = F41C4C180FEA7906002F038C /* PBXTextBookmark */;
-			F41C4C190FEA7906002F038C = F41C4C190FEA7906002F038C /* PBXTextBookmark */;
-			F41C4C1A0FEA7906002F038C = F41C4C1A0FEA7906002F038C /* PBXTextBookmark */;
 			F41C4CB70FEA7D78002F038C = F41C4CB70FEA7D78002F038C /* PBXTextBookmark */;
-			F41C4CB90FEA7D78002F038C = F41C4CB90FEA7D78002F038C /* PBXTextBookmark */;
-			F41C4CBA0FEA7D78002F038C = F41C4CBA0FEA7D78002F038C /* PBXTextBookmark */;
-			F41C4CBB0FEA7D78002F038C = F41C4CBB0FEA7D78002F038C /* PBXTextBookmark */;
-			F41C4CBC0FEA7D78002F038C = F41C4CBC0FEA7D78002F038C /* PBXTextBookmark */;
-			F41C4CBD0FEA7D78002F038C = F41C4CBD0FEA7D78002F038C /* PBXTextBookmark */;
-			F41C4CBE0FEA7D78002F038C = F41C4CBE0FEA7D78002F038C /* PBXTextBookmark */;
-			F41C4CBF0FEA7D78002F038C = F41C4CBF0FEA7D78002F038C /* PBXTextBookmark */;
-			F41C4CC00FEA7D78002F038C = F41C4CC00FEA7D78002F038C /* PBXTextBookmark */;
-			F41C4CC10FEA7D78002F038C = F41C4CC10FEA7D78002F038C /* PBXTextBookmark */;
-			F41C4CC20FEA7D78002F038C = F41C4CC20FEA7D78002F038C /* PBXTextBookmark */;
-			F41C4CC30FEA7D78002F038C = F41C4CC30FEA7D78002F038C /* PBXTextBookmark */;
-			F41C4CC40FEA7D78002F038C = F41C4CC40FEA7D78002F038C /* PBXTextBookmark */;
-			F41C4CC50FEA7D78002F038C = F41C4CC50FEA7D78002F038C /* PBXTextBookmark */;
 			F41C4CC60FEA7D78002F038C = F41C4CC60FEA7D78002F038C /* PBXTextBookmark */;
-			F41C4CC80FEA7D78002F038C = F41C4CC80FEA7D78002F038C /* PBXTextBookmark */;
-			F41C4CC90FEA7D78002F038C = F41C4CC90FEA7D78002F038C /* PBXTextBookmark */;
-			F41C4CCA0FEA7D78002F038C = F41C4CCA0FEA7D78002F038C /* PBXTextBookmark */;
-			F41C4CCB0FEA7D78002F038C = F41C4CCB0FEA7D78002F038C /* PBXTextBookmark */;
-			F41C4CD70FEA7D94002F038C /* PBXTextBookmark */ = F41C4CD70FEA7D94002F038C /* PBXTextBookmark */;
-			F41C4CDB0FEA7DCA002F038C /* PBXTextBookmark */ = F41C4CDB0FEA7DCA002F038C /* PBXTextBookmark */;
-			F41C4CDD0FEA7E9C002F038C /* PBXTextBookmark */ = F41C4CDD0FEA7E9C002F038C /* PBXTextBookmark */;
-			F41C4CE30FEA845A002F038C /* PBXTextBookmark */ = F41C4CE30FEA845A002F038C /* PBXTextBookmark */;
-			F41C4CE40FEA845A002F038C /* PBXTextBookmark */ = F41C4CE40FEA845A002F038C /* PBXTextBookmark */;
-			F41C4CE50FEA845A002F038C /* PBXTextBookmark */ = F41C4CE50FEA845A002F038C /* PBXTextBookmark */;
-			F41C4CE60FEA845A002F038C /* PBXTextBookmark */ = F41C4CE60FEA845A002F038C /* PBXTextBookmark */;
-			F41C4CE70FEA845A002F038C /* PBXTextBookmark */ = F41C4CE70FEA845A002F038C /* PBXTextBookmark */;
-			F41C4CE80FEA845A002F038C /* PBXTextBookmark */ = F41C4CE80FEA845A002F038C /* PBXTextBookmark */;
-			F41C4CE90FEA845A002F038C /* PBXTextBookmark */ = F41C4CE90FEA845A002F038C /* PBXTextBookmark */;
-			F41C4CEA0FEA845A002F038C /* PBXTextBookmark */ = F41C4CEA0FEA845A002F038C /* PBXTextBookmark */;
-			F41C4CEB0FEA845A002F038C /* PBXTextBookmark */ = F41C4CEB0FEA845A002F038C /* PBXTextBookmark */;
-			F41C4CEC0FEA845A002F038C /* PBXTextBookmark */ = F41C4CEC0FEA845A002F038C /* PBXTextBookmark */;
-			F41C4CED0FEA845A002F038C /* PBXTextBookmark */ = F41C4CED0FEA845A002F038C /* PBXTextBookmark */;
-			F41C4CEE0FEA845A002F038C /* PBXTextBookmark */ = F41C4CEE0FEA845A002F038C /* PBXTextBookmark */;
-			F41C4CEF0FEA845A002F038C /* PBXTextBookmark */ = F41C4CEF0FEA845A002F038C /* PBXTextBookmark */;
-			F41C4CF20FEAA6FC002F038C /* PBXTextBookmark */ = F41C4CF20FEAA6FC002F038C /* PBXTextBookmark */;
-			F41C4CF30FEAA6FC002F038C /* PBXTextBookmark */ = F41C4CF30FEAA6FC002F038C /* PBXTextBookmark */;
-			F41C4CF40FEAA6FC002F038C /* PBXTextBookmark */ = F41C4CF40FEAA6FC002F038C /* PBXTextBookmark */;
-			F41C4CF50FEAA6FC002F038C /* PBXTextBookmark */ = F41C4CF50FEAA6FC002F038C /* PBXTextBookmark */;
-			F41C4CF60FEAA6FC002F038C /* PBXTextBookmark */ = F41C4CF60FEAA6FC002F038C /* PBXTextBookmark */;
-			F41C4CF70FEAA6FC002F038C /* PBXTextBookmark */ = F41C4CF70FEAA6FC002F038C /* PBXTextBookmark */;
-			F41C4CF80FEAA6FC002F038C /* PBXTextBookmark */ = F41C4CF80FEAA6FC002F038C /* PBXTextBookmark */;
-			F41C4CF90FEAA6FC002F038C /* PBXTextBookmark */ = F41C4CF90FEAA6FC002F038C /* PBXTextBookmark */;
-			F41C4CFA0FEAA6FC002F038C /* PBXTextBookmark */ = F41C4CFA0FEAA6FC002F038C /* PBXTextBookmark */;
-			F41C4CFB0FEAA6FC002F038C /* PBXTextBookmark */ = F41C4CFB0FEAA6FC002F038C /* PBXTextBookmark */;
-			F41C4CFC0FEAA6FC002F038C /* PBXTextBookmark */ = F41C4CFC0FEAA6FC002F038C /* PBXTextBookmark */;
-			F41C4CFD0FEAA6FC002F038C /* PBXTextBookmark */ = F41C4CFD0FEAA6FC002F038C /* PBXTextBookmark */;
-			F41C4CFE0FEAA6FC002F038C /* PBXTextBookmark */ = F41C4CFE0FEAA6FC002F038C /* PBXTextBookmark */;
-			F41C4CFF0FEAA6FC002F038C /* PBXTextBookmark */ = F41C4CFF0FEAA6FC002F038C /* PBXTextBookmark */;
-			F41C4D000FEAA6FC002F038C /* PBXTextBookmark */ = F41C4D000FEAA6FC002F038C /* PBXTextBookmark */;
-			F41C4D010FEAA6FC002F038C /* PBXTextBookmark */ = F41C4D010FEAA6FC002F038C /* PBXTextBookmark */;
-			F41C4D020FEAA6FC002F038C /* PBXTextBookmark */ = F41C4D020FEAA6FC002F038C /* PBXTextBookmark */;
+			F41C4CE50FEA845A002F038C = F41C4CE50FEA845A002F038C /* PBXTextBookmark */;
+			F41C4CE60FEA845A002F038C = F41C4CE60FEA845A002F038C /* PBXTextBookmark */;
+			F41C4CE70FEA845A002F038C = F41C4CE70FEA845A002F038C /* PBXTextBookmark */;
+			F41C4CE80FEA845A002F038C = F41C4CE80FEA845A002F038C /* PBXTextBookmark */;
+			F41C4CE90FEA845A002F038C = F41C4CE90FEA845A002F038C /* PBXTextBookmark */;
+			F41C4CEA0FEA845A002F038C = F41C4CEA0FEA845A002F038C /* PBXTextBookmark */;
+			F41C4CEB0FEA845A002F038C = F41C4CEB0FEA845A002F038C /* PBXTextBookmark */;
+			F41C4CEC0FEA845A002F038C = F41C4CEC0FEA845A002F038C /* PBXTextBookmark */;
+			F41C4CED0FEA845A002F038C = F41C4CED0FEA845A002F038C /* PBXTextBookmark */;
+			F41C4CEE0FEA845A002F038C = F41C4CEE0FEA845A002F038C /* PBXTextBookmark */;
+			F41C4CF40FEAA6FC002F038C = F41C4CF40FEAA6FC002F038C /* PBXTextBookmark */;
+			F41C4CF50FEAA6FC002F038C = F41C4CF50FEAA6FC002F038C /* PBXTextBookmark */;
+			F41C4CF60FEAA6FC002F038C = F41C4CF60FEAA6FC002F038C /* PBXTextBookmark */;
+			F41C4CF70FEAA6FC002F038C = F41C4CF70FEAA6FC002F038C /* PBXTextBookmark */;
+			F41C4CF80FEAA6FC002F038C = F41C4CF80FEAA6FC002F038C /* PBXTextBookmark */;
+			F41C4CF90FEAA6FC002F038C = F41C4CF90FEAA6FC002F038C /* PBXTextBookmark */;
+			F41C4CFA0FEAA6FC002F038C = F41C4CFA0FEAA6FC002F038C /* PBXTextBookmark */;
+			F41C4CFB0FEAA6FC002F038C = F41C4CFB0FEAA6FC002F038C /* PBXTextBookmark */;
+			F41C4CFC0FEAA6FC002F038C = F41C4CFC0FEAA6FC002F038C /* PBXTextBookmark */;
+			F41C4CFD0FEAA6FC002F038C = F41C4CFD0FEAA6FC002F038C /* PBXTextBookmark */;
+			F41C4CFE0FEAA6FC002F038C = F41C4CFE0FEAA6FC002F038C /* PBXTextBookmark */;
+			F41C4CFF0FEAA6FC002F038C = F41C4CFF0FEAA6FC002F038C /* PBXTextBookmark */;
+			F41C4D000FEAA6FC002F038C = F41C4D000FEAA6FC002F038C /* PBXTextBookmark */;
+			F41C4D010FEAA6FC002F038C = F41C4D010FEAA6FC002F038C /* PBXTextBookmark */;
+			F41C4D790FEAD6B8002F038C = F41C4D790FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D7B0FEAD6B8002F038C = F41C4D7B0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D7C0FEAD6B8002F038C = F41C4D7C0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D7D0FEAD6B8002F038C = F41C4D7D0FEAD6B8002F038C /* PlistBookmark */;
+			F41C4D7E0FEAD6B8002F038C = F41C4D7E0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D7F0FEAD6B8002F038C = F41C4D7F0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D800FEAD6B8002F038C = F41C4D800FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D810FEAD6B8002F038C = F41C4D810FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D820FEAD6B8002F038C = F41C4D820FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D830FEAD6B8002F038C = F41C4D830FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D840FEAD6B8002F038C = F41C4D840FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D850FEAD6B8002F038C = F41C4D850FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D860FEAD6B8002F038C = F41C4D860FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D870FEAD6B8002F038C = F41C4D870FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D880FEAD6B8002F038C = F41C4D880FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D890FEAD6B8002F038C = F41C4D890FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D8A0FEAD6B8002F038C = F41C4D8A0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D8B0FEAD6B8002F038C = F41C4D8B0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D8C0FEAD6B8002F038C = F41C4D8C0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D8D0FEAD6B8002F038C = F41C4D8D0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D8E0FEAD6B8002F038C = F41C4D8E0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D8F0FEAD6B8002F038C = F41C4D8F0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D900FEAD6B8002F038C = F41C4D900FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D910FEAD6B8002F038C = F41C4D910FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D920FEAD6B8002F038C = F41C4D920FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D930FEAD6B8002F038C = F41C4D930FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D940FEAD6B8002F038C = F41C4D940FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D950FEAD6B8002F038C = F41C4D950FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D960FEAD6B8002F038C = F41C4D960FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D970FEAD6B8002F038C = F41C4D970FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D980FEAD6B8002F038C = F41C4D980FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D990FEAD6B8002F038C = F41C4D990FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D9A0FEAD6B8002F038C = F41C4D9A0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D9B0FEAD6B8002F038C = F41C4D9B0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D9C0FEAD6B8002F038C = F41C4D9C0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D9D0FEAD6B8002F038C = F41C4D9D0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D9E0FEAD6B8002F038C = F41C4D9E0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4D9F0FEAD6B8002F038C = F41C4D9F0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DA00FEAD6B8002F038C = F41C4DA00FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DA10FEAD6B8002F038C = F41C4DA10FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DA20FEAD6B8002F038C = F41C4DA20FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DA30FEAD6B8002F038C = F41C4DA30FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DA40FEAD6B8002F038C = F41C4DA40FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DA50FEAD6B8002F038C = F41C4DA50FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DA60FEAD6B8002F038C = F41C4DA60FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DA70FEAD6B8002F038C = F41C4DA70FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DA80FEAD6B8002F038C = F41C4DA80FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DA90FEAD6B8002F038C = F41C4DA90FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DAA0FEAD6B8002F038C = F41C4DAA0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DAB0FEAD6B8002F038C = F41C4DAB0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DAC0FEAD6B8002F038C = F41C4DAC0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DAD0FEAD6B8002F038C = F41C4DAD0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DAE0FEAD6B8002F038C = F41C4DAE0FEAD6B8002F038C /* PlistBookmark */;
+			F41C4DAF0FEAD6B8002F038C = F41C4DAF0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DB00FEAD6B8002F038C = F41C4DB00FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DB10FEAD6B8002F038C = F41C4DB10FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DB20FEAD6B8002F038C = F41C4DB20FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DB40FEAD6B8002F038C = F41C4DB40FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DB50FEAD6B8002F038C = F41C4DB50FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DB60FEAD6B8002F038C = F41C4DB60FEAD6B8002F038C /* PlistBookmark */;
+			F41C4DB70FEAD6B8002F038C = F41C4DB70FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DB80FEAD6B8002F038C = F41C4DB80FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DB90FEAD6B8002F038C = F41C4DB90FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DBA0FEAD6B8002F038C = F41C4DBA0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DBB0FEAD6B8002F038C = F41C4DBB0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DBC0FEAD6B8002F038C = F41C4DBC0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DBD0FEAD6B8002F038C = F41C4DBD0FEAD6B8002F038C /* PlistBookmark */;
+			F41C4DBE0FEAD6B8002F038C = F41C4DBE0FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DBF0FEAD6B8002F038C = F41C4DBF0FEAD6B8002F038C /* PlistBookmark */;
+			F41C4DC00FEAD6B8002F038C = F41C4DC00FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DC10FEAD6B8002F038C = F41C4DC10FEAD6B8002F038C /* PlistBookmark */;
+			F41C4DC20FEAD6B8002F038C = F41C4DC20FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DC30FEAD6B8002F038C = F41C4DC30FEAD6B8002F038C /* PBXTextBookmark */;
+			F41C4DC60FEAD6B8002F038C = F41C4DC60FEAD6B8002F038C /* PBXBookmark */;
+			F41C4DC80FEAD6B8002F038C = F41C4DC80FEAD6B8002F038C /* PBXTextBookmark */;
+			F4F49DF40FEAD8200020B8EF /* PBXTextBookmark */ = F4F49DF40FEAD8200020B8EF /* PBXTextBookmark */;
+			F4F49DF50FEAD8200020B8EF /* PBXTextBookmark */ = F4F49DF50FEAD8200020B8EF /* PBXTextBookmark */;
+			F4F49DF60FEAD8200020B8EF /* PlistBookmark */ = F4F49DF60FEAD8200020B8EF /* PlistBookmark */;
+			F4F49DF70FEAD8220020B8EF /* PlistBookmark */ = F4F49DF70FEAD8220020B8EF /* PlistBookmark */;
+			F4F49DFB0FEAD8220020B8EF /* PBXTextBookmark */ = F4F49DFB0FEAD8220020B8EF /* PBXTextBookmark */;
 		};
 		sourceControlManager = F41C4BF90FEA7524002F038C /* Source Control */;
 		userBuildSettings = {
@@ -144,17 +186,17 @@
 	};
 	1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {694, 1218}}";
-			sepNavSelRange = "{3754, 0}";
-			sepNavVisRange = "{1796, 1761}";
+			sepNavIntBoundsRect = "{{0, 0}, {840, 1470}}";
+			sepNavSelRange = "{4355, 29}";
+			sepNavVisRange = "{2882, 2069}";
 			sepNavWindowFrame = "{{15, 74}, {1269, 1099}}";
 		};
 	};
 	1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {694, 1592}}";
-			sepNavSelRange = "{1847, 54}";
-			sepNavVisRange = "{1351, 1047}";
+			sepNavIntBoundsRect = "{{0, 0}, {702, 3038}}";
+			sepNavSelRange = "{5692, 0}";
+			sepNavVisRange = "{5618, 1104}";
 		};
 	};
 	32D94FC30562CBF700B6AF17 /* ADBHIDDevice */ = {
@@ -171,18 +213,6 @@
 	F41C4BFA0FEA7524002F038C /* Code sense */ = {
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
-	};
-	F41C4C070FEA7906002F038C /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			CFBundleIdentifier,
-		);
-		name = "/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/Info.plist";
-		rLen = 0;
-		rLoc = 2147483647;
 	};
 	F41C4C0A0FEA7906002F038C /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -211,149 +241,9 @@
 		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
 		name = "ADBHIDDevice.cpp: 3";
 		rLen = 0;
-		rLoc = 6274;
+		rLoc = 6722;
 		rType = 0;
 		vrLen = 53;
-		vrLoc = 0;
-	};
-	F41C4C0D0FEA7906002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
-		name = "ADBHIDDevice.h: 3";
-		rLen = 0;
-		rLoc = 1829;
-		rType = 0;
-		vrLen = 209;
-		vrLoc = 0;
-	};
-	F41C4C0E0FEA7906002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 3";
-		rLen = 0;
-		rLoc = 6274;
-		rType = 0;
-		vrLen = 53;
-		vrLoc = 0;
-	};
-	F41C4C0F0FEA7906002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
-		name = "ADBHIDDevice.h: 11";
-		rLen = 0;
-		rLoc = 2006;
-		rType = 0;
-		vrLen = 1338;
-		vrLoc = 0;
-	};
-	F41C4C100FEA7906002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 1";
-		rLen = 0;
-		rLoc = 1589;
-		rType = 0;
-		vrLen = 128;
-		vrLoc = 0;
-	};
-	F41C4C110FEA7906002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
-		name = "ADBHIDDevice.h: 1";
-		rLen = 1590;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 2760;
-		vrLoc = 0;
-	};
-	F41C4C120FEA7906002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 25";
-		rLen = 0;
-		rLoc = 1589;
-		rType = 0;
-		vrLen = 1717;
-		vrLoc = 0;
-	};
-	F41C4C130FEA7906002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
-		name = "ADBHIDDevice.h: 32";
-		rLen = 0;
-		rLoc = 1914;
-		rType = 0;
-		vrLen = 2760;
-		vrLoc = 0;
-	};
-	F41C4C140FEA7906002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 25";
-		rLen = 0;
-		rLoc = 1589;
-		rType = 0;
-		vrLen = 1717;
-		vrLoc = 0;
-	};
-	F41C4C150FEA7906002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
-		name = "ADBHIDDevice.h: 32";
-		rLen = 0;
-		rLoc = 1914;
-		rType = 0;
-		vrLen = 2760;
-		vrLoc = 0;
-	};
-	F41C4C160FEA7906002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 25";
-		rLen = 0;
-		rLoc = 1589;
-		rType = 0;
-		vrLen = 1717;
-		vrLoc = 0;
-	};
-	F41C4C170FEA7906002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
-		name = "ADBHIDDevice.h: 32";
-		rLen = 0;
-		rLoc = 1914;
-		rType = 0;
-		vrLen = 2760;
-		vrLoc = 0;
-	};
-	F41C4C180FEA7906002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 34";
-		rLen = 0;
-		rLoc = 2330;
-		rType = 0;
-		vrLen = 1730;
-		vrLoc = 0;
-	};
-	F41C4C190FEA7906002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
-		name = "ADBHIDDevice.h: 32";
-		rLen = 0;
-		rLoc = 1914;
-		rType = 0;
-		vrLen = 2760;
-		vrLoc = 0;
-	};
-	F41C4C1A0FEA7906002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 36";
-		rLen = 0;
-		rLoc = 6274;
-		rType = 0;
-		vrLen = 1762;
 		vrLoc = 0;
 	};
 	F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */ = {
@@ -363,9 +253,9 @@
 		path = "/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/ADBHIDDevice.cpp";
 		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {702, 3206}}";
-			sepNavSelRange = "{6122, 0}";
-			sepNavVisRange = "{5128, 1144}";
+			sepNavIntBoundsRect = "{{0, 0}, {702, 2926}}";
+			sepNavSelRange = "{5692, 0}";
+			sepNavVisRange = "{5582, 1140}";
 		};
 	};
 	F41C4CB70FEA7D78002F038C /* PBXTextBookmark */ = {
@@ -385,134 +275,6 @@
 		path = /System/Library/Frameworks/Kernel.framework/Headers/AssertMacros.h;
 		sourceTree = "<absolute>";
 	};
-	F41C4CB90FEA7D78002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
-		name = "ADBHIDDevice.h: 33";
-		rLen = 1;
-		rLoc = 1746;
-		rType = 0;
-		vrLen = 1912;
-		vrLoc = 223;
-	};
-	F41C4CBA0FEA7D78002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		comments = "error: incomplete type 'IOWorkLoop' used in nested name specifier";
-		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
-		rLen = 1;
-		rLoc = 71;
-		rType = 1;
-	};
-	F41C4CBB0FEA7D78002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
-		name = "ADBHIDDevice.h: 38";
-		rLen = 1334;
-		rLoc = 2053;
-		rType = 0;
-		vrLen = 1411;
-		vrLoc = 1517;
-	};
-	F41C4CBC0FEA7D78002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 57";
-		rLen = 0;
-		rLoc = 2929;
-		rType = 0;
-		vrLen = 541;
-		vrLoc = 1617;
-	};
-	F41C4CBD0FEA7D78002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
-		name = "ADBHIDDevice.h: 60";
-		rLen = 0;
-		rLoc = 3888;
-		rType = 0;
-		vrLen = 1410;
-		vrLoc = 1517;
-	};
-	F41C4CBE0FEA7D78002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 42";
-		rLen = 54;
-		rLoc = 2513;
-		rType = 0;
-		vrLen = 804;
-		vrLoc = 1351;
-	};
-	F41C4CBF0FEA7D78002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
-		name = "ADBHIDDevice.h: 29";
-		rLen = 0;
-		rLoc = 1696;
-		rType = 0;
-		vrLen = 1434;
-		vrLoc = 1517;
-	};
-	F41C4CC00FEA7D78002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 26";
-		rLen = 0;
-		rLoc = 1590;
-		rType = 0;
-		vrLen = 804;
-		vrLoc = 1351;
-	};
-	F41C4CC10FEA7D78002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
-		name = "ADBHIDDevice.h: 69";
-		rLen = 0;
-		rLoc = 3939;
-		rType = 0;
-		vrLen = 1344;
-		vrLoc = 1696;
-	};
-	F41C4CC20FEA7D78002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 81";
-		rLen = 0;
-		rLoc = 5445;
-		rType = 0;
-		vrLen = 804;
-		vrLoc = 1351;
-	};
-	F41C4CC30FEA7D78002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
-		name = "ADBHIDDevice.h: 69";
-		rLen = 0;
-		rLoc = 3939;
-		rType = 0;
-		vrLen = 1344;
-		vrLoc = 1696;
-	};
-	F41C4CC40FEA7D78002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 47";
-		rLen = 0;
-		rLoc = 2681;
-		rType = 0;
-		vrLen = 804;
-		vrLoc = 1351;
-	};
-	F41C4CC50FEA7D78002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
-		name = "ADBHIDDevice.h: 33";
-		rLen = 1;
-		rLoc = 1746;
-		rType = 0;
-		vrLen = 1618;
-		vrLoc = 1191;
-	};
 	F41C4CC60FEA7D78002F038C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = F41C4CC70FEA7D78002F038C /* AssertMacros.h */;
@@ -529,96 +291,6 @@
 		name = AssertMacros.h;
 		path = /System/Library/Frameworks/Kernel.framework/Headers/AssertMacros.h;
 		sourceTree = "<absolute>";
-	};
-	F41C4CC80FEA7D78002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
-		name = "ADBHIDDevice.h: 33";
-		rLen = 1;
-		rLoc = 1746;
-		rType = 0;
-		vrLen = 1344;
-		vrLoc = 1696;
-	};
-	F41C4CC90FEA7D78002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 42";
-		rLen = 54;
-		rLoc = 2513;
-		rType = 0;
-		vrLen = 1164;
-		vrLoc = 870;
-	};
-	F41C4CCA0FEA7D78002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
-		name = "ADBHIDDevice.h: 33";
-		rLen = 1;
-		rLoc = 1746;
-		rType = 0;
-		vrLen = 1912;
-		vrLoc = 223;
-	};
-	F41C4CCB0FEA7D78002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 42";
-		rLen = 54;
-		rLoc = 2513;
-		rType = 0;
-		vrLen = 804;
-		vrLoc = 1351;
-	};
-	F41C4CD70FEA7D94002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 42";
-		rLen = 54;
-		rLoc = 2513;
-		rType = 0;
-		vrLen = 1239;
-		vrLoc = 1029;
-	};
-	F41C4CDB0FEA7DCA002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 42";
-		rLen = 54;
-		rLoc = 2513;
-		rType = 0;
-		vrLen = 1239;
-		vrLoc = 1029;
-	};
-	F41C4CDD0FEA7E9C002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 42";
-		rLen = 54;
-		rLoc = 2513;
-		rType = 0;
-		vrLen = 1239;
-		vrLoc = 1029;
-	};
-	F41C4CE30FEA845A002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
-		name = "ADBHIDDevice.h: 66";
-		rLen = 0;
-		rLoc = 3828;
-		rType = 0;
-		vrLen = 1458;
-		vrLoc = 1796;
-	};
-	F41C4CE40FEA845A002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 77";
-		rLen = 0;
-		rLoc = 2822;
-		rType = 0;
-		vrLen = 769;
-		vrLoc = 1976;
 	};
 	F41C4CE50FEA845A002F038C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -720,36 +392,6 @@
 		vrLen = 1458;
 		vrLoc = 1796;
 	};
-	F41C4CEF0FEA845A002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 77";
-		rLen = 0;
-		rLoc = 2822;
-		rType = 0;
-		vrLen = 769;
-		vrLoc = 1976;
-	};
-	F41C4CF20FEAA6FC002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
-		name = "ADBHIDDevice.h: 76";
-		rLen = 0;
-		rLoc = 3754;
-		rType = 0;
-		vrLen = 1761;
-		vrLoc = 1796;
-	};
-	F41C4CF30FEAA6FC002F038C /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
-		name = "ADBHIDDevice.cpp: 171";
-		rLen = 0;
-		rLoc = 4583;
-		rType = 0;
-		vrLen = 1060;
-		vrLoc = 4091;
-	};
 	F41C4CF40FEAA6FC002F038C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
@@ -795,7 +437,7 @@
 		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
 		name = "ADBHIDDevice.cpp: 159";
 		rLen = 0;
-		rLoc = 6088;
+		rLoc = 6535;
 		rType = 0;
 		vrLen = 973;
 		vrLoc = 3682;
@@ -815,7 +457,7 @@
 		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
 		name = "ADBHIDDevice.cpp: 159";
 		rLen = 0;
-		rLoc = 5445;
+		rLoc = 5892;
 		rType = 0;
 		vrLen = 1221;
 		vrLoc = 3870;
@@ -835,7 +477,7 @@
 		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
 		name = "ADBHIDDevice.cpp: 149";
 		rLen = 80;
-		rLoc = 5158;
+		rLoc = 5165;
 		rType = 0;
 		vrLen = 1221;
 		vrLoc = 3870;
@@ -855,7 +497,7 @@
 		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
 		name = "ADBHIDDevice.cpp: 187";
 		rLen = 0;
-		rLoc = 5371;
+		rLoc = 5377;
 		rType = 0;
 		vrLen = 1130;
 		vrLoc = 3672;
@@ -890,14 +532,889 @@
 		vrLen = 1761;
 		vrLoc = 1796;
 	};
-	F41C4D020FEAA6FC002F038C /* PBXTextBookmark */ = {
+	F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {694, 812}}";
+			sepNavSelRange = "{2742, 0}";
+			sepNavVisRange = "{1191, 1656}";
+			sepNavWindowFrame = "{{38, 53}, {1269, 1099}}";
+		};
+	};
+	F41C4D050FEAA9BE002F038C /* ADBHIDMouse.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {694, 1358}}";
+			sepNavSelRange = "{4176, 0}";
+			sepNavVisRange = "{2963, 1219}";
+		};
+	};
+	F41C4D110FEAC6CF002F038C /* ADBHIDDevice.cpp */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = ADBHIDDevice.cpp;
+		path = "/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/ADBHIDDevice.cpp";
+		sourceTree = "<absolute>";
+	};
+	F41C4D1D0FEAC80C002F038C /* ADBHIDMouse.cpp */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = ADBHIDMouse.cpp;
+		path = "/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/ADBHIDMouse.cpp";
+		sourceTree = "<absolute>";
+	};
+	F41C4D790FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D7A0FEAD6B8002F038C /* AppleADBMouse.cpp */;
+		name = "AppleADBMouse.cpp: 51";
+		rLen = 1;
+		rLoc = 1770;
+		rType = 0;
+		vrLen = 992;
+		vrLoc = 1311;
+	};
+	F41C4D7A0FEAD6B8002F038C /* AppleADBMouse.cpp */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = AppleADBMouse.cpp;
+		path = "/Users/simon/Desktop/AppleADBMouse-212/AppleADBMouse.cpp";
+		sourceTree = "<absolute>";
+	};
+	F41C4D7B0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 85";
+		rLen = 29;
+		rLoc = 4355;
+		rType = 0;
+		vrLen = 2069;
+		vrLoc = 2882;
+	};
+	F41C4D7C0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 50";
+		rLen = 0;
+		rLoc = 2742;
+		rType = 0;
+		vrLen = 1656;
+		vrLoc = 1191;
+	};
+	F41C4D7D0FEAD6B8002F038C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			IOKitPersonalities,
+			ADBMouse,
+			"ADB Match",
+		);
+		name = "/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	F41C4D7E0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D1D0FEAC80C002F038C /* ADBHIDMouse.cpp */;
+		name = "ADBHIDMouse.cpp: 97";
+		rLen = 0;
+		rLoc = 4288;
+		rType = 0;
+		vrLen = 1222;
+		vrLoc = 3359;
+	};
+	F41C4D7F0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D110FEAC6CF002F038C /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 204";
+		rLen = 0;
+		rLoc = 5692;
+		rType = 0;
+		vrLen = 1251;
+		vrLoc = 5266;
+	};
+	F41C4D800FEAD6B8002F038C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
 		name = "ADBHIDDevice.cpp: 219";
 		rLen = 0;
-		rLoc = 6122;
+		rLoc = 6569;
 		rType = 0;
 		vrLen = 1144;
 		vrLoc = 5128;
+	};
+	F41C4D810FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 85";
+		rLen = 0;
+		rLoc = 4949;
+		rType = 0;
+		vrLen = 1900;
+		vrLoc = 2274;
+	};
+	F41C4D820FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 196";
+		rLen = 0;
+		rLoc = 5456;
+		rType = 0;
+		vrLen = 1036;
+		vrLoc = 5239;
+	};
+	F41C4D830FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 84";
+		rLen = 0;
+		rLoc = 4846;
+		rType = 0;
+		vrLen = 1966;
+		vrLoc = 2274;
+	};
+	F41C4D840FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 206";
+		rLen = 0;
+		rLoc = 5812;
+		rType = 0;
+		vrLen = 1249;
+		vrLoc = 5239;
+	};
+	F41C4D850FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 85";
+		rLen = 3;
+		rLoc = 4378;
+		rType = 0;
+		vrLen = 1759;
+		vrLoc = 2931;
+	};
+	F41C4D860FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 154;
+		vrLoc = 0;
+	};
+	F41C4D870FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 1";
+		rLen = 1590;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1873;
+		vrLoc = 0;
+	};
+	F41C4D880FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1590;
+		vrLoc = 0;
+	};
+	F41C4D890FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D050FEAA9BE002F038C /* ADBHIDMouse.cpp */;
+		name = "ADBHIDMouse.cpp: 26";
+		rLen = 0;
+		rLoc = 1590;
+		rType = 0;
+		vrLen = 1617;
+		vrLoc = 0;
+	};
+	F41C4D8A0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 32";
+		rLen = 0;
+		rLoc = 2840;
+		rType = 0;
+		vrLen = 1692;
+		vrLoc = 0;
+	};
+	F41C4D8B0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 39";
+		rLen = 42;
+		rLoc = 1873;
+		rType = 0;
+		vrLen = 1611;
+		vrLoc = 1271;
+	};
+	F41C4D8C0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 32";
+		rLen = 0;
+		rLoc = 2836;
+		rType = 0;
+		vrLen = 1736;
+		vrLoc = 0;
+	};
+	F41C4D8D0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D050FEAA9BE002F038C /* ADBHIDMouse.cpp */;
+		name = "ADBHIDMouse.cpp: 32";
+		rLen = 0;
+		rLoc = 1749;
+		rType = 0;
+		vrLen = 1673;
+		vrLoc = 0;
+	};
+	F41C4D8E0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 32";
+		rLen = 0;
+		rLoc = 2836;
+		rType = 0;
+		vrLen = 1736;
+		vrLoc = 0;
+	};
+	F41C4D8F0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 34";
+		rLen = 0;
+		rLoc = 1738;
+		rType = 0;
+		vrLen = 1450;
+		vrLoc = 782;
+	};
+	F41C4D900FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D050FEAA9BE002F038C /* ADBHIDMouse.cpp */;
+		name = "ADBHIDMouse.cpp: 34";
+		rLen = 0;
+		rLoc = 4582;
+		rType = 0;
+		vrLen = 1717;
+		vrLoc = 0;
+	};
+	F41C4D910FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 34";
+		rLen = 0;
+		rLoc = 1738;
+		rType = 0;
+		vrLen = 882;
+		vrLoc = 1891;
+	};
+	F41C4D920FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 68";
+		rLen = 95;
+		rLoc = 3292;
+		rType = 0;
+		vrLen = 1918;
+		vrLoc = 1873;
+	};
+	F41C4D930FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 34";
+		rLen = 0;
+		rLoc = 1987;
+		rType = 0;
+		vrLen = 1836;
+		vrLoc = 0;
+	};
+	F41C4D940FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D050FEAA9BE002F038C /* ADBHIDMouse.cpp */;
+		name = "ADBHIDMouse.cpp: 34";
+		rLen = 0;
+		rLoc = 4582;
+		rType = 0;
+		vrLen = 1717;
+		vrLoc = 0;
+	};
+	F41C4D950FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 34";
+		rLen = 0;
+		rLoc = 1738;
+		rType = 0;
+		vrLen = 882;
+		vrLoc = 1891;
+	};
+	F41C4D960FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 89";
+		rLen = 103;
+		rLoc = 4847;
+		rType = 0;
+		vrLen = 1759;
+		vrLoc = 2931;
+	};
+	F41C4D970FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D050FEAA9BE002F038C /* ADBHIDMouse.cpp */;
+		name = "ADBHIDMouse.cpp: 34";
+		rLen = 0;
+		rLoc = 4582;
+		rType = 0;
+		vrLen = 1717;
+		vrLoc = 0;
+	};
+	F41C4D980FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 33";
+		rLen = 939;
+		rLoc = 1898;
+		rType = 0;
+		vrLen = 1915;
+		vrLoc = 0;
+	};
+	F41C4D990FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D050FEAA9BE002F038C /* ADBHIDMouse.cpp */;
+		name = "ADBHIDMouse.cpp: 40";
+		rLen = 0;
+		rLoc = 4537;
+		rType = 0;
+		vrLen = 1706;
+		vrLoc = 223;
+	};
+	F41C4D9A0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 37";
+		rLen = 0;
+		rLoc = 2792;
+		rType = 0;
+		vrLen = 1953;
+		vrLoc = 0;
+	};
+	F41C4D9B0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D050FEAA9BE002F038C /* ADBHIDMouse.cpp */;
+		name = "ADBHIDMouse.cpp: 48";
+		rLen = 0;
+		rLoc = 4344;
+		rType = 0;
+		vrLen = 1354;
+		vrLoc = 1029;
+	};
+	F41C4D9C0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 38";
+		rLen = 0;
+		rLoc = 2823;
+		rType = 0;
+		vrLen = 1934;
+		vrLoc = 65;
+	};
+	F41C4D9D0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 45";
+		rLen = 46;
+		rLoc = 2007;
+		rType = 0;
+		vrLen = 1705;
+		vrLoc = 1731;
+	};
+	F41C4D9E0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 34";
+		rLen = 0;
+		rLoc = 1894;
+		rType = 0;
+		vrLen = 1890;
+		vrLoc = 154;
+	};
+	F41C4D9F0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 49";
+		rLen = 24;
+		rLoc = 2250;
+		rType = 0;
+		vrLen = 1705;
+		vrLoc = 1731;
+	};
+	F41C4DA00FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 35";
+		rLen = 0;
+		rLoc = 1895;
+		rType = 0;
+		vrLen = 1913;
+		vrLoc = 154;
+	};
+	F41C4DA10FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 34";
+		rLen = 0;
+		rLoc = 1738;
+		rType = 0;
+		vrLen = 882;
+		vrLoc = 1891;
+	};
+	F41C4DA20FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 49";
+		rLen = 24;
+		rLoc = 2250;
+		rType = 0;
+		vrLen = 1705;
+		vrLoc = 1731;
+	};
+	F41C4DA30FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 61";
+		rLen = 99;
+		rLoc = 2318;
+		rType = 0;
+		vrLen = 735;
+		vrLoc = 2297;
+	};
+	F41C4DA40FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D050FEAA9BE002F038C /* ADBHIDMouse.cpp */;
+		name = "ADBHIDMouse.cpp: 41";
+		rLen = 0;
+		rLoc = 1833;
+		rType = 0;
+		vrLen = 1856;
+		vrLoc = 1749;
+	};
+	F41C4DA50FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D110FEAC6CF002F038C /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 214";
+		rLen = 0;
+		rLoc = 5948;
+		rType = 0;
+		vrLen = 871;
+		vrLoc = 5136;
+	};
+	F41C4DA60FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 29";
+		rLen = 0;
+		rLoc = 1664;
+		rType = 0;
+		vrLen = 1883;
+		vrLoc = 40;
+	};
+	F41C4DA70FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D050FEAA9BE002F038C /* ADBHIDMouse.cpp */;
+		name = "ADBHIDMouse.cpp: 92";
+		rLen = 0;
+		rLoc = 4577;
+		rType = 0;
+		vrLen = 1219;
+		vrLoc = 2963;
+	};
+	F41C4DA80FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D110FEAC6CF002F038C /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 235";
+		rLen = 62;
+		rLoc = 6590;
+		rType = 0;
+		vrLen = 954;
+		vrLoc = 5763;
+	};
+	F41C4DA90FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 49";
+		rLen = 24;
+		rLoc = 2250;
+		rType = 0;
+		vrLen = 1759;
+		vrLoc = 2931;
+	};
+	F41C4DAA0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D110FEAC6CF002F038C /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 204";
+		rLen = 0;
+		rLoc = 5692;
+		rType = 0;
+		vrLen = 1147;
+		vrLoc = 5360;
+	};
+	F41C4DAB0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 90";
+		rLen = 0;
+		rLoc = 4945;
+		rType = 0;
+		vrLen = 1771;
+		vrLoc = 2931;
+	};
+	F41C4DAC0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 41";
+		rLen = 0;
+		rLoc = 2083;
+		rType = 0;
+		vrLen = 1596;
+		vrLoc = 523;
+	};
+	F41C4DAD0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D1D0FEAC80C002F038C /* ADBHIDMouse.cpp */;
+		name = "ADBHIDMouse.cpp: 89";
+		rLen = 0;
+		rLoc = 4407;
+		rType = 0;
+		vrLen = 1356;
+		vrLoc = 2865;
+	};
+	F41C4DAE0FEAD6B8002F038C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			IOKitPersonalities,
+			ADBMouse,
+			CFBundleIdentifier,
+		);
+		name = "/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	F41C4DAF0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D1D0FEAC80C002F038C /* ADBHIDMouse.cpp */;
+		name = "ADBHIDMouse.cpp: 69";
+		rLen = 102;
+		rLoc = 3363;
+		rType = 0;
+		vrLen = 1304;
+		vrLoc = 2682;
+	};
+	F41C4DB00FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 35";
+		rLen = 0;
+		rLoc = 1824;
+		rType = 0;
+		vrLen = 1867;
+		vrLoc = 306;
+	};
+	F41C4DB10FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D1D0FEAC80C002F038C /* ADBHIDMouse.cpp */;
+		name = "ADBHIDMouse.cpp: 73";
+		rLen = 39;
+		rLoc = 3511;
+		rType = 0;
+		vrLen = 1094;
+		vrLoc = 3465;
+	};
+	F41C4DB20FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4DB30FEAD6B8002F038C /* AppleADBMouse.cpp */;
+		name = "AppleADBMouse.cpp: 51";
+		rLen = 1;
+		rLoc = 1770;
+		rType = 0;
+		vrLen = 992;
+		vrLoc = 1311;
+	};
+	F41C4DB30FEAD6B8002F038C /* AppleADBMouse.cpp */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = AppleADBMouse.cpp;
+		path = "/Users/simon/Desktop/AppleADBMouse-212/AppleADBMouse.cpp";
+		sourceTree = "<absolute>";
+	};
+	F41C4DB40FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 35";
+		rLen = 0;
+		rLoc = 1824;
+		rType = 0;
+		vrLen = 1602;
+		vrLoc = 584;
+	};
+	F41C4DB50FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D1D0FEAC80C002F038C /* ADBHIDMouse.cpp */;
+		name = "ADBHIDMouse.cpp: 99";
+		rLen = 0;
+		rLoc = 3961;
+		rType = 0;
+		vrLen = 1070;
+		vrLoc = 3465;
+	};
+	F41C4DB60FEAD6B8002F038C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			IOKitPersonalities,
+			ADBMouse,
+		);
+		name = "/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	F41C4DB70FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 35";
+		rLen = 0;
+		rLoc = 1824;
+		rType = 0;
+		vrLen = 1602;
+		vrLoc = 584;
+	};
+	F41C4DB80FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 86";
+		rLen = 354;
+		rLoc = 4388;
+		rType = 0;
+		vrLen = 2020;
+		vrLoc = 2931;
+	};
+	F41C4DB90FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 44";
+		rLen = 0;
+		rLoc = 2151;
+		rType = 0;
+		vrLen = 1291;
+		vrLoc = 1271;
+	};
+	F41C4DBA0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D110FEAC6CF002F038C /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 204";
+		rLen = 0;
+		rLoc = 5692;
+		rType = 0;
+		vrLen = 1266;
+		vrLoc = 5266;
+	};
+	F41C4DBB0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* ADBHIDDevice.h */;
+		name = "ADBHIDDevice.h: 85";
+		rLen = 29;
+		rLoc = 4355;
+		rType = 0;
+		vrLen = 2069;
+		vrLoc = 2882;
+	};
+	F41C4DBC0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 50";
+		rLen = 0;
+		rLoc = 2742;
+		rType = 0;
+		vrLen = 1656;
+		vrLoc = 1191;
+	};
+	F41C4DBD0FEAD6B8002F038C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			OSBundleLibraries,
+		);
+		name = "/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	F41C4DBE0FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D1D0FEAC80C002F038C /* ADBHIDMouse.cpp */;
+		name = "ADBHIDMouse.cpp: 99";
+		rLen = 0;
+		rLoc = 3961;
+		rType = 0;
+		vrLen = 1160;
+		vrLoc = 3375;
+	};
+	F41C4DBF0FEAD6B8002F038C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			IOKitPersonalities,
+			"ADB HID Device Hookup",
+			VendorID,
+		);
+		name = "/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	F41C4DC00FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D1D0FEAC80C002F038C /* ADBHIDMouse.cpp */;
+		name = "ADBHIDMouse.cpp: 96";
+		rLen = 0;
+		rLoc = 4189;
+		rType = 0;
+		vrLen = 1206;
+		vrLoc = 3362;
+	};
+	F41C4DC10FEAD6B8002F038C /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			IOKitPersonalities,
+			ADBMouse,
+			"ADB Match",
+		);
+		name = "/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	F41C4DC20FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D1D0FEAC80C002F038C /* ADBHIDMouse.cpp */;
+		name = "ADBHIDMouse.cpp: 97";
+		rLen = 0;
+		rLoc = 4288;
+		rType = 0;
+		vrLen = 1222;
+		vrLoc = 3359;
+	};
+	F41C4DC30FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 204";
+		rLen = 0;
+		rLoc = 5692;
+		rType = 0;
+		vrLen = 1104;
+		vrLoc = 5618;
+	};
+	F41C4DC60FEAD6B8002F038C /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = F41C4DC70FEAD6B8002F038C /* AppleADBMouse.cpp */;
+	};
+	F41C4DC70FEAD6B8002F038C /* AppleADBMouse.cpp */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = AppleADBMouse.cpp;
+		path = "/Users/simon/Desktop/AppleADBMouse-212/AppleADBMouse.cpp";
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1210, 20930}}";
+			sepNavSelRange = "{4254, 87}";
+			sepNavVisRange = "{3237, 1777}";
+		};
+	};
+	F41C4DC80FEAD6B8002F038C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4DC90FEAD6B8002F038C /* AppleADBMouse.cpp */;
+		name = "AppleADBMouse.cpp: 146";
+		rLen = 87;
+		rLoc = 4254;
+		rType = 0;
+		vrLen = 1777;
+		vrLoc = 3237;
+	};
+	F41C4DC90FEAD6B8002F038C /* AppleADBMouse.cpp */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = AppleADBMouse.cpp;
+		path = "/Users/simon/Desktop/AppleADBMouse-212/AppleADBMouse.cpp";
+		sourceTree = "<absolute>";
+	};
+	F4F49DF40FEAD8200020B8EF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 204";
+		rLen = 0;
+		rLoc = 5692;
+		rType = 0;
+		vrLen = 1140;
+		vrLoc = 5582;
+	};
+	F4F49DF50FEAD8200020B8EF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 204";
+		rLen = 0;
+		rLoc = 5692;
+		rType = 0;
+		vrLen = 1140;
+		vrLoc = 5582;
+	};
+	F4F49DF60FEAD8200020B8EF /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			IOKitPersonalities,
+			"HID System Hookup",
+			VendorID,
+		);
+		name = "/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	F4F49DF70FEAD8220020B8EF /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			IOKitPersonalities,
+			"HID System Hookup",
+			VendorID,
+		);
+		name = "/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	F4F49DFB0FEAD8220020B8EF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4DC70FEAD6B8002F038C /* AppleADBMouse.cpp */;
+		name = "AppleADBMouse.cpp: 146";
+		rLen = 87;
+		rLoc = 4254;
+		rType = 0;
+		vrLen = 1777;
+		vrLoc = 3237;
 	};
 }
