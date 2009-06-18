@@ -31,6 +31,8 @@
 #include <IOKit/IOLib.h>
 #include <IOKit/adb/IOADBDevice.h>
 #include <IOKit/hid/IOHIDDevice.h>
+#include <IOKit/IOWorkLoop.h>
+#include <IOKit/IOCommandGate.h>
 
 class ADBHIDDevice : public IOHIDDevice 
 {
@@ -38,11 +40,13 @@ class ADBHIDDevice : public IOHIDDevice
   
 public:
   
-  // start and stop stuff
+  // Uusual lifecycle methods
+  virtual bool init(OSDictionary * properties);
   virtual bool handleStart (IOService * nub);
   virtual bool willTerminate (IOService * nub, IOOptionBits options);
   virtual bool didTerminate(IOService * nub, IOOptionBits options, bool * defer);
   virtual void handleStop (IOService * nub);
+  virtual void free ();
   
   // power management
   virtual IOReturn setPowerState(unsigned long powerStateOrdinal, IOService * device);
@@ -56,9 +60,10 @@ public:
   static void adbPacketInterrupt(IOService * target, UInt8 adbCommand, IOByteCount length, UInt8 * data);
   virtual void handleADBPacket(UInt8 * adbData);
 
-  // Workloop and gating
+  // Workloop, gating, underlying device access
   inline IOWorkLoop * workLoop() { return _workLoop; };
   inline IOCommandGate * commandGate() { return _commandGate; };
+  inline IOADBDevice * adbDevice() { return _adbDevice; };
   
 protected:
   IOWorkLoop * _workLoop;

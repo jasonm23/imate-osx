@@ -299,12 +299,13 @@
 								<string>089C167CFE841241C02AAC07</string>
 								<string>19C28FB6FE9D52B211CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
-								<string>1C08E77C0454961000C914BD</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>19</integer>
+									<integer>3</integer>
+									<integer>1</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -357,13 +358,13 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>F41C4CDB0FEA7DCA002F038C</string>
+										<string>F41C4CEF0FEA845A002F038C</string>
 										<key>history</key>
 										<array>
 											<string>F41C4C070FEA7906002F038C</string>
 											<string>F41C4CB70FEA7D78002F038C</string>
-											<string>F41C4CB90FEA7D78002F038C</string>
-											<string>F41C4CCB0FEA7D78002F038C</string>
+											<string>F41C4CE30FEA845A002F038C</string>
+											<string>F41C4CE40FEA845A002F038C</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -371,6 +372,16 @@
 											<string>F41C4C0B0FEA7906002F038C</string>
 											<string>F41C4C0C0FEA7906002F038C</string>
 											<string>F41C4CC60FEA7D78002F038C</string>
+											<string>F41C4CE50FEA845A002F038C</string>
+											<string>F41C4CE60FEA845A002F038C</string>
+											<string>F41C4CE70FEA845A002F038C</string>
+											<string>F41C4CE80FEA845A002F038C</string>
+											<string>F41C4CE90FEA845A002F038C</string>
+											<string>F41C4CEA0FEA845A002F038C</string>
+											<string>F41C4CEB0FEA845A002F038C</string>
+											<string>F41C4CEC0FEA845A002F038C</string>
+											<string>F41C4CED0FEA845A002F038C</string>
+											<string>F41C4CEE0FEA845A002F038C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -410,8 +421,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {755, 214}}</string>
-										<key>RubberWindowFrame</key>
-										<string>83 164 962 848 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -487,6 +496,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {755, 214}}</string>
+										<key>RubberWindowFrame</key>
+										<string>83 164 962 848 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -669,7 +680,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>267025866.34394699</real>
+	<real>267027546.19655299</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>2</integer>
 	<key>ToolbarIsVisible</key>
