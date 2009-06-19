@@ -88,6 +88,16 @@ KLASS::handleStart(IOService * nub)
   return true;
 }
 
+void
+KLASS::free()
+{
+  if (_hidReport) {
+    _hidReport->release();
+    _hidReport = NULL;
+  }
+  SUPER::free();
+}
+
 IOReturn 
 KLASS::handleADBPacket(UInt8 adbCommand, IOByteCount length, UInt8 * adbData) {
   ADBHIDMouseReport * report = (ADBHIDMouseReport*)(_hidReport->getBytesNoCopy());
