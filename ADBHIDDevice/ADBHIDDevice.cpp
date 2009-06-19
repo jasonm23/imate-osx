@@ -61,6 +61,7 @@ KLASS::init(OSDictionary * properties)
 bool
 KLASS::handleStart(IOService * nub)
 {
+  IOLog("%s::handleStart()\n", getName());
   if (!SUPER::handleStart(nub)) {
     return false;
   }
@@ -98,6 +99,7 @@ cleanup:
 bool 
 KLASS::willTerminate(IOService * provider, IOOptionBits options)
 {
+  IOLog("%s::willTerminate()\n", getName());
   bringDownADBDevice();
   return SUPER::willTerminate(provider, options);
 }
@@ -105,11 +107,13 @@ KLASS::willTerminate(IOService * provider, IOOptionBits options)
 bool 
 KLASS::didTerminate(IOService * nub, IOOptionBits options, bool * defer)
 {
+  IOLog("%s::didTerminate()\n", getName());
   return SUPER::didTerminate(nub, options, defer);
 }
 
 void 
 KLASS::handleStop (IOService * nub) {
+  IOLog("%s::handleStop()\n", getName());
   SUPER::handleStop(nub);
   PMstop();
 }
@@ -117,6 +121,7 @@ KLASS::handleStop (IOService * nub) {
 void
 KLASS::free()
 {
+  IOLog("%s::free()\n", getName());
   if (_commandGate) {
     if (_workLoop) {
       _workLoop->removeEventSource(_commandGate);
@@ -156,6 +161,7 @@ KLASS::setPowerStateAction(OSObject * owner, void * arg0, void * arg1, void * ar
 IOReturn 
 KLASS::setPowerStateGated(unsigned long powerStateOrdinal, IOService * device)
 {
+  IOLog("%s::setPowerState(%l)\n", getName(), powerStateOrdinal);
   switch (powerStateOrdinal) {
     case kADBHIDPowerStateOff:
       bringDownADBDevice();
@@ -199,6 +205,7 @@ KLASS::adbPacketAction(OSObject * owner, void * arg0, void * arg1, void * arg2, 
 IOReturn 
 KLASS::newReportDescriptor(IOMemoryDescriptor **descriptor) const
 {
+  IOLog("%s::newReportDescriptor()\n", getName());
   IOBufferMemoryDescriptor *buffer;
   
   buffer = IOBufferMemoryDescriptor::inTaskWithOptions(kernel_task, 0, reportDescriptorSize());
@@ -211,6 +218,7 @@ KLASS::newReportDescriptor(IOMemoryDescriptor **descriptor) const
 
 bool 
 KLASS::bringUpADBDevice() {
+  IOLog("%s::bringUpADBDevice()\n", getName());
   if (!_adbDevice->seizeForClient(this, KLASS::adbPacketInterrupt)) {
     return false;
   }
@@ -231,6 +239,7 @@ KLASS::bringUpADBDevice() {
 
 void
 KLASS::bringDownADBDevice() {
+  IOLog("%s::bringDownADBDevice()\n", getName());
   if (_adbDevice) {
     _adbDevice->setHandlerID(_adbDevice->defaultHandlerID());
     _adbDevice->releaseFromClient(this);
