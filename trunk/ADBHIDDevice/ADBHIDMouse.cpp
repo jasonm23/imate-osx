@@ -91,6 +91,7 @@ KLASS::handleStart(IOService * nub)
 void
 KLASS::free()
 {
+  IOLog("%s::free()\n", getName());
   if (_hidReport) {
     _hidReport->release();
     _hidReport = NULL;
