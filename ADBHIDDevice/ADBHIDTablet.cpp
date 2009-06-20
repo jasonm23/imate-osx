@@ -49,7 +49,7 @@ typedef struct {
 
 typedef struct {
   UInt8 report_id;
-  UInt8 key_index;
+  UInt8 button;
 } ADBHIDTabletButtonsReport;
 
 UInt8 KLASS::_reportDescriptor[] = {
@@ -237,8 +237,11 @@ KLASS::handleADBPacket(UInt8 adbCommand, IOByteCount length, UInt8 * adbData) {
   }
   // Determine what type of packet we're dealing with.
   if ((adbData[0] & kWacomPFKeyMask) == kWacomPFKeyFlags) {  // Tablet function key packet
-    IOLog("%s::handleADBPacket() got a function key packet\n", getName());
-
+    ADBHIDTabletButtonsReport * report = (ADBHIDTabletButtonsReport*)(_buttonsReport->getBytesNoCopy());
+    bzero(report, sizeof(ADBHIDTabletButtonsReport));
+    report->report_id = 3;
+    report->button    = adbData[2];
+    handleReport(_buttonsReport, kIOHIDReportTypeInput, 0);
   } else {                            // either stylus or puck
     bool proximity = adbData[0] & kWacomProximityMask;
     bool stylus       = adbData[0] & kWacomToolTypeMask;
@@ -250,7 +253,6 @@ KLASS::handleADBPacket(UInt8 adbCommand, IOByteCount length, UInt8 * adbData) {
       ADBHIDTabletStylusReport * report = (ADBHIDTabletStylusReport*)(_stylusReport->getBytesNoCopy());
       bzero(report, sizeof(ADBHIDTabletStylusReport));
       report->report_id    = 1;
-      
       report->x            = x;
       report->y            = y;
       report->tip_pressure = (SInt8)adbData[5];
