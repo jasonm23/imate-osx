@@ -216,7 +216,48 @@
 		</dict>
 	</array>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>F46134BB0FED6D6800C0B373</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>wacom_analysis.txt</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>F46134BC0FED6D6800C0B373</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>wacom_analysis.txt</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>F46134CC0FED6F9B00C0B373</string>
+						<key>history</key>
+						<array>
+							<string>F46134BD0FED6D6800C0B373</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {1269, 1038}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>15 94 1269 1079 0 0 1920 1178 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>962</integer>
@@ -252,8 +293,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -307,9 +346,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>9</integer>
-									<integer>3</integer>
-									<integer>0</integer>
+									<integer>22</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -362,7 +399,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>F461347D0FED3BCC00C0B373</string>
+										<string>F46134CB0FED6F9B00C0B373</string>
 										<key>history</key>
 										<array>
 											<string>F41C4CB70FEA7D78002F038C</string>
@@ -370,13 +407,13 @@
 											<string>F4C54AAE0FEBE3B60004B01E</string>
 											<string>F46ED38E0FEBE7A40092BCC4</string>
 											<string>F46ED3F30FEC07DA0092BCC4</string>
-											<string>F46133EF0FED2CF000C0B373</string>
-											<string>F461346E0FED3BCC00C0B373</string>
 											<string>F461346F0FED3BCC00C0B373</string>
 											<string>F46134700FED3BCC00C0B373</string>
 											<string>F46134710FED3BCC00C0B373</string>
-											<string>F46134720FED3BCC00C0B373</string>
-											<string>F46134730FED3BCC00C0B373</string>
+											<string>F46134A00FED6B8B00C0B373</string>
+											<string>F46134A10FED6B8B00C0B373</string>
+											<string>F46134C10FED6DFB00C0B373</string>
+											<string>F46134C20FED6DFB00C0B373</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -392,24 +429,8 @@
 											<string>F46ED3910FEBE7A40092BCC4</string>
 											<string>F46ED3920FEBE7A40092BCC4</string>
 											<string>F46ED3F80FEC07DA0092BCC4</string>
-											<string>F46133D90FECF70A00C0B373</string>
-											<string>F46133F40FED2CF000C0B373</string>
-											<string>F46133F50FED2CF000C0B373</string>
-											<string>F46133F60FED2CF000C0B373</string>
-											<string>F46133F70FED2CF000C0B373</string>
-											<string>F46133F80FED2CF000C0B373</string>
-											<string>F46133F90FED2CF000C0B373</string>
-											<string>F46134000FED2D8D00C0B373</string>
-											<string>F46134010FED2D8D00C0B373</string>
-											<string>F46134740FED3BCC00C0B373</string>
-											<string>F46134750FED3BCC00C0B373</string>
-											<string>F46134760FED3BCC00C0B373</string>
-											<string>F46134770FED3BCC00C0B373</string>
-											<string>F46134780FED3BCC00C0B373</string>
-											<string>F46134790FED3BCC00C0B373</string>
-											<string>F461347A0FED3BCC00C0B373</string>
-											<string>F461347B0FED3BCC00C0B373</string>
-											<string>F461347C0FED3BCC00C0B373</string>
+											<string>F46134B90FED6D6800C0B373</string>
+											<string>F46134C30FED6DFB00C0B373</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -423,14 +444,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {963, 806}}</string>
+								<string>{{0, 0}, {963, 807}}</string>
 								<key>RubberWindowFrame</key>
 								<string>296 85 1170 1093 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>806pt</string>
+							<string>807pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
@@ -449,8 +470,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {963, 214}}</string>
-										<key>RubberWindowFrame</key>
-										<string>296 85 1170 1093 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -511,6 +530,8 @@
 									<string>PBXCVSModule</string>
 								</dict>
 								<dict>
+									<key>BecomeActive</key>
+									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
@@ -526,6 +547,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {963, 214}}</string>
+										<key>RubberWindowFrame</key>
+										<string>296 85 1170 1093 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -708,7 +731,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>267205580.35023201</real>
+	<real>267218843.218472</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>2</integer>
 	<key>ToolbarIsVisible</key>
@@ -723,6 +746,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>F46134BB0FED6D6800C0B373</string>
 		<string>/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/ADBHIDDevice.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

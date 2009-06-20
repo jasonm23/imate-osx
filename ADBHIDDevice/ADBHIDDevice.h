@@ -95,7 +95,7 @@ public:
   // report descriptor
   virtual void * reportDescriptorBytes() const = 0;
   virtual size_t reportDescriptorSize() const = 0;
-
+  
 protected:
   IOWorkLoop * _workLoop;
   IOCommandGate * _commandGate;

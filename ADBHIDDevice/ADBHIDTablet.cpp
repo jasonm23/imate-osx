@@ -134,11 +134,16 @@ UInt8 KLASS::_reportDescriptor[] = {
   0x09, 0x30,                    //     USAGE (X)
   0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
   0x26, 0x00, 0x50,              //     LOGICAL_MAXIMUM (10240)
+  0x35, 0x00,                    //     PHYSICAL_MINIMUM (0)
+  0x46, 0x00, 0x50,              //     PHYSICAL_MAXIMUM (10240)
+  0x65, 0x11,                    //     UNIT (SI Lin:Distance)
+  0x55, 0x0d,                    //     UNIT_EXPONENT (-3)
   0x95, 0x01,                    //     REPORT_COUNT (1)
   0x75, 0x10,                    //     REPORT_SIZE (16)
   0x81, 0x02,                    //     INPUT (Data,Var,Abs)
   0x09, 0x31,                    //     USAGE (Y)
   0x26, 0x00, 0x3c,              //     LOGICAL_MAXIMUM (10240)
+  0x46, 0x00, 0x50,              //     PHYSICAL_MAXIMUM (10240)
   0x95, 0x01,                    //     REPORT_COUNT (1)
   0x75, 0x10,                    //     REPORT_SIZE (16)
   0x81, 0x02,                    //     INPUT (Data,Var,Abs)
@@ -147,13 +152,17 @@ UInt8 KLASS::_reportDescriptor[] = {
   0x29, 0x04,                    //     USAGE_MAXIMUM (Button 4)
   0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
   0x25, 0x01,                    //     LOGICAL_MAXIMUM (1)
+  0x35, 0x00,                    //     PHYSICAL_MINIMUM (0)
+  0x45, 0x01,                    //     PHYSICAL_MAXIMUM (1)
+  0x65, 0x00,                    //     UNIT (None)
+  0x55, 0x00,                    //     UNIT_EXPONENT (0)
   0x95, 0x04,                    //     REPORT_COUNT (4)
   0x75, 0x01,                    //     REPORT_SIZE (1)
   0x81, 0x02,                    //     INPUT (Data,Var,Abs) 
-  0x09, 0x00,                    //     USAGE (Undefined)
+  0x09, 0x32,                    //     USAGE (In Range)
   0x95, 0x01,                    //     REPORT_COUNT (1)
   0x75, 0x01,                    //     REPORT_SIZE (1)
-  0x81, 0x03,                    //     INPUT (Cnst,Var,Abs)  
+  0x81, 0x02,                    //     INPUT (Data,Var,Abs)  
   0x05, 0x0d,                    //     USAGE_PAGE (Digitizers)
   0x09, 0x38,                    //     USAGE (Transducer Index)
   0x25, 0x07,                    //     Logical Maximum 7
@@ -179,6 +188,24 @@ UInt8 KLASS::_reportDescriptor[] = {
   0xc0                           // END_COLLECTION
 };
 
+#define STYLUS_LOGICAL_MAX_X_LO  29
+#define STYLUS_LOGICAL_MAX_X_HI  30
+#define STYLUS_PHYSICAL_MAX_X_LO 34
+#define STYLUS_PHYSICAL_MAX_X_HI 35
+#define STYLUS_LOGICAL_MAX_Y_LO  49
+#define STYLUS_LOGICAL_MAX_Y_HI  50
+#define STYLUS_PHYSICAL_MAX_Y_LO 52
+#define STYLUS_PHYSICAL_MAX_Y_HI 53
+#define PUCK_LOGICAL_MAX_X_LO    165
+#define PUCK_LOGICAL_MAX_X_HI    166
+#define PUCK_PHYSICAL_MAX_X_LO   170
+#define PUCK_PHYSICAL_MAX_X_HI   171
+#define PUCK_LOGICAL_MAX_Y_LO    185
+#define PUCK_LOGICAL_MAX_Y_HI    186
+#define PUCK_PHYSICAL_MAX_Y_LO   188
+#define PUCK_PHYSICAL_MAX_Y_HI   189
+
+
 // Defines for Wacom structures 
 #define kWacomPFKeyMask     0xd0
 #define kWacomPFKeyFlags    0x90
@@ -202,9 +229,15 @@ UInt8 KLASS::_reportDescriptor[] = {
 #define kStylusEraserFlag     0x08
 #define kStylusInvertFlag     0x10
 
+// Puck report
+#define kPuckProximityFlag    0x10
+
 bool
 KLASS::handleStart(IOService * nub)
 {
+  UInt8 register1[8];
+  IOByteCount adbDataLength;
+  
   IOLog("%s::handleStart()\n", getName());
   if (!SUPER::handleStart(nub)) {
     return false;
@@ -212,6 +245,31 @@ KLASS::handleStart(IOService * nub)
   _stylusReport = IOBufferMemoryDescriptor::withCapacity(sizeof(ADBHIDTabletStylusReport), kIODirectionIn);
   _puckReport = IOBufferMemoryDescriptor::withCapacity(sizeof(ADBHIDTabletPuckReport), kIODirectionIn);
   _buttonsReport = IOBufferMemoryDescriptor::withCapacity(sizeof(ADBHIDTabletButtonsReport), kIODirectionIn);
+  
+  // Read register 1 to get base information
+  if ((adbDevice()->readRegister(1, register1, &adbDataLength) != kIOReturnSuccess) || (adbDataLength != 8)) {
+    IOLog("%s failed to read register 1 in startup\n", this);
+    return false;
+  }
+  
+  // Futz the descriptor to match our device
+  _reportDescriptor[STYLUS_LOGICAL_MAX_X_LO] = register1[3];
+  _reportDescriptor[STYLUS_LOGICAL_MAX_X_HI] = register1[2];
+  _reportDescriptor[STYLUS_LOGICAL_MAX_Y_LO] = register1[5];
+  _reportDescriptor[STYLUS_LOGICAL_MAX_Y_HI] = register1[4];
+  _reportDescriptor[STYLUS_PHYSICAL_MAX_X_LO] = register1[3];
+  _reportDescriptor[STYLUS_PHYSICAL_MAX_X_HI] = register1[2];
+  _reportDescriptor[STYLUS_PHYSICAL_MAX_Y_LO] = register1[5];
+  _reportDescriptor[STYLUS_PHYSICAL_MAX_Y_HI] = register1[4];
+  _reportDescriptor[PUCK_LOGICAL_MAX_X_LO] = register1[3];
+  _reportDescriptor[PUCK_LOGICAL_MAX_X_HI] = register1[2];
+  _reportDescriptor[PUCK_LOGICAL_MAX_Y_LO] = register1[5];
+  _reportDescriptor[PUCK_LOGICAL_MAX_Y_HI] = register1[4];
+  _reportDescriptor[PUCK_PHYSICAL_MAX_X_LO] = register1[3];
+  _reportDescriptor[PUCK_PHYSICAL_MAX_X_HI] = register1[2];
+  _reportDescriptor[PUCK_PHYSICAL_MAX_Y_LO] = register1[5];
+  _reportDescriptor[PUCK_PHYSICAL_MAX_Y_HI] = register1[4];
+  
   return true;
 }
 
@@ -251,7 +309,6 @@ KLASS::handleADBPacket(UInt8 adbCommand, IOByteCount length, UInt8 * adbData) {
   } else {                            // either stylus or puck
     bool proximity = adbData[0] & kWacomProximityMask;
     bool stylus       = adbData[0] & kWacomToolTypeMask;
-    bool click        = adbData[0] & kWacomClickMask;
     UInt8 buttons     = adbData[0] & kWacomButtonMask;
     UInt16 x          = OSSwapHostToLittleInt16( adbData[1] * 256 + adbData[2] );
     UInt16 y          = OSSwapHostToLittleInt16( adbData[3] * 256 + adbData[4] );
@@ -282,11 +339,12 @@ KLASS::handleADBPacket(UInt8 adbCommand, IOByteCount length, UInt8 * adbData) {
     } else {
       ADBHIDTabletPuckReport * report = (ADBHIDTabletPuckReport*)(_puckReport->getBytesNoCopy());
       bzero(report, sizeof(ADBHIDTabletPuckReport));
-      report->report_id    = 2;
-      report->x            = x;
-      report->y            = y;
-      report->flags        = 0x40; // Transducer 2
-      report->flags        |= buttons;
+      report->report_id = 2;
+      report->x         = x;
+      report->y         = y;
+      report->flags     = 0x40; // Transducer 2
+      report->flags     |= buttons;
+      report->flags     |= proximity ? kPuckProximityFlag : 0x00;
       handleReport(_puckReport, kIOHIDReportTypeInput, 0);
     }
   }
