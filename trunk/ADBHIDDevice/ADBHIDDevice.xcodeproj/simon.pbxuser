@@ -37,7 +37,7 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
 					300,
-					406,
+					614,
 				);
 				PBXFileTableDataSourceColumnsKey = (
 					PBXErrorsWarningsDataSource_TypeID,
@@ -50,7 +50,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					516,
+					724,
 					20,
 					48,
 					43,
@@ -147,6 +147,22 @@
 			F46134600FED331200C0B373 /* PBXTextBookmark */ = F46134600FED331200C0B373 /* PBXTextBookmark */;
 			F46134640FED33D300C0B373 /* PBXTextBookmark */ = F46134640FED33D300C0B373 /* PBXTextBookmark */;
 			F46134650FED35BD00C0B373 /* PBXTextBookmark */ = F46134650FED35BD00C0B373 /* PBXTextBookmark */;
+			F461346E0FED3BCC00C0B373 /* PBXTextBookmark */ = F461346E0FED3BCC00C0B373 /* PBXTextBookmark */;
+			F461346F0FED3BCC00C0B373 /* PBXTextBookmark */ = F461346F0FED3BCC00C0B373 /* PBXTextBookmark */;
+			F46134700FED3BCC00C0B373 /* PBXTextBookmark */ = F46134700FED3BCC00C0B373 /* PBXTextBookmark */;
+			F46134710FED3BCC00C0B373 /* PBXTextBookmark */ = F46134710FED3BCC00C0B373 /* PBXTextBookmark */;
+			F46134720FED3BCC00C0B373 /* PlistBookmark */ = F46134720FED3BCC00C0B373 /* PlistBookmark */;
+			F46134730FED3BCC00C0B373 /* PBXTextBookmark */ = F46134730FED3BCC00C0B373 /* PBXTextBookmark */;
+			F46134740FED3BCC00C0B373 /* PBXTextBookmark */ = F46134740FED3BCC00C0B373 /* PBXTextBookmark */;
+			F46134750FED3BCC00C0B373 /* PBXTextBookmark */ = F46134750FED3BCC00C0B373 /* PBXTextBookmark */;
+			F46134760FED3BCC00C0B373 /* PBXTextBookmark */ = F46134760FED3BCC00C0B373 /* PBXTextBookmark */;
+			F46134770FED3BCC00C0B373 /* PBXTextBookmark */ = F46134770FED3BCC00C0B373 /* PBXTextBookmark */;
+			F46134780FED3BCC00C0B373 /* PBXTextBookmark */ = F46134780FED3BCC00C0B373 /* PBXTextBookmark */;
+			F46134790FED3BCC00C0B373 /* PBXTextBookmark */ = F46134790FED3BCC00C0B373 /* PBXTextBookmark */;
+			F461347A0FED3BCC00C0B373 /* PBXTextBookmark */ = F461347A0FED3BCC00C0B373 /* PBXTextBookmark */;
+			F461347B0FED3BCC00C0B373 /* PBXTextBookmark */ = F461347B0FED3BCC00C0B373 /* PBXTextBookmark */;
+			F461347C0FED3BCC00C0B373 /* PlistBookmark */ = F461347C0FED3BCC00C0B373 /* PlistBookmark */;
+			F461347D0FED3BCC00C0B373 /* PBXTextBookmark */ = F461347D0FED3BCC00C0B373 /* PBXTextBookmark */;
 			F46ED38D0FEBE7A40092BCC4 = F46ED38D0FEBE7A40092BCC4 /* PBXTextBookmark */;
 			F46ED38E0FEBE7A40092BCC4 = F46ED38E0FEBE7A40092BCC4 /* PBXTextBookmark */;
 			F46ED3910FEBE7A40092BCC4 = F46ED3910FEBE7A40092BCC4 /* PBXTextBookmark */;
@@ -175,7 +191,7 @@
 	};
 	089C167EFE841241C02AAC07 /* English */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {694, 529}}";
+			sepNavIntBoundsRect = "{{0, 0}, {902, 774}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 45}";
 		};
@@ -239,9 +255,9 @@
 		path = "/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/ADBHIDDevice.cpp";
 		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {702, 3500}}";
+			sepNavIntBoundsRect = "{{0, 0}, {902, 3374}}";
 			sepNavSelRange = "{6801, 12}";
-			sepNavVisRange = "{1591, 847}";
+			sepNavVisRange = "{1029, 1599}";
 		};
 	};
 	F41C4CB70FEA7D78002F038C /* PBXTextBookmark */ = {
@@ -280,9 +296,9 @@
 	};
 	F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {694, 770}}";
+			sepNavIntBoundsRect = "{{0, 0}, {902, 812}}";
 			sepNavSelRange = "{1637, 0}";
-			sepNavVisRange = "{306, 1970}";
+			sepNavVisRange = "{65, 2782}";
 			sepNavWindowFrame = "{{38, 53}, {1269, 1099}}";
 		};
 	};
@@ -362,7 +378,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 108";
 		rLen = 0;
-		rLoc = 5609;
+		rLoc = 5606;
 		rType = 0;
 		vrLen = 1534;
 		vrLoc = 4009;
@@ -382,7 +398,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 177";
 		rLen = 0;
-		rLoc = 9730;
+		rLoc = 9727;
 		rType = 0;
 		vrLen = 2268;
 		vrLoc = 2161;
@@ -406,7 +422,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 177";
 		rLen = 0;
-		rLoc = 9730;
+		rLoc = 9727;
 		rType = 0;
 		vrLen = 2268;
 		vrLoc = 2161;
@@ -444,7 +460,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 108";
 		rLen = 0;
-		rLoc = 5609;
+		rLoc = 5606;
 		rType = 0;
 		vrLen = 4259;
 		vrLoc = 2872;
@@ -508,7 +524,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 241";
 		rLen = 796;
-		rLoc = 11813;
+		rLoc = 12009;
 		rType = 0;
 		vrLen = 1985;
 		vrLoc = 10381;
@@ -562,7 +578,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 241";
 		rLen = 796;
-		rLoc = 11813;
+		rLoc = 12009;
 		rType = 0;
 		vrLen = 2039;
 		vrLoc = 10327;
@@ -586,7 +602,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 241";
 		rLen = 208;
-		rLoc = 11813;
+		rLoc = 12009;
 		rType = 0;
 		vrLen = 1947;
 		vrLoc = 10518;
@@ -596,7 +612,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 108";
 		rLen = 0;
-		rLoc = 5609;
+		rLoc = 5606;
 		rType = 0;
 		vrLen = 4259;
 		vrLoc = 2872;
@@ -626,7 +642,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 241";
 		rLen = 208;
-		rLoc = 11813;
+		rLoc = 12009;
 		rType = 0;
 		vrLen = 1986;
 		vrLoc = 10381;
@@ -636,7 +652,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 241";
 		rLen = 208;
-		rLoc = 11813;
+		rLoc = 12009;
 		rType = 0;
 		vrLen = 1986;
 		vrLoc = 10381;
@@ -656,7 +672,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 63";
 		rLen = 0;
-		rLoc = 2514;
+		rLoc = 2511;
 		rType = 0;
 		vrLen = 2234;
 		vrLoc = 2063;
@@ -666,7 +682,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 112";
 		rLen = 0;
-		rLoc = 5609;
+		rLoc = 5606;
 		rType = 0;
 		vrLen = 4256;
 		vrLoc = 2503;
@@ -686,7 +702,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 164";
 		rLen = 0;
-		rLoc = 8672;
+		rLoc = 8669;
 		rType = 0;
 		vrLen = 2072;
 		vrLoc = 7048;
@@ -696,7 +712,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 112";
 		rLen = 0;
-		rLoc = 5609;
+		rLoc = 5606;
 		rType = 0;
 		vrLen = 4256;
 		vrLoc = 2503;
@@ -716,7 +732,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 254";
 		rLen = 588;
-		rLoc = 12021;
+		rLoc = 12217;
 		rType = 0;
 		vrLen = 1692;
 		vrLoc = 10911;
@@ -726,7 +742,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 112";
 		rLen = 0;
-		rLoc = 5609;
+		rLoc = 5606;
 		rType = 0;
 		vrLen = 4256;
 		vrLoc = 2503;
@@ -746,7 +762,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 254";
 		rLen = 588;
-		rLoc = 12021;
+		rLoc = 12217;
 		rType = 0;
 		vrLen = 1890;
 		vrLoc = 10681;
@@ -766,7 +782,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 99";
 		rLen = 0;
-		rLoc = 4907;
+		rLoc = 4904;
 		rType = 0;
 		vrLen = 4256;
 		vrLoc = 2503;
@@ -776,7 +792,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 194";
 		rLen = 0;
-		rLoc = 9835;
+		rLoc = 9832;
 		rType = 0;
 		vrLen = 1190;
 		vrLoc = 8972;
@@ -786,7 +802,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 97";
 		rLen = 0;
-		rLoc = 4607;
+		rLoc = 4604;
 		rType = 0;
 		vrLen = 4267;
 		vrLoc = 2503;
@@ -796,7 +812,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 194";
 		rLen = 0;
-		rLoc = 9835;
+		rLoc = 9832;
 		rType = 0;
 		vrLen = 1190;
 		vrLoc = 8972;
@@ -806,7 +822,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 97";
 		rLen = 0;
-		rLoc = 4607;
+		rLoc = 4604;
 		rType = 0;
 		vrLen = 4267;
 		vrLoc = 2503;
@@ -816,7 +832,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 254";
 		rLen = 0;
-		rLoc = 11923;
+		rLoc = 12119;
 		rType = 0;
 		vrLen = 1839;
 		vrLoc = 10620;
@@ -826,10 +842,174 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 196";
 		rLen = 0;
-		rLoc = 9769;
+		rLoc = 9766;
 		rType = 0;
 		vrLen = 2019;
 		vrLoc = 8440;
+	};
+	F461346E0FED3BCC00C0B373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F4F49E050FEAE9E10020B8EF /* ADBHIDTablet.h */;
+		name = "ADBHIDTablet.h: 59";
+		rLen = 0;
+		rLoc = 3046;
+		rType = 0;
+		vrLen = 2898;
+		vrLoc = 154;
+	};
+	F461346F0FED3BCC00C0B373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 27";
+		rLen = 0;
+		rLoc = 1637;
+		rType = 0;
+		vrLen = 2782;
+		vrLoc = 65;
+	};
+	F46134700FED3BCC00C0B373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 232";
+		rLen = 12;
+		rLoc = 6801;
+		rType = 0;
+		vrLen = 1599;
+		vrLoc = 1029;
+	};
+	F46134710FED3BCC00C0B373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 089C167EFE841241C02AAC07 /* English */;
+		name = "InfoPlist.strings: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 45;
+		vrLoc = 0;
+	};
+	F46134720FED3BCC00C0B373 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			OSBundleLibraries,
+		);
+		name = "/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	F46134730FED3BCC00C0B373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
+		name = "ADBHIDTablet.cpp: 86";
+		rLen = 62;
+		rLoc = 3939;
+		rType = 0;
+		vrLen = 3346;
+		vrLoc = 2618;
+	};
+	F46134740FED3BCC00C0B373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
+		name = "ADBHIDTablet.cpp: 196";
+		rLen = 0;
+		rLoc = 9766;
+		rType = 0;
+		vrLen = 2019;
+		vrLoc = 8440;
+	};
+	F46134750FED3BCC00C0B373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F4F49E050FEAE9E10020B8EF /* ADBHIDTablet.h */;
+		name = "ADBHIDTablet.h: 59";
+		rLen = 0;
+		rLoc = 3046;
+		rType = 0;
+		vrLen = 2898;
+		vrLoc = 154;
+	};
+	F46134760FED3BCC00C0B373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4D040FEAA9BE002F038C /* ADBHIDMouse.h */;
+		name = "ADBHIDMouse.h: 27";
+		rLen = 0;
+		rLoc = 1637;
+		rType = 0;
+		vrLen = 2782;
+		vrLoc = 65;
+	};
+	F46134770FED3BCC00C0B373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 232";
+		rLen = 12;
+		rLoc = 6801;
+		rType = 0;
+		vrLen = 1675;
+		vrLoc = 953;
+	};
+	F46134780FED3BCC00C0B373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
+		name = "ADBHIDTablet.cpp: 196";
+		rLen = 0;
+		rLoc = 9766;
+		rType = 0;
+		vrLen = 3236;
+		vrLoc = 5907;
+	};
+	F46134790FED3BCC00C0B373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F41C4CA00FEA7BA4002F038C /* ADBHIDDevice.cpp */;
+		name = "ADBHIDDevice.cpp: 232";
+		rLen = 12;
+		rLoc = 6801;
+		rType = 0;
+		vrLen = 1599;
+		vrLoc = 1029;
+	};
+	F461347A0FED3BCC00C0B373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
+		name = "ADBHIDTablet.cpp: 86";
+		rLen = 62;
+		rLoc = 3939;
+		rType = 0;
+		vrLen = 3346;
+		vrLoc = 2618;
+	};
+	F461347B0FED3BCC00C0B373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 089C167EFE841241C02AAC07 /* English */;
+		name = "InfoPlist.strings: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 45;
+		vrLoc = 0;
+	};
+	F461347C0FED3BCC00C0B373 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			OSBundleLibraries,
+		);
+		name = "/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	F461347D0FED3BCC00C0B373 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
+		name = "ADBHIDTablet.cpp: 86";
+		rLen = 62;
+		rLoc = 3939;
+		rType = 0;
+		vrLen = 3309;
+		vrLoc = 5666;
 	};
 	F46ED38D0FEBE7A40092BCC4 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -989,7 +1169,7 @@
 		fRef = F46ED3E60FEBF8430092BCC4 /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 241";
 		rLen = 796;
-		rLoc = 11813;
+		rLoc = 12009;
 		rType = 0;
 		vrLen = 1703;
 		vrLoc = 10777;
@@ -999,7 +1179,7 @@
 		fRef = F46ED3E60FEBF8430092BCC4 /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 241";
 		rLen = 796;
-		rLoc = 11813;
+		rLoc = 12009;
 		rType = 0;
 		vrLen = 1703;
 		vrLoc = 10777;
@@ -1023,7 +1203,7 @@
 		fRef = F4F49E060FEAE9E10020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 177";
 		rLen = 0;
-		rLoc = 9730;
+		rLoc = 9727;
 		rType = 0;
 		vrLen = 2326;
 		vrLoc = 2161;
@@ -1033,7 +1213,7 @@
 		fRef = F4F49E060FEAE9E10020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 108";
 		rLen = 0;
-		rLoc = 5609;
+		rLoc = 5606;
 		rType = 0;
 		vrLen = 4259;
 		vrLoc = 2872;
@@ -1050,9 +1230,9 @@
 	};
 	F4F49E050FEAE9E10020B8EF /* ADBHIDTablet.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {694, 882}}";
+			sepNavIntBoundsRect = "{{0, 0}, {902, 882}}";
 			sepNavSelRange = "{3046, 0}";
-			sepNavVisRange = "{1351, 1701}";
+			sepNavVisRange = "{154, 2898}";
 		};
 	};
 	F4F49E060FEAE9E10020B8EF /* ADBHIDTablet.cpp */ = {
@@ -1069,9 +1249,9 @@
 		path = "/Users/simon/Projects/wacom/imate-osx/ADBHIDDevice/ADBHIDTablet.cpp";
 		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {902, 4130}}";
-			sepNavSelRange = "{9769, 0}";
-			sepNavVisRange = "{8440, 2019}";
+			sepNavIntBoundsRect = "{{0, 0}, {902, 4186}}";
+			sepNavSelRange = "{11309, 0}";
+			sepNavVisRange = "{10510, 2367}";
 			sepNavWindowFrame = "{{56, 75}, {1269, 1099}}";
 		};
 	};
@@ -1090,7 +1270,7 @@
 		fRef = F4F49E130FEAED050020B8EF /* ADBHIDTablet.cpp */;
 		name = "ADBHIDTablet.cpp: 178";
 		rLen = 0;
-		rLoc = 9986;
+		rLoc = 9983;
 		rType = 0;
 		vrLen = 814;
 		vrLoc = 8864;

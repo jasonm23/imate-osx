@@ -35,19 +35,6 @@
 			<key>newHandler</key>
 			<integer>104</integer>
 		</dict>
-		<key>HID System Hookup</key>
-		<dict>
-			<key>CFBundleIdentifier</key>
-			<string>com.apple.kernel.iokit</string>
-			<key>IOClass</key>
-			<string>IOHIDEventDriver</string>
-			<key>IOProviderClass</key>
-			<string>IOHIDInterface</string>
-			<key>DeviceUsage</key>
-			<integer>44</integer>
-			<key>DeviceUsagePage</key>
-			<integer>14</integer>
-		</dict>
 	</dict>
 	<key>OSBundleLibraries</key>
 	<dict>
