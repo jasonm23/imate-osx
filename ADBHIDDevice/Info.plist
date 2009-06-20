@@ -22,18 +22,18 @@
 	<string>1.0.0d1</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>ADBMouse</key>
+		<key>Wacom-UD-xxxx-A</key>
 		<dict>
-			<key>dpi</key>
-			<string>200</string>
 			<key>ADB Match</key>
-			<string>3</string>
+			<string>0x04-0x3a</string>
 			<key>CFBundleIdentifier</key>
 			<string>cx.ath.tufty.ADBHIDDevice</string>
 			<key>IOClass</key>
-			<string>ADBHIDMouse</string>
+			<string>ADBHIDTablet</string>
 			<key>IOProviderClass</key>
 			<string>IOADBDevice</string>
+			<key>newHandler</key>
+			<integer>104</integer>
 		</dict>
 		<key>HID System Hookup</key>
 		<dict>
@@ -43,8 +43,10 @@
 			<string>IOHIDEventDriver</string>
 			<key>IOProviderClass</key>
 			<string>IOHIDInterface</string>
-			<key>VendorID</key>
-			<integer>65261</integer>
+			<key>DeviceUsage</key>
+			<integer>44</integer>
+			<key>DeviceUsagePage</key>
+			<integer>14</integer>
 		</dict>
 	</dict>
 	<key>OSBundleLibraries</key>
