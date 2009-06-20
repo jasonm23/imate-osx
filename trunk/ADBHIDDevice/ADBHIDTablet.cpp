@@ -107,18 +107,19 @@ UInt8 KLASS::_reportDescriptor[] = {
   0x09, 0x42,                    //     USAGE (Tip Switch)
   0x09, 0x44,                    //     USAGE (Barrel Switch)
   0x09, 0x45,                    //     USAGE (Eraser)
+  0x09, 0x3c,                    //     USAGE (Invert)
   0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
   0x25, 0x01,                    //     LOGICAL_MAXIMUM (1)
   0x35, 0x00,                    //     PHYSICAL_MINIMUM (0)
   0x45, 0x01,                    //     PHYSICAL_MAXIMUM (1)
   0x65, 0x00,                    //     UNIT (None)
-  0x95, 0x04,                    //     REPORT_COUNT (4)
+  0x95, 0x05,                    //     REPORT_COUNT (5)
   0x75, 0x01,                    //     REPORT_SIZE (1)
   0x81, 0x02,                    //     INPUT (Data,Var,Abs)
   0x09, 0x38,                    //     USAGE (Transducer Index)
-  0x25, 0x0f,                    //     Logical Maximum 15
+  0x25, 0x07,                    //     Logical Maximum 7
   0x95, 0x01,                    //     REPORT_COUNT (1)
-  0x75, 0x04,                    //     REPORT_SIZE (4)
+  0x75, 0x03,                    //     REPORT_SIZE (3)
   0x81, 0x02,                    //     INPUT (Data,Var,Abs)
   0xc0,                          //   END_COLLECTION
   0x85, 0x02,                    //   REPORT_ID (2)
@@ -148,12 +149,16 @@ UInt8 KLASS::_reportDescriptor[] = {
   0x25, 0x01,                    //     LOGICAL_MAXIMUM (1)
   0x95, 0x04,                    //     REPORT_COUNT (4)
   0x75, 0x01,                    //     REPORT_SIZE (1)
-  0x81, 0x02,                    //     INPUT (Data,Var,Abs)  
+  0x81, 0x02,                    //     INPUT (Data,Var,Abs) 
+  0x09, 0x00,                    //     USAGE (Undefined)
+  0x95, 0x01,                    //     REPORT_COUNT (1)
+  0x75, 0x01,                    //     REPORT_SIZE (1)
+  0x81, 0x03,                    //     INPUT (Cnst,Var,Abs)  
   0x05, 0x0d,                    //     USAGE_PAGE (Digitizers)
   0x09, 0x38,                    //     USAGE (Transducer Index)
-  0x25, 0x0f,                    //     Logical Maximum 15
+  0x25, 0x07,                    //     Logical Maximum 7
   0x95, 0x01,                    //     REPORT_COUNT (1)
-  0x75, 0x04,                    //     REPORT_SIZE (4)
+  0x75, 0x03,                    //     REPORT_SIZE (3)
   0x81, 0x02,                    //     INPUT (Data,Var,Abs)
   0xc0,                          //   END_COLLECTION
   0x85, 0x03,                    //   REPORT_ID (3)
@@ -195,6 +200,7 @@ UInt8 KLASS::_reportDescriptor[] = {
 #define kStylusTipSwitchFlag  0x02
 #define kStylusSideSwitchFlag 0x04
 #define kStylusEraserFlag     0x08
+#define kStylusInvertFlag     0x10
 
 bool
 KLASS::handleStart(IOService * nub)
@@ -258,16 +264,18 @@ KLASS::handleADBPacket(UInt8 adbCommand, IOByteCount length, UInt8 * adbData) {
       report->tip_pressure = (SInt8)adbData[5];
       report->x_tilt       = (SInt8)adbData[6];
       report->y_tilt       = (SInt8)adbData[7];
-      report->flags        = 0x10; // Transducer 1
+      report->flags        = 0x20; // Transducer 1
       if (proximity) {
         report->flags |= kStylusProximityFlag;
         // Determine stylus attitude if this is the first entry into proximity
         if (!_stylusInProximity) {
           _stylusInverted = buttons & kWacomEraserProximityFlag;
         }
-        if (_stylusInverted) report->flags |= kStylusEraserFlag;
+        if (_stylusInverted) report->flags |= kStylusInvertFlag;
         if (buttons & kWacomTipSwitchMask) report->flags |= kStylusTipSwitchFlag;
         if (buttons & kWacomSideSwitch1Mask) report->flags |= kStylusSideSwitchFlag;
+        // This is a bit naughty, but IOHIDEventDriver maps the Eraser element to button 3 for some insane reason
+        if (buttons & kWacomSideSwitch2Mask) report->flags |= kStylusEraserFlag;
       }
       _stylusInProximity = proximity;
       handleReport(_stylusReport, kIOHIDReportTypeInput, 0);
@@ -277,7 +285,7 @@ KLASS::handleADBPacket(UInt8 adbCommand, IOByteCount length, UInt8 * adbData) {
       report->report_id    = 2;
       report->x            = x;
       report->y            = y;
-      report->flags        = 0x20; // Transducer 2
+      report->flags        = 0x40; // Transducer 2
       report->flags        |= buttons;
       handleReport(_puckReport, kIOHIDReportTypeInput, 0);
     }
