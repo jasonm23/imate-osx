@@ -20,39 +20,63 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
-//#define USBLOG 
-
+// Define one, other, or both, of LOGGING and DATA_LOGGING for log output.
 //#define LOGGING
 //#define LOG_LEVEL 7
 
 //#define DATA_LOGGING
 //#define DATA_LOG_LEVEL 3
 
-#ifndef LOGGING
-#define DEBUG_IOLog( ARGS... )
-#else             /* LOGGING */
+
+// defining USBLOG will pass messages through the USB debug stack, where they can be picked up
+// with USB Prober
+//#define USBLOG 
+
+// Defining FIRELOG requires the FireLog extension to be installed, and will pass messages
+// through the firewire stack to this or another machine, for pickup.
+// Must add com.apple.FireLog 2.0 to the OSBundleLibraries entry in Info.plist as well.
+//#define FIRELOG
+
 #ifdef USBLOG
 #include <IOKit/usb/IOUSBLog.h>
-#define DEBUG_IOLog( ARGS... ) USBLog (ARGS)
-#else
+#endif
+
+#ifdef FIRELOG
+#include "/System/Library/Frameworks/Kernel.framework/Headers/IOKit/firewire/FireLog.h"
+#endif
+
+
+#ifndef LOGGING   /* LOGGING */
+#define DEBUG_IOLog( ARGS... )
+#else             
 #ifndef LOG_LEVEL
 #define LOG_LEVEL 7
 #endif
+#ifdef FIRELOG    /* Firewire logging */
+#define DEBUG_IOLog( LEVEL, ... ) { if( (LEVEL) <= (LOG_LEVEL) ) FireLog( __VA_ARGS__ ); }
+#else
+#ifdef USBLOG     /* USB Logging */
+#define DEBUG_IOLog( ARGS... ) USBLog (ARGS)
+#else
 #define DEBUG_IOLog( LEVEL, ...) { if( (LEVEL) <= (LOG_LEVEL) ) IOLog( __VA_ARGS__ ); }
-#endif          /* SYSLOG */
+#endif            /* USB Logging */
+#endif            /* Firewire Logging */
 #endif            /* LOGGING */
 
 #ifndef DATA_LOGGING
 #define DATA_IOLog( ARGS... )
-#else             /* DATA_LOGGING */
-#ifdef USBLOG
-#include <IOKit/usb/IOUSBLog.h>
-#define DATA_IOLog( ARGS... )	USBLog (ARGS)
-#else
-#ifndef DATA_LOG_LEVEL
-#define DATA_LOG_LEVEL 7
+#else             
+#ifndef LOG_LEVEL
+#define LOG_LEVEL 7
 #endif
-#define DATA_IOLog( LEVEL, ... ) { if( (LEVEL) <= (DATA_LOG_LEVEL) ) IOLog( __VA_ARGS__ ); }
-#endif          /* SYSLOG */
+#ifdef FIRELOG    /* Firewire logging */
+#define DATA_IOLog( LEVEL, ... ) { if( (LEVEL) <= (LOG_LEVEL) ) FireLog( __VA_ARGS__ ); }
+#else
+#ifdef USBLOG     /* USB Logging */
+#define DATA_IOLog( ARGS... ) USBLog (ARGS)
+#else
+#define DATA_IOLog( LEVEL, ...) { if( (LEVEL) <= (LOG_LEVEL) ) IOLog( __VA_ARGS__ ); }
+#endif            /* USB Logging */
+#endif            /* Firewire Logging */
 #endif            /* DATA_LOGGING */
 
