@@ -241,7 +241,9 @@ void
 KLASS::bringDownADBDevice() {
   IOLog("%s::bringDownADBDevice()\n", getName());
   if (_adbDevice) {
-    _adbDevice->setHandlerID(_adbDevice->defaultHandlerID());
+    if (_adbDevice->defaultHandlerID() != _adbDevice->handlerID()) {
+      _adbDevice->setHandlerID(_adbDevice->defaultHandlerID());
+    }
     _adbDevice->releaseFromClient(this);
     _adbDevice = NULL;
   }
