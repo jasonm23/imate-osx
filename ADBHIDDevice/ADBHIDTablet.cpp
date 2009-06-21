@@ -235,48 +235,60 @@ UInt8 KLASS::_reportDescriptor[] = {
 bool
 KLASS::handleStart(IOService * nub)
 {
-  UInt8 register1[8];
-  IOByteCount adbDataLength;
-  
-  IOLog("%s::handleStart()\n", getName());
+  DEBUG_IOLog(3, "%s::handleStart()\n", getName());
   if (!SUPER::handleStart(nub)) {
     return false;
   }
   _stylusReport = IOBufferMemoryDescriptor::withCapacity(sizeof(ADBHIDTabletStylusReport), kIODirectionIn);
   _puckReport = IOBufferMemoryDescriptor::withCapacity(sizeof(ADBHIDTabletPuckReport), kIODirectionIn);
   _buttonsReport = IOBufferMemoryDescriptor::withCapacity(sizeof(ADBHIDTabletButtonsReport), kIODirectionIn);
-  
-  // Read register 1 to get base information
-  if ((adbDevice()->readRegister(1, register1, &adbDataLength) != kIOReturnSuccess) || (adbDataLength != 8)) {
-    IOLog("%s failed to read register 1 in startup\n", this);
-    return false;
-  }
-  
-  // Futz the descriptor to match our device
-  _reportDescriptor[STYLUS_LOGICAL_MAX_X_LO] = register1[3];
-  _reportDescriptor[STYLUS_LOGICAL_MAX_X_HI] = register1[2];
-  _reportDescriptor[STYLUS_LOGICAL_MAX_Y_LO] = register1[5];
-  _reportDescriptor[STYLUS_LOGICAL_MAX_Y_HI] = register1[4];
-  _reportDescriptor[STYLUS_PHYSICAL_MAX_X_LO] = register1[3];
-  _reportDescriptor[STYLUS_PHYSICAL_MAX_X_HI] = register1[2];
-  _reportDescriptor[STYLUS_PHYSICAL_MAX_Y_LO] = register1[5];
-  _reportDescriptor[STYLUS_PHYSICAL_MAX_Y_HI] = register1[4];
-  _reportDescriptor[PUCK_LOGICAL_MAX_X_LO] = register1[3];
-  _reportDescriptor[PUCK_LOGICAL_MAX_X_HI] = register1[2];
-  _reportDescriptor[PUCK_LOGICAL_MAX_Y_LO] = register1[5];
-  _reportDescriptor[PUCK_LOGICAL_MAX_Y_HI] = register1[4];
-  _reportDescriptor[PUCK_PHYSICAL_MAX_X_LO] = register1[3];
-  _reportDescriptor[PUCK_PHYSICAL_MAX_X_HI] = register1[2];
-  _reportDescriptor[PUCK_PHYSICAL_MAX_Y_LO] = register1[5];
-  _reportDescriptor[PUCK_PHYSICAL_MAX_Y_HI] = register1[4];
-  
+    
   return true;
 }
+
+bool 
+KLASS::bringUpADBDevice() 
+{
+  DEBUG_IOLog(3, "%s::bringUpADBDevice()\n", getName());
+  UInt8 register1[8];
+  IOByteCount adbDataLength;
+  IOReturn rc;
+  
+  if (SUPER::bringUpADBDevice()) {
+    // Read register 1 to get base information
+    if (((rc = adbDevice()->readRegister(1, register1, &adbDataLength)) != kIOReturnSuccess) || (adbDataLength != 8)) {
+      DEBUG_IOLog(3, "%s failed to read register 1 in bringUpADBDevice, rc was %s, adbDataLength was %d\n", getName(), stringFromReturn(rc) , adbDataLength);
+      return false;
+    }
+    
+    // Futz the descriptor to match our device
+    _reportDescriptor[STYLUS_LOGICAL_MAX_X_LO] = register1[3];
+    _reportDescriptor[STYLUS_LOGICAL_MAX_X_HI] = register1[2];
+    _reportDescriptor[STYLUS_LOGICAL_MAX_Y_LO] = register1[5];
+    _reportDescriptor[STYLUS_LOGICAL_MAX_Y_HI] = register1[4];
+    _reportDescriptor[STYLUS_PHYSICAL_MAX_X_LO] = register1[3];
+    _reportDescriptor[STYLUS_PHYSICAL_MAX_X_HI] = register1[2];
+    _reportDescriptor[STYLUS_PHYSICAL_MAX_Y_LO] = register1[5];
+    _reportDescriptor[STYLUS_PHYSICAL_MAX_Y_HI] = register1[4];
+    _reportDescriptor[PUCK_LOGICAL_MAX_X_LO] = register1[3];
+    _reportDescriptor[PUCK_LOGICAL_MAX_X_HI] = register1[2];
+    _reportDescriptor[PUCK_LOGICAL_MAX_Y_LO] = register1[5];
+    _reportDescriptor[PUCK_LOGICAL_MAX_Y_HI] = register1[4];
+    _reportDescriptor[PUCK_PHYSICAL_MAX_X_LO] = register1[3];
+    _reportDescriptor[PUCK_PHYSICAL_MAX_X_HI] = register1[2];
+    _reportDescriptor[PUCK_PHYSICAL_MAX_Y_LO] = register1[5];
+    _reportDescriptor[PUCK_PHYSICAL_MAX_Y_HI] = register1[4];
+    
+    return true;
+  }
+  return false;
+}
+
 
 void
 KLASS::free()
 {
-  IOLog("%s::free()\n", getName());
+  DEBUG_IOLog(3, "%s::free()\n", getName());
   if (_stylusReport) {
     _stylusReport->release();
     _stylusReport = NULL;
@@ -296,7 +308,8 @@ IOReturn
 KLASS::handleADBPacket(UInt8 adbCommand, IOByteCount length, UInt8 * adbData) {
   // Our packets should always be 8 bytes long
   if (length != 8) {
-    IOLog("%s::handleADBPacket() got a packet of length %l, expecting 8\n", getName(), length);
+    DEBUG_IOLog(3, "%s::handleADBPacket() got a packet of length %d, expecting 8\n", getName(), length);
+    DEBUG_IOLog(3, "%s::handleADBPacket() - 0x%02x, 0x%02x\n", getName(), adbData[0], adbData[1]);
     return kIOReturnError;
   }
   // Determine what type of packet we're dealing with.
