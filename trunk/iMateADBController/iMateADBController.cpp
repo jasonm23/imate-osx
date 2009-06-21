@@ -816,7 +816,7 @@ KLASS::iMateWriteLowLevel(UInt8 bmRequestType, UInt8 bRequest, UInt16 wValue, UI
   devReq.wLenDone = 0;
   
   if (shuttingDown()) 
-    return kIOReturnOffline;
+    return kIOReturnError;
   
   incrementOutstandingIO();
   
