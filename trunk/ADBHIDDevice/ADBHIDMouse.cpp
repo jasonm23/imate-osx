@@ -68,9 +68,9 @@ UInt8 KLASS::_reportDescriptor[56] = {
 
 IOService *
 KLASS::probe(IOService * provider, SInt32 * score) {
-  IOLog("%s::probe()\n", getName());
+  DEBUG_IOLog(3, "%s::probe()\n", getName());
   if (OSDynamicCast(IOADBDevice, provider)) {
-    IOLog("%s::probe()\n", getName());
+    DEBUG_IOLog(3, "%s::probe()\n", getName());
     *score = 1000000;
     return this;
   }
@@ -80,7 +80,7 @@ KLASS::probe(IOService * provider, SInt32 * score) {
 bool
 KLASS::handleStart(IOService * nub)
 {
-  IOLog("%s::handleStart()\n", getName());
+  DEBUG_IOLog(3, "%s::handleStart()\n", getName());
   if (!SUPER::handleStart(nub)) {
     return false;
   }
@@ -91,7 +91,7 @@ KLASS::handleStart(IOService * nub)
 void
 KLASS::free()
 {
-  IOLog("%s::free()\n", getName());
+  DEBUG_IOLog(3, "%s::free()\n", getName());
   if (_hidReport) {
     _hidReport->release();
     _hidReport = NULL;

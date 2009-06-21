@@ -36,6 +36,7 @@ class ADBHIDTablet : public ADBHIDDevice
     virtual bool handleStart (IOService * nub);
     virtual void free ();
     
+    virtual bool bringUpADBDevice();
     virtual IOReturn handleADBPacket(UInt8 adbCommand, IOByteCount length, UInt8 * adbData);
     
     virtual void * reportDescriptorBytes() const;

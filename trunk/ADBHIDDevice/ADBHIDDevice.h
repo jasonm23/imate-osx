@@ -33,6 +33,7 @@
 #include <IOKit/hid/IOHIDDevice.h>
 #include <IOKit/IOWorkLoop.h>
 #include <IOKit/IOCommandGate.h>
+#include "Debug.h"
 
 class ADBHIDDevice : public IOHIDDevice 
 {
