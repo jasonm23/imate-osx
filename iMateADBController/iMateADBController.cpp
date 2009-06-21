@@ -239,6 +239,7 @@ IOReturn KLASS::probeBus ()
   rc = SUPER::probeBus();
   iMateWrite(kUSBOut, 0x01, 0x0003, 0x0001, 0x0000, NULL);  // and off again
   acknowledgeSetPowerState();
+  registerService();
   return rc;
 }
 
@@ -412,7 +413,10 @@ KLASS::readComplete(IOReturn rc, UInt32 bufferSizeRemaining)
 
 void KLASS::signalData() {
   DEBUG_IOLog(3,"%s(%p)::signalData\n", getName(), this);
-  if (waitingForData == adbPacket[8]) {                       // Check we're waiting for a response to this specific command
+  if (waitingForData != 0x00 && adbPacket[8] != 0x00) {
+    if (waitingForData != adbPacket[8]) {                       // Check we're waiting for a response to this specific command
+      IOLog("%s(%p)::signalData - was waiting for response from command %02x, got response %02x\n", getName(), this, waitingForData, adbPacket[8]);
+    }
     decrementOutstandingIO();
     waitingForData = 0x00;                                    // No longer waiting
     adbMessageResult = kIOReturnSuccess;                      // Successful return
@@ -473,8 +477,8 @@ KLASS::setPowerStateGated(unsigned long powerStateOrdinal, IOService * device)
       queueRead();
 //      if (fReadThread) {
 //        thread_call_enter(fReadThread);
-        bringUpADBStack();
-      registerService();
+      bringUpADBStack();
+      return kiMateProbeTimeMicroseconds;
 
         return kiMateProbeTimeMicroseconds;
 //      } else {
