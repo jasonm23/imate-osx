@@ -43,6 +43,7 @@ public:
   
   // Uusual lifecycle methods
   virtual bool init(OSDictionary * properties);
+  virtual IOService * probe(IOService * nub, SInt32 * score);
   virtual bool handleStart (IOService * nub);
   virtual bool willTerminate (IOService * nub, IOOptionBits options);
   virtual bool didTerminate(IOService * nub, IOOptionBits options, bool * defer);

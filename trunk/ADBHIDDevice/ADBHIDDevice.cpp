@@ -58,6 +58,39 @@ KLASS::init(OSDictionary * properties)
   return true;
 }
 
+IOService * 
+KLASS::probe(IOService * nub, SInt32 * score)
+{
+  DEBUG_IOLog(3, "%s::probe(), score coming is 0x%08x\n", getName(), *score);
+  IOService * result = NULL;
+  
+  // Check that the superclass probe returns the right device, for starters.
+  if (SUPER::probe(nub, score) != NULL) {
+    IOADBDevice * device = OSDynamicCast(IOADBDevice, nub);
+    if (device) {
+      // do we have a desired handler ID?
+      if (getProperty(kADBHIDDeviceNewHandlerKey)) {
+        UInt8 targetHandler = OSDynamicCast(OSNumber, getProperty(kADBHIDDeviceNewHandlerKey))->unsigned8BitValue();
+        DEBUG_IOLog(7, "%s::probe attempting to set handler to 0x%02x\n", getName(), targetHandler);
+  
+        // Try to set the handler ID
+        if (device->setHandlerID(targetHandler) == kIOReturnSuccess) {
+          // We managed to do it - this is definitely our device.
+          result = this;
+          *score += 10000;
+          DEBUG_IOLog(7, "%s::probe success, score is now %d\n", getName(), *score);
+        }
+        // And finally, set the handler back to what it was
+        device->setHandlerID(device->defaultHandlerID());
+      } else {
+        result = this;
+        DEBUG_IOLog(7, "%s::probe success, score is now %d\n", getName(), *score);
+      }
+    }
+  }
+  return result;
+}
+
 bool
 KLASS::handleStart(IOService * nub)
 {
