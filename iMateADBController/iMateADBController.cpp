@@ -240,6 +240,7 @@ IOReturn KLASS::probeBus ()
   iMateWrite(kUSBOut, 0x01, 0x0003, 0x0001, 0x0000, NULL);  // and off again
   acknowledgeSetPowerState();
   registerService();
+  wakeADBDevices();
   return rc;
 }
 

@@ -293,11 +293,6 @@ IOReturn KLASS::probeBus ()
   UInt32		unresolvedAddrs;
   UInt32		freeAddrs;
   IOADBAddress	freeNum, devNum;
-  IOADBDevice *	newDev;
-  OSDictionary * 	newProps;
-  char		nameStr[ 10 ];
-  const OSNumber * object;
-  const OSSymbol * key;
   
   /* Kill the auto poll until a new dev id's have been setup */
   setAutoPollEnable(false);
@@ -370,8 +365,22 @@ IOReturn KLASS::probeBus ()
   
   setAutoPollEnable(true);
   
+  return kIOReturnSuccess;
+}
+
+// Wake the ADB devices on the bus, moved from probe so that subclasses can
+// finish any additional probe handling before they wake all the devices up
+void
+KLASS::wakeADBDevices()
+{
+  IOADBDevice *	newDev;
+  OSDictionary * 	newProps;
+  char		nameStr[ 10 ];
+  const OSNumber * object;
+  const OSSymbol * key;
+
   // publish the nubs
-  for ( i = 1; i < ADB_DEVICE_COUNT; i++ ) {
+  for ( size_t i = 1; i < ADB_DEVICE_COUNT; i++ ) {
     if( 0 == adbDevices[ i ] ) {
       continue;
     }
@@ -477,7 +486,6 @@ IOReturn KLASS::probeBus ()
     newDev->registerService();
     newDev->waitQuiet();
   }							// repeat loop
-  return kIOReturnSuccess;
 }
 
 // **********************************************************************************
