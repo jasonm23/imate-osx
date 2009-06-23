@@ -228,11 +228,30 @@ KLASS::setPowerState(unsigned long powerStateOrdinal, IOService * device)
 }
 
 // static entry point for ADB bus probing
-void
+/* static */ void
 KLASS::probeADBBus(thread_call_param_t me, thread_call_param_t arg2)
 {
-	((KLASS*)me)->probeBus();
-	((KLASS*)me)->acknowledgeSetPowerState();
+  KLASS* myThis = OSDynamicCast(KLASS, (OSObject*)me);
+  if (myThis) {
+    myThis->retain();
+    myThis->commandGate()->runAction(probeBusAction, NULL, NULL, NULL, NULL);
+    myThis->acknowledgeSetPowerState();
+    myThis->release();
+  } else {
+    DEBUG_IOLog(1,"probeADBBus could not cast to KLASS\n");
+  }
+}
+
+/* static */ IOReturn
+KLASS::probeBusAction(OSObject * owner, void * arg0, void * arg1, void * arg2, void * arg3) 
+{
+  KLASS * myThis;
+  if (myThis = OSDynamicCast(KLASS,owner)) {
+    return myThis->probeBus();
+  } else {
+    DEBUG_IOLog(1,"probeBusAction could not cast to KLASS\n");
+    return kIOReturnError;
+  }
 }
 
 #pragma mark Redefined from IOADBController to fix endian issues 

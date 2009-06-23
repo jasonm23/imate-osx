@@ -246,14 +246,14 @@ KLASS::closeDevices() {
   return SUPER::closeDevices();
 }
 
+// probeBus - probe ADB bus.
+// called in gated context
 IOReturn KLASS::probeBus ()
 {
   DEBUG_IOLog(3,"%s(%p)::probeBus\n", getName(), this);
   IOReturn rc;
 
   iMateWrite(kUSBOut, 0x01, 0x0003, 0x0000, 0x0000, NULL);  // turn address 3 conversion on
-  // iMate doesn't ack this, it seems
-  decrementOutstandingIO();  // gnarly hack.
   rc = SUPER::probeBus();
   iMateWrite(kUSBOut, 0x01, 0x0003, 0x0001, 0x0000, NULL);  // and off again
   acknowledgeSetPowerState();
@@ -263,6 +263,7 @@ IOReturn KLASS::probeBus ()
   // Have we just finished starting up?  If so, decrement our IO counter to account for the 
   // increment we used in start().  
   if (startingUp) {
+    DEBUG_IOLog(4,"%s(%p)::probeBus decrementing outstanding IO\n", getName(), this);
     startingUp = false;
     decrementOutstandingIO();
   }
@@ -860,7 +861,7 @@ KLASS::iMateWriteLowLevel(UInt8 bmRequestType, UInt8 bRequest, UInt16 wValue, UI
 {
   IOUSBDevRequest devReq;
   IOReturn rc;
-  DEBUG_IOLog(7,"%s(%p)::iMateWriteLowLevel 0x%02x : 0x%02x, 0x%04x, 0x%04x, 0x%04x, %08p\n", getName(), this, bmRequestType, bRequest, wValue, wIndex, wLength, pData);
+  DEBUG_IOLog(7,"%s(%p)::iMateWriteLowLevel 0x%02x : 0x%02x, 0x%04x, 0x%04x, 0x%04x, %08p, %s\n", getName(), this, bmRequestType, bRequest, wValue, wIndex, wLength, pData, waitForData ? "sleep" : "continue");
   devReq.bmRequestType = bmRequestType;
   devReq.bRequest = bRequest;
   devReq.wValue = wValue;

@@ -70,7 +70,10 @@ class RemovableADBController : public IOADBController
   protected:
 		// static thread entry method for probing the ADB bus
 		static void probeADBBus(thread_call_param_t me, thread_call_param_t arg2);
+    
+    static IOReturn probeBusAction(OSObject * owner, void * arg0, void * arg1, void * arg2, void * arg3);
     virtual IOReturn probeBus();
+    
     virtual void wakeADBDevices();
     virtual bool probeAddress ( IOADBAddress addr );
     virtual bool moveDeviceFrom ( IOADBAddress from, IOADBAddress to, bool check );
