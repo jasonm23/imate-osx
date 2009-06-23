@@ -27,6 +27,13 @@
 
 #define ADB_CMD(command, address, register)  command | (address << kADBAddressField) | register
 
+typedef struct {
+  IOReturn             adbMessageResult;
+  size_t               adbDataLength;
+  UInt8                adbPacket[10];
+  IOTimerEventSource * timerEventSource;
+} ADBControlBlock;
+
 class iMateADBController : public RemovableADBController
 {
   OSDeclareDefaultStructors(iMateADBController)
@@ -49,13 +56,11 @@ protected:
   IOUSBPipe       * fInterruptPipe; // Incoming data pipe
   IOBufferMemoryDescriptor * fInterruptPipeMDP;
   IOUSBCompletionWithTimeStamp   fReadCompletionInfo;
-  IOTimerEventSource * fTimerEventSource;
-  
-  IOReturn          adbMessageResult;
-  
-  size_t            adbDataLength;
+    
   UInt8           * fUSBData;
-  UInt8             adbPacket[10];
+  
+  ADBControlBlock autopollControlBlock;
+  ADBControlBlock commandControlBlock;
   
   thread_call_t     fReadThread;
 
@@ -64,6 +69,8 @@ protected:
   UInt32            packetSize; // Packet size as returned from the device
   bool              autopollOn;
   UInt8             waitingForData;
+  
+  bool              startingUp;
 	
 protected:
 
@@ -71,9 +78,12 @@ protected:
   IOReturn iMateWrite(UInt8 direction, UInt8 bRequest, UInt16 wValue, UInt16 wIndex, UInt16 wLength, void * pData, bool waitForResults = false);
   IOReturn iMateWriteLowLevel(UInt8 bmRequestType, UInt8 bRequest, UInt16 wValue, UInt16 wIndex, UInt16 wLength, void * pData, bool waitForResults = false);
 
-  static void adbTimeoutHandler(OSObject * object, IOTimerEventSource * source);
-  void adbTimeout(); 
-  void signalData();
+  static void autopollTimeoutHandler(OSObject * object, IOTimerEventSource * source);
+  void autopollTimeout(); 
+  static void commandTimeoutHandler(OSObject * object, IOTimerEventSource * source);
+  void commandTimeout(); 
+  
+  void signalData(ADBControlBlock * controlBlock);
   
   static void readThreadHandler(thread_call_param_t owner, void *);
   static void readCompleteCallback(void * owner, void * parameter, IOReturn rc, UInt32 bufferSizeRemaining, AbsoluteTime timestamp);
