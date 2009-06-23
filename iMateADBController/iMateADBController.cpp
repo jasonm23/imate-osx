@@ -65,11 +65,13 @@ KLASS::init(OSDictionary * properties)
   fInterruptPipe = NULL;
   fInterruptPipeMDP = NULL;
   fUSBData = NULL;
-  fTimerEventSource = NULL;
+  autopollControlBlock.timerEventSource = NULL;
+  commandControlBlock.timerEventSource = NULL;
   pollList = 0;
   autopollOn = false;
   waitingForData = 0xff;
   autoPollMilliseconds = 11;
+  startingUp = false;
   
   return true;
 }
@@ -86,6 +88,7 @@ KLASS::start ( IOService * provider )
   IOUSBFindEndpointRequest epReq;
   
   // Make sure we get out of here alive
+  startingUp = true;
   incrementOutstandingIO();
   
   // And an endpoint request, pick up the "in" interrupt endpoint 
@@ -104,14 +107,23 @@ KLASS::start ( IOService * provider )
     goto cleanup;
   }
   
-  // Now a timer event source for ADB timeouts
-  if ((fTimerEventSource = IOTimerEventSource::timerEventSource(reinterpret_cast<OSObject *>(this), 
-                                                                reinterpret_cast<IOTimerEventSource::Action>(&(KLASS::adbTimeoutHandler)))) == NULL) {
-    DEBUG_IOLog(1,"%s(%p)::start - create timer event source failed\n", getName(), this);
+  // Now timer event sources for ADB timeouts
+  if ((autopollControlBlock.timerEventSource = IOTimerEventSource::timerEventSource(reinterpret_cast<OSObject *>(this), 
+                                                                                    reinterpret_cast<IOTimerEventSource::Action>(&(KLASS::autopollTimeoutHandler)))) == NULL) {
+    DEBUG_IOLog(1,"%s(%p)::start - create autopoll timer event source failed\n", getName(), this);
     goto cleanup;
   }
-  if (workLoop()->addEventSource(fTimerEventSource) != kIOReturnSuccess) {
-    DEBUG_IOLog(1,"%s(%p)::start - addEventSource fTimerEventSource to WorkLoop failed\n", getName(), this);
+  if (workLoop()->addEventSource(autopollControlBlock.timerEventSource) != kIOReturnSuccess) {
+    DEBUG_IOLog(1,"%s(%p)::start - addEventSource autopollControlBlock.timerEventSource to WorkLoop failed\n", getName(), this);
+    goto cleanup;
+  }
+  if ((commandControlBlock.timerEventSource = IOTimerEventSource::timerEventSource(reinterpret_cast<OSObject *>(this), 
+                                                                                    reinterpret_cast<IOTimerEventSource::Action>(&(KLASS::commandTimeoutHandler)))) == NULL) {
+    DEBUG_IOLog(1,"%s(%p)::start - create command timer event source failed\n", getName(), this);
+    goto cleanup;
+  }
+  if (workLoop()->addEventSource(commandControlBlock.timerEventSource) != kIOReturnSuccess) {
+    DEBUG_IOLog(1,"%s(%p)::start - addEventSource commandControlBlock.timerEventSource to WorkLoop failed\n", getName(), this);
     goto cleanup;
   }
   
@@ -148,7 +160,6 @@ KLASS::start ( IOService * provider )
   // Set up power management stuff
   bringUpPowerManagement(provider);
   
-  decrementOutstandingIO();
   return true;
     
 cleanup:
@@ -181,14 +192,21 @@ void KLASS::stop ( IOService *provider )
 {
   DEBUG_IOLog(3,"%s(%p)::stop\n", getName(), this);
   
-  if (fTimerEventSource) {
-    DEBUG_IOLog(4,"%s(%p)::stop killing timer source\n", getName(), this);
+  if (autopollControlBlock.timerEventSource) {
+    autopollControlBlock.timerEventSource->cancelTimeout();
     if (workLoop()) {
-      DEBUG_IOLog(4,"%s(%p)::stop removing timer source from workloop\n", getName(), this);
-      workLoop()->removeEventSource(fTimerEventSource);
+      workLoop()->removeEventSource(autopollControlBlock.timerEventSource);
     }
-    fTimerEventSource->release();
-    fTimerEventSource = NULL;
+    autopollControlBlock.timerEventSource->release();
+    autopollControlBlock.timerEventSource = NULL;
+  }
+  if (commandControlBlock.timerEventSource) {
+    commandControlBlock.timerEventSource->cancelTimeout();
+    if (workLoop()) {
+      workLoop()->removeEventSource(commandControlBlock.timerEventSource);
+    }
+    commandControlBlock.timerEventSource->release();
+    commandControlBlock.timerEventSource = NULL;
   }
   
   if (fReadThread) {
@@ -241,31 +259,59 @@ IOReturn KLASS::probeBus ()
   acknowledgeSetPowerState();
   registerService();
   wakeADBDevices();
+  
+  // Have we just finished starting up?  If so, decrement our IO counter to account for the 
+  // increment we used in start().  
+  if (startingUp) {
+    startingUp = false;
+    decrementOutstandingIO();
+  }
   return rc;
 }
 
 
 /* static */ void
-KLASS::adbTimeoutHandler(OSObject * arg, IOTimerEventSource * source)
+KLASS::autopollTimeoutHandler(OSObject * arg, IOTimerEventSource * source)
 {
-  DEBUG_IOLog(3,"adbTimeout\n");
+  DEBUG_IOLog(3,"autopollTimeoutHandler\n");
   KLASS * myThis;
   if (myThis = OSDynamicCast(KLASS, arg)) {
     myThis->retain();
-    myThis->adbTimeout();
+    myThis->autopollTimeout();
     myThis->release();
   } else {
-    DEBUG_IOLog(1,"adbTimeoutHandler could not cast to KLASS\n");
+    DEBUG_IOLog(1,"autopollTimeoutHandler could not cast to KLASS\n");
   }
 }
 
 void
-KLASS::adbTimeout() 
+KLASS::autopollTimeout() 
 {
-  adbMessageResult = kIOReturnTimeout;
-  decrementOutstandingIO();
-  commandGate()->commandWakeup(&adbMessageResult);
+  autopollControlBlock.adbMessageResult = kIOReturnTimeout;
 }
+
+/* static */ void
+KLASS::commandTimeoutHandler(OSObject * arg, IOTimerEventSource * source)
+{
+  DEBUG_IOLog(3,"commandTimeoutHandler\n");
+  KLASS * myThis;
+  if (myThis = OSDynamicCast(KLASS, arg)) {
+    myThis->retain();
+    myThis->commandTimeout();
+    myThis->release();
+  } else {
+    DEBUG_IOLog(1,"commandTimeoutHandler could not cast to KLASS\n");
+  }
+}
+
+void
+KLASS::commandTimeout() 
+{
+  commandControlBlock.adbMessageResult = kIOReturnTimeout;
+  decrementOutstandingIO();
+  commandGate()->commandWakeup(&commandControlBlock);
+}
+
 
 /* static */ void 
 KLASS::readThreadHandler(thread_call_param_t owner, void *) 
@@ -347,8 +393,6 @@ KLASS::readComplete(IOReturn rc, UInt32 bufferSizeRemaining)
 
     // We got some data
   if (rc == kIOReturnSuccess) {
-    // Cancel our timer.
-    fTimerEventSource->cancelTimeout();
     // USB packet is 8 bytes, optionally followed by a second 8.
     // byte 0 == ADB command
     // byte 1 ==
@@ -359,41 +403,49 @@ KLASS::readComplete(IOReturn rc, UInt32 bufferSizeRemaining)
     DATA_IOLog(7,"%s(%p)::readComplete USB control data was %02x %02x %02x %02x\n", getName(), this, fUSBData[0], fUSBData[1], fUSBData[2], fUSBData[3]);
 #endif
     
+    // Switch what control block we use depending on the ADB command (and thus source)
+    // autopoll data comes in with a command of 0x00, hopefully all other commands
+    // are serialised such that there's no conflict
+    ADBControlBlock * adbControlBlock = (fUSBData[0] == 0 || fUSBData[0] != waitingForData) ? &autopollControlBlock : &commandControlBlock;
+    DEBUG_IOLog(7, "%s(%p)::readComplete received a %s packet\n", getName(), this, (fUSBData[0] == 0 || fUSBData[0] != waitingForData) ? "autopoll" : "command reply"); 
+    // Cancel our timer.
+    adbControlBlock->timerEventSource->cancelTimeout();
+    
     switch (fUSBData[2]) {
       case 0x99:    // First block of USB Data
-        adbPacket[8] = fUSBData[0];                               // Store ADB command
-        adbDataLength = adbPacket[9] = fUSBData[3];               // Total number of bytes sent
-        if (adbDataLength > 4) {                                  // we expect a second block to follow
-          memcpy(adbPacket, fUSBData + 4, 4);                     // Copy data
-          fTimerEventSource->setTimeoutMS(kADBTimeoutMilliseconds); // Reset the timeout for the next packet
+        adbControlBlock->adbPacket[8] = fUSBData[0];                               // Store ADB command
+        adbControlBlock->adbDataLength = adbControlBlock->adbPacket[9] = fUSBData[3];               // Total number of bytes sent
+        if (adbControlBlock->adbDataLength > 4) {                                  // we expect a second block to follow
+          memcpy(adbControlBlock->adbPacket, fUSBData + 4, 4);                     // Copy data
+          adbControlBlock->timerEventSource->setTimeoutMS(kADBTimeoutMilliseconds); // Reset the timeout for the next packet
         } else {
-          memcpy(adbPacket, fUSBData + 4, adbDataLength);         // Copy data
-          signalData();
+          memcpy(adbControlBlock->adbPacket, fUSBData + 4, adbControlBlock->adbDataLength);         // Copy data
+          signalData(adbControlBlock);
 #ifdef DATA_LOGGING
           DATA_IOLog(3,"%s(%p)::readComplete adb data block 1 was ", getName(), this);
-          for (int i = 0; i < adbDataLength; i++)
-            DATA_IOLog(3,"0x%02x ", adbPacket[i]);
+          for (int i = 0; i < adbControlBlock->adbDataLength; i++)
+            DATA_IOLog(3,"0x%02x ", adbControlBlock->adbPacket[i]);
           DATA_IOLog(3,"\n");
 #endif
         }
         break;
       case 0x98:    // Second block of adb data
-        memcpy(adbPacket + 4, fUSBData + 4, adbDataLength - 4);   // Copy data
-        signalData();
+        memcpy(adbControlBlock->adbPacket + 4, fUSBData + 4, adbControlBlock->adbDataLength - 4);   // Copy data
+        signalData(adbControlBlock);
 #ifdef DATA_LOGGING
         DATA_IOLog(3,"%s(%p)::readComplete adb data block 2 was ", getName(), this);
-        for (int i = 0; i < adbDataLength; i++)
-          DATA_IOLog(3,"0x%02x ", adbPacket[i]);
+        for (int i = 0; i < adbControlBlock->adbDataLength; i++)
+          DATA_IOLog(3,"0x%02x ", adbControlBlock->adbPacket[i]);
         DATA_IOLog(3,"\n");
 #endif
         break;
       default:
-        decrementOutstandingIO();  // we recieved a packet, even if we don't know what to do with it
+        decrementOutstandingIO();  // we received a packet, even if we don't know what to do with it
         DEBUG_IOLog(7,"%s(%p)::readComplete got a data packet with a header byte of %02x\n", getName(), this, fUSBData[2]);
 #ifdef DATA_LOGGING
         DATA_IOLog(3,"%s(%p)::readComplete odd adb data block was ", getName(), this);
-        for (int i = 0; i < adbDataLength; i++)
-          DATA_IOLog(3,"0x%02x ", adbPacket[i]);
+        for (int i = 0; i < fUSBData[3]; i++)
+          DATA_IOLog(3,"0x%02x ", fUSBData[i + 4]);
         DATA_IOLog(3,"\n");
 #endif
         break;
@@ -412,18 +464,20 @@ KLASS::readComplete(IOReturn rc, UInt32 bufferSizeRemaining)
   return rc;
 }
 
-void KLASS::signalData() {
+void KLASS::signalData(ADBControlBlock * controlBlock) {
   DEBUG_IOLog(3,"%s(%p)::signalData\n", getName(), this);
-  if (waitingForData != 0x00 && adbPacket[8] != 0x00) {
-    if (waitingForData != adbPacket[8]) {                       // Check we're waiting for a response to this specific command
-      IOLog("%s(%p)::signalData - was waiting for response from command %02x, got response %02x\n", getName(), this, waitingForData, adbPacket[8]);
+  
+  // decide what to do with the packet
+  if (controlBlock == &autopollControlBlock) {  // Autopoll data
+    if (waitingForData != controlBlock->adbPacket[8]) {                       // Check we're waiting for a response to this specific command
+      IOLog("%s(%p)::signalData - was waiting for response from command %02x, got response %02x - treating as autopolled\n", getName(), this, waitingForData, controlBlock->adbPacket[8]);
     }
+    autopollHandler(this, controlBlock->adbPacket[8], controlBlock->adbDataLength, controlBlock->adbPacket);
+  } else {                                   // Requested packet
     decrementOutstandingIO();
-    waitingForData = 0x00;                                    // No longer waiting
-    adbMessageResult = kIOReturnSuccess;                      // Successful return
-    commandGate()->commandWakeup(&adbMessageResult);           // Wake up and process
-  } else {
-    autopollHandler(this, fUSBData[0], adbDataLength, adbPacket); // Must be autopolled
+    waitingForData = 0x00;                                         // No longer waiting
+    controlBlock->adbMessageResult = kIOReturnSuccess;             // Successful return
+    commandGate()->commandWakeup(controlBlock); // Wake up and process
   }
 }
 
@@ -481,7 +535,6 @@ KLASS::setPowerStateGated(unsigned long powerStateOrdinal, IOService * device)
       bringUpADBStack();
       return kiMateProbeTimeMicroseconds;
 
-        return kiMateProbeTimeMicroseconds;
 //      } else {
 //        DEBUG_IOLog(3,"%s(%p)::setPowerStateGated - fReadThread is nil\n", getName(), this);
 //      }
@@ -718,12 +771,12 @@ KLASS::readFromDeviceGated(UInt32 address, UInt32 adbRegister,
   if (rc == kIOReturnSuccess) {
 #ifdef DATA_LOGGING
     DATA_IOLog(3,"%s(%p)::readFromDevice data was ", getName(), this);
-    for (int i = 0; i < adbDataLength; i++)
-      DATA_IOLog(3,"0x%02x ", adbPacket[i]);
+    for (int i = 0; i < commandControlBlock.adbDataLength; i++)
+      DATA_IOLog(3,"0x%02x ", commandControlBlock.adbPacket[i]);
     DATA_IOLog(3,"\n");
 #endif
-    *length = adbDataLength;
-    memcpy(data, adbPacket, adbDataLength);
+    *length = commandControlBlock.adbDataLength;
+    memcpy(data, commandControlBlock.adbPacket, commandControlBlock.adbDataLength);
     return rc;
   } else {
     return ADB_RET_NOTPRESENT;
@@ -834,18 +887,18 @@ KLASS::iMateWriteLowLevel(UInt8 bmRequestType, UInt8 bRequest, UInt16 wValue, UI
   }
   
   // Sleep the command gate waiting on results coming back or the timeout happening
-  fTimerEventSource->setTimeoutMS(kADBTimeoutMilliseconds);  // x milliseconds timeout for ADB command to complete
-  adbMessageResult = kIOReturnBusy;
+  commandControlBlock.timerEventSource->setTimeoutMS(kADBTimeoutMilliseconds);  // x milliseconds timeout for ADB command to complete
+  commandControlBlock.adbMessageResult = kIOReturnBusy;
   if (waitForData) {
     waitingForData = (UInt8)(wValue & 0xff);
-    bzero(adbPacket, 10);  // this is still iffy, what if we receive unasked for data when we're asking for data
+    bzero(commandControlBlock.adbPacket, 10);  // this is still iffy, what if we receive unasked for data when we're asking for data
   } else {
     waitingForData = 0x00;
   }
-  commandGate()->commandSleep(&adbMessageResult, THREAD_UNINT);
-  if (!waitForData) adbMessageResult = kIOReturnSuccess;
+  commandGate()->commandSleep(&commandControlBlock, THREAD_UNINT);
+  if (!waitForData) commandControlBlock.adbMessageResult = kIOReturnSuccess;
   DEBUG_IOLog(7,"%s(%p)::iMateWriteLowLevel returning 0x%08x : %s\n", getName(), this, rc, stringFromReturn(rc));
-  return adbMessageResult;
+  return commandControlBlock.adbMessageResult;
 }
 
 
