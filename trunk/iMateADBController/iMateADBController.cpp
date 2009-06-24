@@ -25,7 +25,7 @@
 #include <stdarg.h>
 
 // How long we should wait, in ms, for a response from a device on the ADB bus
-#define kADBTimeoutMilliseconds 20
+#define kADBTimeoutMilliseconds 30
 // How long does a reset take?  ADB spec says 300ms, we allow 310.
 #define kADBResetMilliseconds 310
 // How long does a bus probe take?
@@ -256,9 +256,6 @@ IOReturn KLASS::probeBus ()
   iMateWrite(kUSBOut, 0x01, 0x0003, 0x0000, 0x0000, NULL);  // turn address 3 conversion on
   rc = SUPER::probeBus();
   iMateWrite(kUSBOut, 0x01, 0x0003, 0x0001, 0x0000, NULL);  // and off again
-  acknowledgeSetPowerState();
-  registerService();
-  wakeADBDevices();
   
   // Have we just finished starting up?  If so, decrement our IO counter to account for the 
   // increment we used in start().  
@@ -365,10 +362,12 @@ KLASS::queueRead()
 /* static */ void
 KLASS::readCompleteCallback(void * owner, void * parameter, IOReturn rc, UInt32 bufferSizeRemaining, AbsoluteTime timestamp)
 {
+  DEBUG_IOLog(3,"readCompleteCallback\n");
   KLASS * myThis;
   if (myThis = OSDynamicCast(KLASS,(OSObject*)owner)) {
     myThis->retain();
-    myThis->commandGate()->runAction(readCompleteAction, (void*)rc, (void*)bufferSizeRemaining, NULL, NULL);
+//    myThis->commandGate()->runAction(readCompleteAction, (void*)rc, (void*)bufferSizeRemaining, NULL, NULL);
+    myThis->readComplete(rc, bufferSizeRemaining);
     myThis->release();
   } else {
     DEBUG_IOLog(1,"readCompleteCallback could not cast to KLASS\n");
@@ -421,27 +420,27 @@ KLASS::readComplete(IOReturn rc, UInt32 bufferSizeRemaining)
           adbControlBlock->timerEventSource->setTimeoutMS(kADBTimeoutMilliseconds); // Reset the timeout for the next packet
         } else {
           memcpy(adbControlBlock->adbPacket, fUSBData + 4, adbControlBlock->adbDataLength);         // Copy data
-          signalData(adbControlBlock);
 #ifdef DATA_LOGGING
           DATA_IOLog(3,"%s(%p)::readComplete adb data block 1 was ", getName(), this);
           for (int i = 0; i < adbControlBlock->adbDataLength; i++)
             DATA_IOLog(3,"0x%02x ", adbControlBlock->adbPacket[i]);
           DATA_IOLog(3,"\n");
 #endif
+          signalData(adbControlBlock);
         }
         break;
       case 0x98:    // Second block of adb data
         memcpy(adbControlBlock->adbPacket + 4, fUSBData + 4, adbControlBlock->adbDataLength - 4);   // Copy data
-        signalData(adbControlBlock);
 #ifdef DATA_LOGGING
         DATA_IOLog(3,"%s(%p)::readComplete adb data block 2 was ", getName(), this);
         for (int i = 0; i < adbControlBlock->adbDataLength; i++)
           DATA_IOLog(3,"0x%02x ", adbControlBlock->adbPacket[i]);
         DATA_IOLog(3,"\n");
 #endif
+        signalData(adbControlBlock);
         break;
       default:
-        decrementOutstandingIO();  // we received a packet, even if we don't know what to do with it
+        decrementOutstandingIOGated();  // we received a packet, even if we don't know what to do with it
         DEBUG_IOLog(7,"%s(%p)::readComplete got a data packet with a header byte of %02x\n", getName(), this, fUSBData[2]);
 #ifdef DATA_LOGGING
         DATA_IOLog(3,"%s(%p)::readComplete odd adb data block was ", getName(), this);
@@ -455,10 +454,11 @@ KLASS::readComplete(IOReturn rc, UInt32 bufferSizeRemaining)
     // We got into here after an error, usually after unplugging, but there may be a "hanging" 
     // outstanding IO from a message sent to the iMate. Get rid of it if so.
     if (waitingForData) {
-      decrementOutstandingIO();
+      decrementOutstandingIOGated();
     }
   }
-  decrementOutstandingIO();
+  // This is the IO from the read
+  decrementOutstandingIOGated();
   if ((rc != kIOReturnAborted) && (rc != kIOReturnNotResponding)) {
     thread_call_enter(fReadThread);                               // Reschedule a read
   }
@@ -468,16 +468,19 @@ KLASS::readComplete(IOReturn rc, UInt32 bufferSizeRemaining)
 void KLASS::signalData(ADBControlBlock * controlBlock) {
   DEBUG_IOLog(3,"%s(%p)::signalData\n", getName(), this);
   
+  controlBlock->adbMessageResult = kIOReturnSuccess;             // Successful return
   // decide what to do with the packet
   if (controlBlock == &autopollControlBlock) {  // Autopoll data
-    if (waitingForData != controlBlock->adbPacket[8]) {                       // Check we're waiting for a response to this specific command
-      IOLog("%s(%p)::signalData - was waiting for response from command %02x, got response %02x - treating as autopolled\n", getName(), this, waitingForData, controlBlock->adbPacket[8]);
+    if (waitingForData) {
+      DEBUG_IOLog(4,"%s(%p)::signalData - was waiting for response from command %02x, got response %02x - treating as autopolled\n", getName(), this, waitingForData, controlBlock->adbPacket[8]);
+      // reset the timeout for the ongoing ADB command, as this autopolled response may have held up the command response
+      commandControlBlock.timerEventSource->cancelTimeout();
+      commandControlBlock.timerEventSource->setTimeoutMS(kADBTimeoutMilliseconds);
     }
     autopollHandler(this, controlBlock->adbPacket[8], controlBlock->adbDataLength, controlBlock->adbPacket);
   } else {                                   // Requested packet
-    decrementOutstandingIO();
+    decrementOutstandingIOGated();
     waitingForData = 0x00;                                         // No longer waiting
-    controlBlock->adbMessageResult = kIOReturnSuccess;             // Successful return
     commandGate()->commandWakeup(controlBlock); // Wake up and process
   }
 }
@@ -530,9 +533,9 @@ KLASS::setPowerStateGated(unsigned long powerStateOrdinal, IOService * device)
       break;
     case kiMatePowerStateOn:
       // Arm read thread
-      queueRead();
+//      queueRead();
 //      if (fReadThread) {
-//        thread_call_enter(fReadThread);
+        thread_call_enter(fReadThread);
       bringUpADBStack();
       return kiMateProbeTimeMicroseconds;
 
@@ -873,7 +876,7 @@ KLASS::iMateWriteLowLevel(UInt8 bmRequestType, UInt8 bRequest, UInt16 wValue, UI
   if (shuttingDown()) 
     return kIOReturnError;
   
-  incrementOutstandingIO();
+  incrementOutstandingIOGated();
   
   rc = fInterface->DeviceRequest(&devReq, NULL);
   if (rc != kIOReturnSuccess) {
@@ -882,7 +885,7 @@ KLASS::iMateWriteLowLevel(UInt8 bmRequestType, UInt8 bRequest, UInt16 wValue, UI
     if (rc != kIOReturnSuccess) {
       DEBUG_IOLog(7,"%s(%p)::iMateWriteLowLevel returning 0x%08x : %s\n", getName(), this, rc, stringFromReturn(rc));
       DEBUG_IOLog(7,"%s(%p)::iMateWriteLowLevel sent 0x%08x bytes\n", getName(), this, devReq.wLenDone);
-      decrementOutstandingIO();
+      decrementOutstandingIOGated();
       return rc;
     }
   }
@@ -896,7 +899,7 @@ KLASS::iMateWriteLowLevel(UInt8 bmRequestType, UInt8 bRequest, UInt16 wValue, UI
   } else {
     waitingForData = 0x00;
   }
-  commandGate()->commandSleep(&commandControlBlock, THREAD_UNINT);
+  commandGate()->commandSleep(&commandControlBlock, THREAD_ABORTSAFE);
   if (!waitForData) commandControlBlock.adbMessageResult = kIOReturnSuccess;
   DEBUG_IOLog(7,"%s(%p)::iMateWriteLowLevel returning 0x%08x : %s\n", getName(), this, rc, stringFromReturn(rc));
   return commandControlBlock.adbMessageResult;

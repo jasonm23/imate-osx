@@ -59,6 +59,8 @@ class RemovableADBController : public IOADBController
     
     virtual IOReturn incrementOutstandingIO();
     virtual IOReturn decrementOutstandingIO();
+    virtual IOReturn incrementOutstandingIOGated();
+    virtual IOReturn decrementOutstandingIOGated();
     static IOReturn changeOutstandingIOAction(OSObject * owner, void * direction, void *, void *, void *);
     virtual bool shouldDoDeferredShutdown() { return ((_outstandingIO == 0) && (_shuttingDown)); };
     virtual bool shuttingDown() { return _shuttingDown; };
