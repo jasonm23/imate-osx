@@ -236,6 +236,8 @@ KLASS::probeADBBus(thread_call_param_t me, thread_call_param_t arg2)
     myThis->retain();
     myThis->commandGate()->runAction(probeBusAction, NULL, NULL, NULL, NULL);
     myThis->acknowledgeSetPowerState();
+    myThis->registerService();
+    myThis->wakeADBDevices();
     myThis->release();
   } else {
     DEBUG_IOLog(1,"probeADBBus could not cast to KLASS\n");
@@ -590,32 +592,38 @@ KLASS::moveDeviceFrom ( IOADBAddress from, IOADBAddress to, bool check )
 IOReturn 
 KLASS::incrementOutstandingIO()
 {
-  DEBUG_IOLog(3,"%s(%p)::incrementOutstandingIO\n", getName(), this);
   if (commandGate()) {
     return commandGate()->runAction(changeOutstandingIOAction, NULL);
   }
-  _outstandingIO++;
-  DEBUG_IOLog(7,"%s(%p)::incrementOutstandingIO : outstandingIO is now %d\n", getName(), this, _outstandingIO);
+  changeOutstandingIOAction(this, NULL, NULL, NULL, NULL);
   return kIOReturnSuccess;
 }
 
 IOReturn 
+KLASS::incrementOutstandingIOGated()
+{
+  changeOutstandingIOAction(this, NULL, NULL, NULL, NULL);
+  return kIOReturnSuccess;
+}
+
+
+IOReturn 
 KLASS::decrementOutstandingIO()
 {
-  DEBUG_IOLog(3,"%s(%p)::decrementOutstandingIO\n", getName(), this);
   if (commandGate()) {
     return commandGate()->runAction(changeOutstandingIOAction, (void*)-1);
   }
-  _outstandingIO--;
-  if  (shouldDoDeferredShutdown()) {
-    DEBUG_IOLog(4,"%s(%p)::decrementOutstandingIO  continuing deferred shutdown\n", getName(), this);
-    closeDevices();
-    bool defer = false;
-    SUPERSUPER::didTerminate(_deferredTerminationNub, _deferredTerminationOptions, &defer);
-  }
-  DEBUG_IOLog(7,"%s(%p)::decrementOutstandingIO : outstandingIO is now %d\n", getName(), this, _outstandingIO);
+  changeOutstandingIOAction(this, (void *)-1, NULL, NULL, NULL);
   return kIOReturnSuccess;
 }
+
+IOReturn 
+KLASS::decrementOutstandingIOGated()
+{
+  changeOutstandingIOAction(this, (void*)-1, NULL, NULL, NULL);
+  return kIOReturnSuccess;
+}
+
 
 IOReturn 
 KLASS::changeOutstandingIOAction(OSObject * owner, void * param1, void *, void *, void *)
