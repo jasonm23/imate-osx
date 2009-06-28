@@ -14,7 +14,7 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
 					440,
-					258,
+					258.20849609375,
 				);
 				PBXFileTableDataSourceColumnsKey = (
 					PBXErrorsWarningsDataSource_TypeID,
@@ -116,29 +116,30 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 267565191;
-			PBXWorkspaceStateSaveDate = 267565191;
+			PBXPerProjectTemplateStateSaveDate = 267880599;
+			PBXWorkspaceStateSaveDate = 267880599;
 		};
 		perUserProjectItems = {
 			F42147150FF171B200D81DA1 = F42147150FF171B200D81DA1 /* PBXTextBookmark */;
 			F42147190FF171B200D81DA1 = F42147190FF171B200D81DA1 /* PBXTextBookmark */;
-			F428D5180FF0188500CB13BB = F428D5180FF0188500CB13BB /* PBXTextBookmark */;
 			F429D9710FDA65A9005D179D = F429D9710FDA65A9005D179D /* PBXTextBookmark */;
 			F429D9770FDA65A9005D179D = F429D9770FDA65A9005D179D /* PBXTextBookmark */;
-			F434FCA00FF1780D009EB936 = F434FCA00FF1780D009EB936 /* PBXTextBookmark */;
-			F434FCAD0FF1787B009EB936 = F434FCAD0FF1787B009EB936 /* PBXTextBookmark */;
 			F436845B0FD2CDA1003077DB = F436845B0FD2CDA1003077DB /* PBXTextBookmark */;
-			F440779C0FF2BA1900E6A4D5 /* PBXTextBookmark */ = F440779C0FF2BA1900E6A4D5 /* PBXTextBookmark */;
-			F440779D0FF2BA1900E6A4D5 /* PBXTextBookmark */ = F440779D0FF2BA1900E6A4D5 /* PBXTextBookmark */;
-			F440779E0FF2BA1900E6A4D5 /* PBXTextBookmark */ = F440779E0FF2BA1900E6A4D5 /* PBXTextBookmark */;
-			F440779F0FF2BA1900E6A4D5 /* PBXTextBookmark */ = F440779F0FF2BA1900E6A4D5 /* PBXTextBookmark */;
-			F44077A00FF2BA1900E6A4D5 /* PBXTextBookmark */ = F44077A00FF2BA1900E6A4D5 /* PBXTextBookmark */;
-			F44077A10FF2BA1E00E6A4D5 /* PBXTextBookmark */ = F44077A10FF2BA1E00E6A4D5 /* PBXTextBookmark */;
-			F44077A50FF2BA1E00E6A4D5 /* PBXTextBookmark */ = F44077A50FF2BA1E00E6A4D5 /* PBXTextBookmark */;
+			F440779C0FF2BA1900E6A4D5 = F440779C0FF2BA1900E6A4D5 /* PBXTextBookmark */;
+			F440779E0FF2BA1900E6A4D5 = F440779E0FF2BA1900E6A4D5 /* PBXTextBookmark */;
+			F440779F0FF2BA1900E6A4D5 = F440779F0FF2BA1900E6A4D5 /* PBXTextBookmark */;
+			F44077B40FF2BDA400E6A4D5 = F44077B40FF2BDA400E6A4D5 /* PBXTextBookmark */;
+			F44077B50FF2BDA400E6A4D5 = F44077B50FF2BDA400E6A4D5 /* PBXTextBookmark */;
+			F44077B60FF2BDA400E6A4D5 = F44077B60FF2BDA400E6A4D5 /* PBXTextBookmark */;
+			F44077B70FF2BDA400E6A4D5 = F44077B70FF2BDA400E6A4D5 /* PlistBookmark */;
+			F44077B80FF2BDA400E6A4D5 = F44077B80FF2BDA400E6A4D5 /* PBXTextBookmark */;
+			F44077B90FF2BDA400E6A4D5 = F44077B90FF2BDA400E6A4D5 /* PBXTextBookmark */;
+			F44077BA0FF2BDA400E6A4D5 = F44077BA0FF2BDA400E6A4D5 /* PBXTextBookmark */;
+			F44077BB0FF2BDA400E6A4D5 = F44077BB0FF2BDA400E6A4D5 /* PlistBookmark */;
+			F44077BC0FF2BDA400E6A4D5 = F44077BC0FF2BDA400E6A4D5 /* PBXTextBookmark */;
 			F44EE7680FF173D5009C3912 = F44EE7680FF173D5009C3912 /* PBXTextBookmark */;
 			F44EE76A0FF173D5009C3912 = F44EE76A0FF173D5009C3912 /* PBXTextBookmark */;
 			F44EE7720FF17673009C3912 = F44EE7720FF17673009C3912 /* PBXTextBookmark */;
-			F452445F0FEE29420043E760 = F452445F0FEE29420043E760 /* PlistBookmark */;
 			F45244620FEE29420043E760 = F45244620FEE29420043E760 /* PBXTextBookmark */;
 			F45247D40FEE2BD20043E760 = F45247D40FEE2BD20043E760 /* PBXTextBookmark */;
 			F45247D60FEE2BD20043E760 = F45247D60FEE2BD20043E760 /* PBXTextBookmark */;
@@ -157,9 +158,6 @@
 			F499A08E0FD04EA300E9E46A = F499A08E0FD04EA300E9E46A /* PBXTextBookmark */;
 			F499A0900FD04EA300E9E46A = F499A0900FD04EA300E9E46A /* PBXTextBookmark */;
 			F499A0960FD04EA300E9E46A = F499A0960FD04EA300E9E46A /* PBXTextBookmark */;
-			F49B27230FF15E0900FFB4CA = F49B27230FF15E0900FFB4CA /* PBXTextBookmark */;
-			F4B681910FF17FA200F2709B = F4B681910FF17FA200F2709B /* PBXTextBookmark */;
-			F4B681940FF1816E00F2709B = F4B681940FF1816E00F2709B /* PBXTextBookmark */;
 			F4B681950FF1816E00F2709B = F4B681950FF1816E00F2709B /* PBXTextBookmark */;
 			F4E7B4650FD06B2D00092660 = F4E7B4650FD06B2D00092660 /* PlistBookmark */;
 			F4F865F20FD0639900CEB8E0 = F4F865F20FD0639900CEB8E0 /* PBXTextBookmark */;
@@ -181,7 +179,7 @@
 	1A224C3FFF42367911CA2CB7 /* RemovableADBController.cpp */ = {
 		uiCtxt = {
 			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{9414, 74}\";\n            s = 0;\n        },\n                {\n            c =             (\n                                {\n                    r = \"{9592, 72}\";\n                    s = 0;\n                }\n            );\n            r = \"{9570, 881}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 17983}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {686, 9058}}";
+			sepNavIntBoundsRect = "{{0, 0}, {686, 9086}}";
 			sepNavSelRange = "{15680, 11}";
 			sepNavVisRange = "{9640, 1309}";
 			sepNavVisRect = "{{0, 1193}, {554, 410}}";
@@ -225,16 +223,6 @@
 		path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/Kernel.framework/Versions/A/Headers/kern/kern_types.h;
 		sourceTree = "<absolute>";
 	};
-	F428D5180FF0188500CB13BB /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F45244560FEE27120043E760 /* Debug.h */;
-		name = "Debug.h: 27";
-		rLen = 0;
-		rLoc = 1059;
-		rType = 0;
-		vrLen = 1135;
-		vrLoc = 602;
-	};
 	F429D9710FDA65A9005D179D /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = F429D9720FDA65A9005D179D /* IOADBController.h */;
@@ -269,26 +257,6 @@
 		path = /System/Library/Frameworks/Kernel.framework/Headers/IOKit/adb/IOADBController.h;
 		sourceTree = "<absolute>";
 	};
-	F434FCA00FF1780D009EB936 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3FFF42367911CA2CB7 /* RemovableADBController.cpp */;
-		name = "RemovableADBController.cpp: 610";
-		rLen = 288;
-		rLoc = 16583;
-		rType = 0;
-		vrLen = 832;
-		vrLoc = 16146;
-	};
-	F434FCAD0FF1787B009EB936 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F48F0C000FCC0CED002DCC44 /* iMateADBController.cpp */;
-		name = "iMateADBController.cpp: 460";
-		rLen = 0;
-		rLoc = 16427;
-		rType = 0;
-		vrLen = 3344;
-		vrLoc = 13407;
-	};
 	F436845B0FD2CDA1003077DB /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = F48F0C200FCC0E60002DCC44 /* Debug.h */;
@@ -308,16 +276,6 @@
 		rType = 0;
 		vrLen = 1309;
 		vrLoc = 10593;
-	};
-	F440779D0FF2BA1900E6A4D5 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F46530690FF0D2FB00C50296 /* iMateADBController.cpp */;
-		name = "iMateADBController.cpp: 538";
-		rLen = 0;
-		rLoc = 19070;
-		rType = 0;
-		vrLen = 1509;
-		vrLoc = 18332;
 	};
 	F440779E0FF2BA1900E6A4D5 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -339,17 +297,7 @@
 		vrLen = 1309;
 		vrLoc = 10593;
 	};
-	F44077A00FF2BA1900E6A4D5 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F46530690FF0D2FB00C50296 /* iMateADBController.cpp */;
-		name = "iMateADBController.cpp: 369";
-		rLen = 2;
-		rLoc = 12110;
-		rType = 0;
-		vrLen = 2597;
-		vrLoc = 14019;
-	};
-	F44077A10FF2BA1E00E6A4D5 /* PBXTextBookmark */ = {
+	F44077B40FF2BDA400E6A4D5 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = F46530690FF0D2FB00C50296 /* iMateADBController.cpp */;
 		name = "iMateADBController.cpp: 369";
@@ -359,9 +307,83 @@
 		vrLen = 2510;
 		vrLoc = 14019;
 	};
-	F44077A50FF2BA1E00E6A4D5 /* PBXTextBookmark */ = {
+	F44077B50FF2BDA400E6A4D5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F48F0C010FCC0CED002DCC44 /* iMateADBController.h */;
+		name = "iMateADBController.h: 93";
+		rLen = 0;
+		rLoc = 3437;
+		rType = 0;
+		vrLen = 2455;
+		vrLoc = 2081;
+	};
+	F44077B60FF2BDA400E6A4D5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F45244560FEE27120043E760 /* Debug.h */;
+		name = "Debug.h: 83";
+		rLen = 0;
+		rLoc = 2770;
+		rType = 0;
+		vrLen = 1788;
+		vrLoc = 157;
+	};
+	F44077B70FF2BDA400E6A4D5 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = F48F0C490FCC120F002DCC44 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleName,
+		);
+		name = "/Users/simon/Projects/wacom/imate-osx/iMateADBController/Info.plist";
+		rLen = 18;
+		rLoc = 0;
+	};
+	F44077B80FF2BDA400E6A4D5 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = F46530690FF0D2FB00C50296 /* iMateADBController.cpp */;
+		name = "iMateADBController.cpp: 369";
+		rLen = 2;
+		rLoc = 12110;
+		rType = 0;
+		vrLen = 2510;
+		vrLoc = 14019;
+	};
+	F44077B90FF2BDA400E6A4D5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F48F0C010FCC0CED002DCC44 /* iMateADBController.h */;
+		name = "iMateADBController.h: 93";
+		rLen = 0;
+		rLoc = 3437;
+		rType = 0;
+		vrLen = 2455;
+		vrLoc = 2081;
+	};
+	F44077BA0FF2BDA400E6A4D5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F45244560FEE27120043E760 /* Debug.h */;
+		name = "Debug.h: 83";
+		rLen = 0;
+		rLoc = 2770;
+		rType = 0;
+		vrLen = 1788;
+		vrLoc = 157;
+	};
+	F44077BB0FF2BDA400E6A4D5 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = F48F0C490FCC120F002DCC44 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleName,
+		);
+		name = "/Users/simon/Projects/wacom/imate-osx/iMateADBController/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	F44077BC0FF2BDA400E6A4D5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F48F0C000FCC0CED002DCC44 /* iMateADBController.cpp */;
 		name = "iMateADBController.cpp: 460";
 		rLen = 0;
 		rLoc = 16427;
@@ -405,24 +427,6 @@
 		name = Debug.h;
 		path = "/Users/simon/Projects/wacom/imate-osx/iMateADBController/Debug.h";
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {810, 1162}}";
-			sepNavSelRange = "{2770, 0}";
-			sepNavVisRange = "{157, 1788}";
-		};
-	};
-	F452445F0FEE29420043E760 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = F48F0C490FCC120F002DCC44 /* Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			OSBundleLibraries,
-			com.apple.FireLog,
-		);
-		name = "/Users/simon/Projects/wacom/imate-osx/iMateADBController/Info.plist";
-		rLen = 0;
-		rLoc = 2147483647;
 	};
 	F45244620FEE29420043E760 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -535,11 +539,6 @@
 		name = iMateADBController.cpp;
 		path = "/Users/simon/Projects/wacom/imate-osx/iMateADBController/iMateADBController.cpp";
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1176, 12726}}";
-			sepNavSelRange = "{12110, 2}";
-			sepNavVisRange = "{14019, 2510}";
-		};
 	};
 	F48F0B5D0FCBE2F2002DCC44 /* Source Control */ = {
 		isa = PBXSourceControlManager;
@@ -556,9 +555,9 @@
 	};
 	F48F0C000FCC0CED002DCC44 /* iMateADBController.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1020, 12768}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1176, 12292}}";
 			sepNavSelRange = "{16427, 0}";
-			sepNavVisRange = "{11782, 3042}";
+			sepNavVisRange = "{14804, 3007}";
 			sepNavVisRect = "{{0, 0}, {554, 410}}";
 			sepNavWindowFrame = "{{308, 60}, {858, 976}}";
 		};
@@ -751,36 +750,6 @@
 		rType = 0;
 		vrLen = 1447;
 		vrLoc = 2307;
-	};
-	F49B27230FF15E0900FFB4CA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F48F0C010FCC0CED002DCC44 /* iMateADBController.h */;
-		name = "iMateADBController.h: 93";
-		rLen = 0;
-		rLoc = 3437;
-		rType = 0;
-		vrLen = 2120;
-		vrLoc = 2230;
-	};
-	F4B681910FF17FA200F2709B /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F46530690FF0D2FB00C50296 /* iMateADBController.cpp */;
-		name = "iMateADBController.cpp: 538";
-		rLen = 0;
-		rLoc = 19070;
-		rType = 0;
-		vrLen = 784;
-		vrLoc = 18687;
-	};
-	F4B681940FF1816E00F2709B /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = F48F0C000FCC0CED002DCC44 /* iMateADBController.cpp */;
-		name = "iMateADBController.cpp: 538";
-		rLen = 0;
-		rLoc = 19070;
-		rType = 0;
-		vrLen = 784;
-		vrLoc = 18687;
 	};
 	F4B681950FF1816E00F2709B /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

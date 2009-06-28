@@ -235,7 +235,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>F44077A50FF2BA1E00E6A4D5</string>
+						<string>F44077BC0FF2BDA400E6A4D5</string>
 						<key>history</key>
 						<array>
 							<string>F44EE7680FF173D5009C3912</string>
@@ -391,7 +391,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>F4999F740FD02FB700E9E46A</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>iMateADBController.cpp</string>
+								<string>Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -399,11 +399,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>F4999F750FD02FB700E9E46A</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>iMateADBController.cpp</string>
+										<string>Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>F44077A10FF2BA1E00E6A4D5</string>
+										<string>F44077BB0FF2BDA400E6A4D5</string>
 										<key>history</key>
 										<array>
 											<string>F499A07F0FD04EA300E9E46A</string>
@@ -413,16 +413,16 @@
 											<string>F495771C0FD3259700A21BE6</string>
 											<string>F429D9710FDA65A9005D179D</string>
 											<string>F45D3C250FEE1F2E00BC9D2F</string>
-											<string>F452445F0FEE29420043E760</string>
 											<string>F45247D40FEE2BD20043E760</string>
 											<string>F45247D60FEE2BD20043E760</string>
-											<string>F428D5180FF0188500CB13BB</string>
 											<string>F46530520FF0D13700C50296</string>
-											<string>F49B27230FF15E0900FFB4CA</string>
 											<string>F42147150FF171B200D81DA1</string>
 											<string>F44EE7720FF17673009C3912</string>
 											<string>F440779C0FF2BA1900E6A4D5</string>
-											<string>F44077A00FF2BA1900E6A4D5</string>
+											<string>F44077B40FF2BDA400E6A4D5</string>
+											<string>F44077B50FF2BDA400E6A4D5</string>
+											<string>F44077B60FF2BDA400E6A4D5</string>
+											<string>F44077B70FF2BDA400E6A4D5</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -443,6 +443,9 @@
 											<string>F42147190FF171B200D81DA1</string>
 											<string>F440779E0FF2BA1900E6A4D5</string>
 											<string>F440779F0FF2BA1900E6A4D5</string>
+											<string>F44077B80FF2BDA400E6A4D5</string>
+											<string>F44077B90FF2BDA400E6A4D5</string>
+											<string>F44077BA0FF2BDA400E6A4D5</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -471,6 +474,8 @@
 							<key>Tabs</key>
 							<array>
 								<dict>
+									<key>BecomeActive</key>
+									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
@@ -482,6 +487,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {747, 81}}</string>
+										<key>RubberWindowFrame</key>
+										<string>647 204 1083 880 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -542,8 +549,6 @@
 									<string>PBXCVSModule</string>
 								</dict>
 								<dict>
-									<key>BecomeActive</key>
-									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
@@ -559,8 +564,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {747, 81}}</string>
-										<key>RubberWindowFrame</key>
-										<string>647 204 1083 880 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -743,7 +746,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>267565598.38536099</real>
+	<real>267566500.39041799</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>2</integer>
 	<key>ToolbarIsVisible</key>
