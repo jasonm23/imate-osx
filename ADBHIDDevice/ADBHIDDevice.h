@@ -102,6 +102,7 @@ protected:
   IOWorkLoop * _workLoop;
   IOCommandGate * _commandGate;
   IOADBDevice * _adbDevice;
+  bool _siezed;
 };
 
 #endif
