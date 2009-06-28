@@ -54,6 +54,7 @@ KLASS::init(OSDictionary * properties)
   _workLoop = NULL;
 	_commandGate = NULL;
 	_adbDevice = NULL;
+  _sieze = false;
   
   return true;
 }
@@ -116,6 +117,12 @@ KLASS::handleStart(IOService * nub)
   }
   _commandGate->enable();
 
+  // Ugly hack, IOHIDDevice calls newReportDescriptor() immediately after 
+  // start(), so if we haven't done our descriptor futzing annd grabbed the
+  // device by then, we're in a bad state.  We *also* do the same call from
+  // setPowerState(), so we need to be careful...
+  bringUpADBDevice();
+  
   PMinit();
   nub->joinPMtree(this);
   registerPowerDriver(this, myPowerStates(), myNumberOfPowerStates());  
@@ -252,22 +259,25 @@ KLASS::newReportDescriptor(IOMemoryDescriptor **descriptor) const
 bool 
 KLASS::bringUpADBDevice() {
   DEBUG_IOLog(3, "%s::bringUpADBDevice()\n", getName());
-  if (!_adbDevice->seizeForClient(this, KLASS::adbPacketInterrupt)) {
-    return false;
-  }
+  if (!_siezed) {
+    if (!_adbDevice->seizeForClient(this, KLASS::adbPacketInterrupt)) {
+      return _siezed;
+    }
+    _siezed = true;
   
-  // We now have a hold of the tablet, time to configure it if we need to
-  if (getProperty(kADBHIDDeviceNewHandlerKey)) {
-    UInt8 targetHandler = OSDynamicCast( OSNumber, getProperty(kADBHIDDeviceNewHandlerKey))->unsigned8BitValue();
-    // Check if we need to change handler ID
-    if (_adbDevice->handlerID() != targetHandler) {    
-      // Set the handler id to required ID. 
-      if (_adbDevice->setHandlerID(targetHandler) != kIOReturnSuccess) {
-        return false;
+    // We now have a hold of the tablet, time to configure it if we need to
+    if (getProperty(kADBHIDDeviceNewHandlerKey)) {
+      UInt8 targetHandler = OSDynamicCast( OSNumber, getProperty(kADBHIDDeviceNewHandlerKey))->unsigned8BitValue();
+      // Check if we need to change handler ID
+      if (_adbDevice->handlerID() != targetHandler) {    
+        // Set the handler id to required ID. 
+        if (_adbDevice->setHandlerID(targetHandler) != kIOReturnSuccess) {   
+          _siezed = false;
+        }
       }
     }
   }
-  return true;
+  return _seized;
 }
 
 void
@@ -279,5 +289,6 @@ KLASS::bringDownADBDevice() {
     }
     _adbDevice->releaseFromClient(this);
     _adbDevice = NULL;
+    _siezed = false;
   }
 }
