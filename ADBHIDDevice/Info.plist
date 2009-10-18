@@ -22,6 +22,19 @@
 	<string>1.0.0d1</string>
 	<key>IOKitPersonalities</key>
 	<dict>
+		<key>Wacom-GD-xxxx-A</key>
+		<dict>
+			<key>ADB Match</key>
+			<string>0x04-0x6a</string>
+			<key>CFBundleIdentifier</key>
+			<string>cx.ath.tufty.ADBHIDDevice</string>
+			<key>IOClass</key>
+			<string>ADBHIDTablet</string>
+			<key>IOProviderClass</key>
+			<string>IOADBDevice</string>
+			<key>newHandler</key>
+			<integer>106</integer>
+		</dict>
 		<key>Wacom-UD-xxxx-A</key>
 		<dict>
 			<key>ADB Match</key>
@@ -34,6 +47,21 @@
 			<string>IOADBDevice</string>
 			<key>newHandler</key>
 			<integer>104</integer>
+		</dict>
+		<key>Wacom Tablet Handler</key>
+		<dict>
+			<key>VendorID</key>
+			<integer>65261</integer>
+			<key>ProductID</key>
+			<integer>64206</integer>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.kernel.iokit</string>
+			<key>IOClass</key>
+			<string>IOHIDEventDriver</string>
+			<key>IOProviderClass</key>
+			<string>IOHIDInterface</string>
+			<key>SupportsInk</key>
+			<string>1</string>
 		</dict>
 	</dict>
 	<key>OSBundleLibraries</key>
