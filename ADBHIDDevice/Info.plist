@@ -48,7 +48,20 @@
 			<key>newHandler</key>
 			<integer>104</integer>
 		</dict>
-		<key>Wacom Tablet Handler</key>
+		<key>Calcomp-UltraSlate-Model-10090A</key>
+		<dict>
+			<key>ADB Match</key>
+			<string>0x04-0x40</string>
+			<key>CFBundleIdentifier</key>
+			<string>cx.ath.tufty.ADBHIDDevice</string>
+			<key>IOClass</key>
+			<string>ADBHIDUltraSlate</string>
+			<key>IOProviderClass</key>
+			<string>IOADBDevice</string>
+			<key>newHandler</key>
+			<integer>64</integer>
+		</dict>
+		<key>Wacom/Ultraslate Tablet Handler</key>
 		<dict>
 			<key>VendorID</key>
 			<integer>65261</integer>
